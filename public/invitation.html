@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mariage Christian Lengbe et Sephora Malanda</title>
+    <meta
+      name="description"
+      content="Invitation de mariage Hope Events pour Christian Lengbe et Sephora Malanda."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    />
+    <link rel="stylesheet" href="./assets/css/hope-events-invitation.css" />
+  </head>
+  <body id="top" class="invitation-page">
+    <div class="coeur" aria-hidden="true"></div>
+
+    <div class="clone-page-shell">
+      <section class="ww-home-page" id="home">
+        <div class="container hero-poster-shell reveal-card">
+          <figure class="hero-poster">
+            <img
+              class="hero-poster-image"
+              src="./assets/img/Home.jpg"
+              alt="Affiche de mariage Christian Lengbe et Sephora Malanda"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="content-surface" id="couple">
+        <div class="container">
+          <div
+            class="message-stage reveal-card"
+            data-message-image="./Table%20charit%C3%A9/couple-lonkeke.jpg"
+            data-invitee="Couple Lonkeke"
+            data-table="Charite"
+            data-export-name="invitation-couple-lonkeke-charite"
+          >
+            <figure class="message-artwork">
+              <img
+                id="messageImage"
+                class="message-artwork-image"
+                src="./Table%20charit%C3%A9/couple-lonkeke.jpg"
+                alt="Invitation personnalisee Hope Events"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          </div>
+
+          <div class="action-stack text-center reveal-card">
+            <button
+              id="downloadButton"
+              type="button"
+              class="clone-primary-button action-button"
+            >
+              Telecharger l'invitation
+            </button>
+
+            <a
+              class="clone-secondary-button action-button"
+              href="https://maps.google.com/?q=Kinshasa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Afficher la carte d'adresse
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ww-section ww-rsvp-detail text-white" id="rsvp">
+        <div class="container">
+          <div class="section-head text-center reveal-card">
+            <h2 class="section-title">Livre d'or</h2>
+            <p>Laissez un petit mot aux maries</p>
+          </div>
+
+          <div class="rsvp-card reveal-card">
+            <form id="guestbook-form">
+              <label class="field-label" for="message-input">Votre message</label>
+              <textarea
+                id="message-input"
+                required
+                class="form-control"
+                rows="9"
+              >Bonjour merci beaucoup pour l'invitation.</textarea>
+
+              <div class="text-center action-wrap">
+                <button class="clone-primary-button action-button" type="submit">
+                  Envoyer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="preferences-surface">
+        <div class="container">
+          <div class="preferences-card reveal-card">
+            <div class="section-head text-center">
+              <p class="preferences-kicker">Vos preferences</p>
+              <h2 class="section-title dark-title">Que desirez vous boire ? 🍻</h2>
+              <p class="preferences-copy">
+                Aidez les maries dans la planification de leur evenement en
+                leur suggerant vos gouts de boissons. Deux choix au maximum.
+              </p>
+            </div>
+
+            <div class="preference-group">
+              <h3 class="category-title text-center">Boissons alcoolisees</h3>
+              <div class="clone-product-grid">
+                <button type="button" class="product-button choice-chip" data-product="Castel">Castel</button>
+                <button type="button" class="product-button choice-chip" data-product="Beaufort">Beaufort</button>
+                <button type="button" class="product-button choice-chip" data-product="Primus">Primus</button>
+                <button type="button" class="product-button choice-chip" data-product="Tembo">Tembo</button>
+                <button type="button" class="product-button choice-chip" data-product="Mutzig">Mutzig</button>
+                <button type="button" class="product-button choice-chip" data-product="Nkoyi">Nkoyi</button>
+                <button type="button" class="product-button choice-chip" data-product="Likofi">Likofi</button>
+                <button type="button" class="product-button choice-chip" data-product="Legend">Legend</button>
+                <button type="button" class="product-button choice-chip" data-product="Champagne">Champagne</button>
+                <button type="button" class="product-button choice-chip" data-product="Vin">Vin</button>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3 class="category-title text-center">Boissons non alcoolisees</h3>
+              <div class="clone-product-grid">
+                <button type="button" class="product-button choice-chip" data-product="Coca">Coca</button>
+                <button type="button" class="product-button choice-chip" data-product="Fanta">Fanta</button>
+                <button type="button" class="product-button choice-chip" data-product="Vitalo">Vitalo</button>
+                <button type="button" class="product-button choice-chip" data-product="Maltina">Maltina</button>
+                <button type="button" class="product-button choice-chip" data-product="Energy Malt">Energy Malt</button>
+              </div>
+            </div>
+
+            <div style="display: none" id="submitButton" class="text-center action-wrap">
+              <button
+                id="preferences-submit"
+                type="button"
+                class="clone-primary-button action-button"
+              >
+                Soumettre
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ww-footer">
+        <div class="container text-center py-4">
+          <p class="footer-brand">Invitation realisee par Hope Events</p>
+          <p class="footer-signature">Signature Dr Tech</p>
+          <p class="ico-1">
+            <a
+              class="whatsapp-link"
+              href="https://wa.me/243000000000?text=Bonjour%20Dr%20Tech%2C%20je%20veux%20une%20invitation%20dans%20cet%20esprit."
+              target="_blank"
+              rel="noreferrer"
+            >
+              👉 Nous contacter sur Whatsapp
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./assets/js/demo-data.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/hope-events-invitation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/invitation/:token",
+      "destination": "/invitation.html?token=:token"
+    }
+  ]
+}
+

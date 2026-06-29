@@ -1,0 +1,13 @@
+{
+  "name": "hope-events-invitations",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "firebase": "^12.15.0",
+    "firebase-admin": "^12.7.0"
+  }
+}

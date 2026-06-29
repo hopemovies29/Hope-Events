@@ -1,0 +1,548 @@
+.invitation-page {
+  --page-bg: #f3e3d5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.invitation-grain {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    radial-gradient(rgba(101, 58, 36, 0.045) 1px, transparent 1px);
+  background-size: auto, 15px 15px;
+  opacity: 0.56;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.invitation-bloom {
+  position: fixed;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 50%;
+  filter: blur(36px);
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bloom-left {
+  top: 8rem;
+  left: -8rem;
+  background: rgba(206, 139, 94, 0.24);
+}
+
+.bloom-right {
+  right: -8rem;
+  bottom: -5rem;
+  background: rgba(170, 103, 73, 0.22);
+}
+
+.invitation-topbar,
+.invitation-shell {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2rem), 1180px);
+  margin: 0 auto;
+}
+
+.invitation-topbar {
+  padding: 1.4rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.signature-badge,
+.loading-pill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.48rem 0.86rem;
+  border-radius: 999px;
+  background: rgba(181, 99, 57, 0.1);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.invitation-shell {
+  padding: 1rem 0 4rem;
+}
+
+.loading-card,
+.error-card,
+.hero-card,
+.letter-card,
+.schedule-section,
+.venue-banner,
+.interaction-card,
+.signature-panel,
+.invitation-footer {
+  border: 1px solid rgba(97, 57, 35, 0.12);
+  background: rgba(255, 250, 246, 0.76);
+  box-shadow: 0 24px 70px rgba(58, 31, 19, 0.14);
+  backdrop-filter: blur(14px);
+  border-radius: 2rem;
+}
+
+.loading-card,
+.error-card {
+  padding: 3rem;
+}
+
+.loading-card h1,
+.error-card h1 {
+  margin: 1rem 0 0.8rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.98;
+}
+
+.loading-card p,
+.error-card p,
+.photo-panel-copy,
+.hero-intro,
+.hero-message,
+.letter-card p,
+.venue-banner p,
+.hint,
+.signature-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.invitation-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-scene {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(310px, 0.98fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.hero-card,
+.letter-card,
+.schedule-section,
+.venue-banner,
+.interaction-card,
+.signature-panel,
+.invitation-footer {
+  padding: 2rem;
+}
+
+.hero-copy-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy-card::after {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  bottom: -4rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(181, 99, 57, 0.18), transparent 70%);
+}
+
+.hero-copy-card h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.hero-date {
+  margin: 1rem 0 0;
+  color: var(--highlight);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guest-ribbon {
+  width: fit-content;
+  margin-top: 1.9rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(97, 57, 35, 0.08);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.guest-ribbon span,
+.guest-ribbon small {
+  color: var(--muted);
+}
+
+.guest-ribbon strong {
+  font-size: 1.08rem;
+}
+
+.hero-intro {
+  margin-top: 1.5rem;
+}
+
+.hero-message {
+  margin-top: 0.85rem;
+  max-width: 38rem;
+}
+
+.action-row {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-photo-card {
+  display: grid;
+  gap: 1.1rem;
+  align-content: start;
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.photo-ring {
+  position: absolute;
+  inset: 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  pointer-events: none;
+}
+
+.photo-frame {
+  margin: 0;
+  border-radius: 1.45rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  position: relative;
+}
+
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 26%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 30%);
+  pointer-events: none;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-panel {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.letter-section {
+  display: grid;
+}
+
+.letter-card {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 250, 0.96), rgba(249, 242, 236, 0.92)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 30px,
+      rgba(181, 99, 57, 0.04) 30px,
+      rgba(181, 99, 57, 0.04) 31px
+    );
+}
+
+.letter-salutation {
+  margin: 0 0 1rem !important;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.letter-signature {
+  margin-top: 1.6rem;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.letter-signature strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+}
+
+.compact-heading {
+  margin-bottom: 1.4rem;
+}
+
+.compact-heading h2,
+.interaction-heading h2,
+.venue-banner h2,
+.signature-panel h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.schedule-card {
+  padding: 1.2rem;
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(97, 57, 35, 0.08);
+  display: grid;
+  gap: 0.4rem;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(97, 57, 35, 0.08);
+}
+
+.schedule-card span {
+  color: var(--highlight);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.schedule-card strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.8rem;
+}
+
+.schedule-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.venue-banner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.venue-label {
+  color: var(--highlight);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.interaction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.interaction-heading {
+  margin-bottom: 1.2rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.field span,
+.preference-block h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(97, 57, 35, 0.14);
+  border-radius: 1.05rem;
+  padding: 0.95rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  font: inherit;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(181, 99, 57, 0.15);
+  border-color: rgba(181, 99, 57, 0.35);
+}
+
+.chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.choice-chip {
+  position: relative;
+}
+
+.choice-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.choice-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(97, 57, 35, 0.12);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.choice-chip input:checked + span {
+  background: linear-gradient(135deg, var(--accent), #824a2a);
+  color: #fff9f4;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.preference-block + .preference-block {
+  margin-top: 1.25rem;
+}
+
+.form-feedback {
+  min-height: 1.5rem;
+  margin: 0.9rem 0 0;
+  color: var(--highlight);
+  font-size: 0.94rem;
+}
+
+.signature-panel {
+  text-align: center;
+  background:
+    radial-gradient(circle at top center, rgba(235, 188, 152, 0.18), transparent 38%),
+    rgba(255, 250, 246, 0.82);
+}
+
+.invitation-footer {
+  text-align: center;
+}
+
+.invitation-footer p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.invitation-footer p + p {
+  margin-top: 0.45rem;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 620ms ease,
+    transform 620ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-scene,
+  .interaction-grid,
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .invitation-topbar,
+  .venue-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-card,
+  .letter-card,
+  .schedule-section,
+  .venue-banner,
+  .interaction-card,
+  .signature-panel,
+  .invitation-footer,
+  .loading-card,
+  .error-card {
+    padding: 1.35rem;
+  }
+
+  .hero-copy-card h1 {
+    line-height: 1;
+  }
+
+  .guest-ribbon {
+    width: 100%;
+  }
+}
