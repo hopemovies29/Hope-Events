@@ -8,20 +8,23 @@
       name="description"
       content="Espace client prive Hope Events pour consulter les tables et les invitations d'un evenement."
     />
+    <script>
+      document.write('<base href="' + (window.location.protocol === "file:" ? "./" : "/") + '">');
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body class="home-page">
     <div class="backdrop-noise" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="Hope Events">
-        <img class="brand-logo" src="./assets/img/logo.jpg" alt="Logo Hope Events" />
+      <a class="brand" href="index.html" aria-label="Hope Events">
+        <img class="brand-logo" src="assets/img/logo.jpg" alt="Logo Hope Events" />
         <span class="brand-text">
           <strong>Hope Events</strong>
           <small>Signature Dr Tech</small>
@@ -29,7 +32,7 @@
       </a>
 
       <nav class="site-nav" aria-label="Navigation principale">
-        <a href="./index.html">Accueil</a>
+        <a href="index.html">Accueil</a>
         <a href="#tables">Tables</a>
       </nav>
     </header>
@@ -56,7 +59,7 @@
           <p id="client-space-error-message">
             Verifie le code remis par Hope Events.
           </p>
-          <a class="button button-primary" href="./index.html">Retour a l'accueil</a>
+          <a class="button button-primary" href="index.html">Retour a l'accueil</a>
         </div>
       </section>
 
@@ -86,8 +89,8 @@
       </section>
     </main>
 
-    <script src="./assets/js/demo-data.js"></script>
-    <script src="./assets/js/api.js"></script>
-    <script src="./assets/js/espace-client.js"></script>
+    <script src="assets/js/demo-data.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/espace-client.js"></script>
   </body>
 </html>

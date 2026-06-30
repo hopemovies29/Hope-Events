@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/invitation/:token",
-      "destination": "/invitation?token=:token"
+      "destination": "/invitation.html?token=:token"
     },
     {
       "source": "/espace-client/:key",
-      "destination": "/espace-client?key=:key"
+      "destination": "/espace-client.html?key=:key"
     }
   ]
 }
