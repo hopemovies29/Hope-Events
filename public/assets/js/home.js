@@ -31,14 +31,14 @@
     });
   }
 
-  function buildInvitationUrl(code) {
+  function buildClientSpaceUrl(code) {
     const encodedCode = encodeURIComponent(code);
 
     if (window.location.protocol === "file:") {
-      return `./invitation.html?token=${encodedCode}`;
+      return `./espace-client.html?key=${encodedCode}`;
     }
 
-    return `/invitation/${encodedCode}`;
+    return `/espace-client/${encodedCode}`;
   }
 
   function initPrivateAccess() {
@@ -52,12 +52,12 @@
       const code = codeInput.value.trim();
 
       if (!code) {
-        accessFeedback.textContent = "Entre le code unique remis par Hope Events.";
+      accessFeedback.textContent = "Entre le code evenement ou la cle remise par Hope Events.";
         return;
       }
 
       accessFeedback.textContent = "Ouverture de votre espace prive...";
-      window.location.href = buildInvitationUrl(code);
+      window.location.href = buildClientSpaceUrl(code);
     });
   }
 

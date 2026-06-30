@@ -21,6 +21,24 @@
     };
   }
 
+  function getDemoEventSpace(key) {
+    if (!window.HopeEventsDemo || typeof window.HopeEventsDemo.getEventSpace !== "function") {
+      return null;
+    }
+
+    const eventSpace = window.HopeEventsDemo.getEventSpace(key);
+
+    if (!eventSpace) {
+      return null;
+    }
+
+    return {
+      ok: true,
+      mode: "demo",
+      data: eventSpace
+    };
+  }
+
   async function requestJson(url, options) {
     const response = await fetch(url, options);
     const payload = await response.json();
@@ -58,6 +76,32 @@
     }
   }
 
+  async function getEventSpace(key) {
+    if (isFileMode()) {
+      const demoPayload = getDemoEventSpace(key);
+
+      if (!demoPayload) {
+        throw new Error("Espace client de demo introuvable");
+      }
+
+      return demoPayload;
+    }
+
+    try {
+      return await requestJson("/api/event-space?key=" + encodeURIComponent(key), {
+        method: "GET"
+      });
+    } catch (error) {
+      const demoPayload = getDemoEventSpace(key);
+
+      if (demoPayload) {
+        return demoPayload;
+      }
+
+      throw error;
+    }
+  }
+
   async function postJson(url, body) {
     if (isFileMode()) {
       return {
@@ -78,6 +122,7 @@
 
   window.HopeEventsApi = {
     getInvitation,
+    getEventSpace,
     recordView: function (token) {
       return postJson("/api/view", { token: token });
     },
@@ -89,4 +134,3 @@
     }
   };
 })();
-

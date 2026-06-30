@@ -1,5 +1,8 @@
 (function () {
   const base = {
+    id: "christian-sephora-2026",
+    slug: "christian-sephora-2026",
+    accessKey: "couple-lengbe",
     coupleNames: "Christian Lengbe et Sephora Malanda",
     title: "Leur grande promesse",
     dateIso: "",
@@ -107,6 +110,34 @@
   window.HopeEventsDemo = {
     defaultToken: "charite-couple-lonkeke",
     invitationIndex: invitationIndex,
+    getEventSpace: function (key) {
+      if (key !== base.accessKey && key !== base.slug) {
+        return null;
+      }
+
+      return {
+        id: base.id,
+        slug: base.slug,
+        accessKey: base.accessKey,
+        coupleNames: base.coupleNames,
+        dateLabel: base.dateLabel,
+        venueName: base.venueName,
+        venueAddress: base.venueAddress,
+        mapUrl: base.mapUrl,
+        invitations: invitationIndex.map(function (item) {
+          const invitation = invitations[item.token];
+
+          return {
+            token: invitation.token,
+            guestName: invitation.guestName,
+            tableName: invitation.tableName,
+            tableSlug: invitation.tableSlug,
+            seats: invitation.seats,
+            invitationUrl: item.url
+          };
+        })
+      };
+    },
     getInvitation: function (token) {
       const invitation = invitations[token];
 
