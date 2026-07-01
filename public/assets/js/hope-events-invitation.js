@@ -149,15 +149,34 @@
       return;
     }
 
-    const heartCount = 9;
+    container.innerHTML = "";
+
+    const heartCount = window.innerWidth < 768 ? 10 : 16;
+    const heartGlyphs = ["❤", "❤", "❤", "❣", "💕", "💖"];
+    const heartColors = [
+      "rgba(244, 142, 125, 0.84)",
+      "rgba(232, 109, 138, 0.82)",
+      "rgba(255, 163, 176, 0.88)",
+      "rgba(222, 92, 117, 0.78)"
+    ];
 
     for (let index = 0; index < heartCount; index += 1) {
-      const heart = document.createElement("div");
+      const heart = document.createElement("span");
+      const glyph = document.createElement("span");
       heart.className = "heart";
-      heart.textContent = "♥";
-      heart.style.left = `${Math.random() * 100}%`;
-      heart.style.animationDelay = `${Math.random() * 8}s`;
-      heart.style.animationDuration = `${9 + Math.random() * 5}s`;
+      glyph.className = "heart-glyph";
+      glyph.textContent = heartGlyphs[Math.floor(Math.random() * heartGlyphs.length)];
+
+      heart.style.left = `${2 + Math.random() * 96}%`;
+      heart.style.setProperty("--heart-delay", `${Math.random() * 10}s`);
+      heart.style.setProperty("--heart-duration", `${10 + Math.random() * 6}s`);
+      heart.style.setProperty("--heart-drift", `${-28 + Math.random() * 56}px`);
+      heart.style.setProperty("--heart-sway", `${16 + Math.random() * 34}px`);
+      heart.style.setProperty("--heart-tilt", `${-18 + Math.random() * 36}deg`);
+      heart.style.setProperty("--heart-size", `${18 + Math.random() * 18}px`);
+      heart.style.setProperty("--heart-color", heartColors[Math.floor(Math.random() * heartColors.length)]);
+      heart.style.setProperty("--heart-beat-duration", `${1.8 + Math.random() * 1.4}s`);
+      heart.appendChild(glyph);
       container.appendChild(heart);
     }
   }

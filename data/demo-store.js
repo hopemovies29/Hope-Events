@@ -48,7 +48,7 @@ const demoEvent = {
   },
   coverImage: "/assets/img/Home.jpg",
   footerBrand: "Invitation signee Hope Events by Dr Tech",
-  whatsappLink: "https://wa.me/243000000000",
+  whatsappLink: "https://wa.me/243827274226",
   preferences: {
     alcoholic: [
       "Champagne",

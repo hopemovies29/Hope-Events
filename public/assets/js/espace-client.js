@@ -10,6 +10,7 @@
   const summaryCount = document.getElementById("summary-count");
   const tablesGrid = document.getElementById("tables-grid");
   const revealNodes = document.querySelectorAll("[data-reveal]");
+  const sectionAnchors = document.querySelectorAll('a[href^="#"]');
 
   function resolveKey() {
     const url = new URL(window.location.href);
@@ -57,6 +58,40 @@
 
     revealNodes.forEach(function (node) {
       observer.observe(node);
+    });
+  }
+
+  function initSectionAnchors() {
+    if (!sectionAnchors.length) {
+      return;
+    }
+
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    sectionAnchors.forEach(function (anchor) {
+      anchor.addEventListener("click", function (event) {
+        const hash = anchor.getAttribute("href");
+
+        if (!hash || hash === "#") {
+          return;
+        }
+
+        const target = document.querySelector(hash);
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({
+          behavior: motionPreference.matches ? "auto" : "smooth",
+          block: "start"
+        });
+
+        if (window.history && typeof window.history.replaceState === "function") {
+          window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+        }
+      });
     });
   }
 
@@ -167,6 +202,7 @@
   }
 
   async function init() {
+    initSectionAnchors();
     initReveal();
 
     const key = resolveKey();

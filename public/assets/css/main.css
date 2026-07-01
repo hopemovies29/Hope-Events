@@ -420,6 +420,22 @@ img {
     var(--surface-strong);
 }
 
+.contact-lines {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: center;
+}
+
+.contact-lines a {
+  color: #ffd8b6;
+  font-weight: 600;
+}
+
+.contact-lines a:hover {
+  text-decoration: underline;
+}
+
 .site-footer {
   padding: 0 0 2rem;
   text-align: center;

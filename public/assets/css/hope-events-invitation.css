@@ -64,15 +64,32 @@ textarea {
   pointer-events: none;
   position: fixed;
   inset: 0;
+  overflow: hidden;
   z-index: 3;
 }
 
 .heart {
   position: fixed;
-  color: rgba(244, 142, 125, 0.68);
-  font-size: 18px;
-  animation: float-heart 11s linear infinite;
+  bottom: -14vh;
   z-index: 3;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: heart-rise var(--heart-duration, 12s) linear infinite;
+  animation-delay: var(--heart-delay, 0s);
+}
+
+.heart-glyph {
+  display: block;
+  font-size: var(--heart-size, 24px);
+  line-height: 1;
+  color: var(--heart-color, rgba(244, 142, 125, 0.82));
+  text-shadow:
+    0 0 10px rgba(255, 167, 188, 0.35),
+    0 0 24px rgba(244, 142, 125, 0.24);
+  filter: drop-shadow(0 8px 16px rgba(219, 103, 114, 0.18));
+  animation:
+    heart-beat var(--heart-beat-duration, 2.4s) ease-in-out infinite,
+    heart-glow 4.4s ease-in-out infinite;
 }
 
 #home {
@@ -381,19 +398,75 @@ textarea {
   text-decoration: underline;
 }
 
-@keyframes float-heart {
+@keyframes heart-rise {
   0% {
-    transform: translateY(105vh) scale(0.72);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.72);
     opacity: 0;
   }
 
-  15% {
-    opacity: 0.72;
+  12% {
+    opacity: 0.82;
+  }
+
+  38% {
+    transform:
+      translate3d(calc(var(--heart-drift, 0px) * 0.45), -38vh, 0)
+      rotate(calc(var(--heart-tilt, 0deg) * 0.5))
+      scale(0.94);
+  }
+
+  70% {
+    transform:
+      translate3d(calc(var(--heart-drift, 0px) - var(--heart-sway, 0px)), -82vh, 0)
+      rotate(var(--heart-tilt, 0deg))
+      scale(1.06);
+    opacity: 0.76;
   }
 
   100% {
-    transform: translateY(-20vh) scale(1.08);
+    transform:
+      translate3d(calc(var(--heart-drift, 0px) + var(--heart-sway, 0px)), -136vh, 0)
+      rotate(calc(var(--heart-tilt, 0deg) * -0.6))
+      scale(1.18);
     opacity: 0;
+  }
+}
+
+@keyframes heart-beat {
+  0%,
+  100% {
+    transform: scale(0.94);
+  }
+
+  18% {
+    transform: scale(1.2);
+  }
+
+  36% {
+    transform: scale(0.98);
+  }
+
+  54% {
+    transform: scale(1.13);
+  }
+
+  72% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes heart-glow {
+  0%,
+  100% {
+    opacity: 0.88;
+    filter: drop-shadow(0 8px 16px rgba(219, 103, 114, 0.14));
+  }
+
+  50% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 8px 16px rgba(219, 103, 114, 0.2))
+      drop-shadow(0 0 18px rgba(255, 171, 196, 0.32));
   }
 }
 

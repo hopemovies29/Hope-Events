@@ -49,7 +49,7 @@
     },
     coverImage: "/assets/img/mariage.jpeg",
     footerBrand: "Invitation signée Hope Events by Dr Tech",
-    whatsappLink: "https://wa.me/243000000000",
+    whatsappLink: "https://wa.me/243827274226",
     preferences: {
       alcoholic: [
         "Champagne",
