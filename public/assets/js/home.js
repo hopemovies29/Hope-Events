@@ -38,7 +38,7 @@
       return `./espace-client.html?key=${encodedCode}`;
     }
 
-    return `/espace-client/${encodedCode}`;
+    return `/espace-client?key=${encodedCode}`;
   }
 
   function initPrivateAccess() {
