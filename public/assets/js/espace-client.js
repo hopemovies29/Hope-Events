@@ -27,7 +27,7 @@
     }
 
     if (window.HopeEventsDemo && window.HopeEventsDemo.getEventSpace) {
-      return "couple-lengbe";
+      return "HE-CLSM-2026";
     }
 
     return "";

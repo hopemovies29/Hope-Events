@@ -32,7 +32,12 @@
   }
 
   function buildClientSpaceUrl(code) {
-    const encodedCode = encodeURIComponent(code);
+    const normalizedCode = code
+      .trim()
+      .replace(/[\s_]+/g, "-")
+      .replace(/-+/g, "-")
+      .toUpperCase();
+    const encodedCode = encodeURIComponent(normalizedCode);
 
     if (window.location.protocol === "file:") {
       return `./espace-client.html?key=${encodedCode}`;
@@ -52,7 +57,7 @@
       const code = codeInput.value.trim();
 
       if (!code) {
-      accessFeedback.textContent = "Entre le code evenement ou la cle remise par Hope Events.";
+        accessFeedback.textContent = "Entre le code prive remis par Hope Events.";
         return;
       }
 

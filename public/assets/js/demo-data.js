@@ -2,7 +2,7 @@
   const base = {
     id: "christian-sephora-2026",
     slug: "christian-sephora-2026",
-    accessKey: "couple-lengbe",
+    accessKey: "HE-CLSM-2026",
     coupleNames: "Christian Lengbe et Sephora Malanda",
     title: "Leur grande promesse",
     dateIso: "",
@@ -111,7 +111,9 @@
     defaultToken: "charite-couple-lonkeke",
     invitationIndex: invitationIndex,
     getEventSpace: function (key) {
-      if (key !== base.accessKey && key !== base.slug) {
+      const candidate = String(key || "").trim().replace(/[\s_]+/g, "-");
+
+      if (candidate !== base.accessKey && candidate !== base.slug) {
         return null;
       }
 

@@ -1,7 +1,7 @@
 const demoEvent = {
   id: "christian-sephora-2026",
   slug: "christian-sephora-2026",
-  accessKey: "couple-lengbe",
+  accessKey: "HE-CLSM-2026",
   coupleNames: "Christian Lengbe et Sephora Malanda",
   title: "Leur grande promesse",
   dateIso: "",
