@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation | Ben Lumu et Julie</title>
+    <meta
+      name="description"
+      content="Invitation web douce et personnalisee pour le mariage de Ben Lumu et Julie."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
+    />
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo.jpg" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="lumu-invitation-page">
+    <div class="floating-hearts" aria-hidden="true"></div>
+
+    <main class="invite-frame">
+      <section class="invite-phone reveal-card">
+        <header class="invite-topbar">
+          <div class="invite-brand">
+            <img src="../assets/img/logo.jpg" alt="Hope Events" />
+            <span>Hope Events</span>
+          </div>
+          <button id="copyLinkButton" type="button" class="topbar-action">
+            Copier le lien
+          </button>
+        </header>
+
+        <section class="hero-media">
+          <img
+            class="hero-media-image"
+            src="./assets/ben-julie-portrait-2.jpeg"
+            alt="Ben Lumu et Julie"
+          />
+          <div class="hero-media-overlay">
+            <p class="hero-overline">Vous etes invites au</p>
+            <h1 class="hero-main-title">Mariage</h1>
+            <p class="hero-subtitle">de <span id="coupleNames">Ben Lumu et Julie</span></p>
+          </div>
+        </section>
+
+        <section class="invite-body">
+          <div class="invitee-chip" id="inviteeChip">Couple Kuanzambi • Table Amour</div>
+
+          <p class="love-phrase" id="lovePhrase">
+            Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.
+          </p>
+
+          <div class="info-list">
+            <article class="info-row">
+              <span class="info-icon">📅</span>
+              <div>
+                <strong id="dateLabel">Vendredi 7 aout 2026</strong>
+                <span>Date de celebration</span>
+              </div>
+            </article>
+            <article class="info-row">
+              <span class="info-icon">🕖</span>
+              <div>
+                <strong id="timeLabel">19h00</strong>
+                <span>Heure de rendez-vous</span>
+              </div>
+            </article>
+            <article class="info-row">
+              <span class="info-icon">📍</span>
+              <div>
+                <strong id="venueLabel">Salle Emmaus</strong>
+                <span id="addressLabel">Saint Sacrement, Kinshasa</span>
+              </div>
+            </article>
+          </div>
+
+          <a
+            id="mapButton"
+            class="route-button"
+            href="https://maps.google.com/?q=Saint+Sacrement+Kinshasa"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Voir l'itineraire
+          </a>
+
+          <div class="countdown-card">
+            <p class="countdown-label">Jour J dans</p>
+            <div class="countdown-grid">
+              <article>
+                <strong id="daysValue">00</strong>
+                <span>Jours</span>
+              </article>
+              <article>
+                <strong id="hoursValue">00</strong>
+                <span>Heures</span>
+              </article>
+              <article>
+                <strong id="minutesValue">00</strong>
+                <span>Minutes</span>
+              </article>
+              <article>
+                <strong id="secondsValue">00</strong>
+                <span>Secondes</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <button id="confirmButton" type="button" class="quick-action">
+              <span>✔</span>
+              <small>Confirmer</small>
+            </button>
+            <button id="shareButton" type="button" class="quick-action">
+              <span>🔗</span>
+              <small>Partager</small>
+            </button>
+            <button id="galleryButton" type="button" class="quick-action">
+              <span>🖼</span>
+              <small>Galerie</small>
+            </button>
+            <a
+              id="contactButton"
+              class="quick-action"
+              href="https://wa.me/243827274226"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>💬</span>
+              <small>Contact</small>
+            </a>
+          </div>
+
+          <p class="confirm-feedback" id="confirmFeedback"></p>
+
+          <p class="closing-line">
+            Nous avons hate de partager ce moment avec vous ! <span>❤</span>
+          </p>
+        </section>
+      </section>
+
+      <section class="gallery-panel reveal-card" id="gallery">
+        <div class="panel-head">
+          <p class="panel-kicker">Ben & Julie</p>
+          <h2>Quelques images de leur histoire</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-poster">
+            <img src="./assets/save-the-date-ben-julie.png" alt="Save the date Ben Lumu et Julie" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="./assets/ben-julie-portrait-1.jpeg" alt="Portrait de Ben Lumu et Julie" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="./assets/ben-julie-portrait-2.jpeg" alt="Ben Lumu et Julie souriants" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/demo-data.js"></script>
+    <script src="./config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="./invitation.js"></script>
+  </body>
+</html>

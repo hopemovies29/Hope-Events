@@ -3,6 +3,16 @@
   const accessForm = document.getElementById("private-access-form");
   const codeInput = document.getElementById("client-code");
   const accessFeedback = document.getElementById("access-feedback");
+  const clientRoutes = {
+    "HE-BLJ-2026": {
+      file: "./couple-lumu/espace-client.html",
+      web: "/couple-lumu/espace-client.html"
+    },
+    "HE-CLSM-2026": {
+      file: "./couple-lengbe/espace-client.html",
+      web: "/couple-lengbe/espace-client.html"
+    }
+  };
 
   function initReveal() {
     if (!("IntersectionObserver" in window) || !revealNodes.length) {
@@ -38,9 +48,18 @@
       .replace(/-+/g, "-")
       .toUpperCase();
     const encodedCode = encodeURIComponent(normalizedCode);
+    const route = clientRoutes[normalizedCode];
 
     if (window.location.protocol === "file:") {
+      if (route) {
+        return `${route.file}?key=${encodedCode}`;
+      }
+
       return `./espace-client.html?key=${encodedCode}`;
+    }
+
+    if (route) {
+      return `${route.web}?key=${encodedCode}`;
     }
 
     return `/espace-client?key=${encodedCode}`;

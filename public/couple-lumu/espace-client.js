@@ -13,6 +13,10 @@
   const revealNodes = document.querySelectorAll("[data-reveal]");
   const sectionAnchors = document.querySelectorAll('a[href^="#"]');
 
+  function isFileMode() {
+    return window.location.protocol === "file:";
+  }
+
   function resolveKey() {
     const url = new URL(window.location.href);
     const queryKey = url.searchParams.get("key") || url.searchParams.get("code");
@@ -21,33 +25,56 @@
       return queryKey;
     }
 
-    const parts = window.location.pathname.split("/").filter(Boolean);
-    const clientSpaceIndex = parts.indexOf("espace-client");
+    return pageConfig.defaultKey || "HE-BLJ-2026";
+  }
 
-    if (clientSpaceIndex !== -1 && parts[clientSpaceIndex + 1]) {
-      return decodeURIComponent(parts[clientSpaceIndex + 1]);
+  function buildLocalPageUrl(pagePath, token) {
+    const separator = pagePath.indexOf("?") === -1 ? "?" : "&";
+    return `${pagePath}${separator}token=${encodeURIComponent(token || "")}`;
+  }
+
+  function buildPublicInvitationUrl(token) {
+    const publicPath = String(pageConfig.publicInvitationPath || "/couple-lumu/invitation.html").trim();
+    const normalizedPath = publicPath.startsWith("/") ? publicPath : `/${publicPath}`;
+
+    if (!isFileMode()) {
+      return `${window.location.origin}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
     }
 
-    if (pageConfig.defaultKey) {
-      return pageConfig.defaultKey;
-    }
-
-    if (window.HopeEventsDemo && window.HopeEventsDemo.getEventSpace) {
-      return "HE-BLJ-2026";
-    }
-
-    return "";
+    const publicBaseUrl = String(pageConfig.publicBaseUrl || "https://hope-events.vercel.app").trim().replace(/\/+$/, "");
+    return `${publicBaseUrl}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
   }
 
   function buildInvitationUrl(invitation) {
-    const token = encodeURIComponent(invitation.token || "");
-    const configuredPath = String(pageConfig.invitationPagePath || "").trim();
+    return buildLocalPageUrl(pageConfig.invitationPagePath || "./invitation.html", invitation.token);
+  }
 
-    if (!configuredPath) {
-      return invitation.invitationUrl;
+  function buildQrCardUrl(invitation) {
+    const customPath = String(invitation.qrPagePath || "").trim();
+
+    if (customPath) {
+      return buildLocalPageUrl(customPath, invitation.token);
     }
 
-    return `${configuredPath}?token=${token}`;
+    return buildLocalPageUrl(pageConfig.qrCardPath || "./qr-card.html", invitation.token);
+  }
+
+  function setHidden(element, hidden) {
+    if (!element) {
+      return;
+    }
+
+    element.classList.toggle("is-hidden", hidden);
+  }
+
+  function showError(message) {
+    setHidden(loadingState, true);
+    setHidden(contentState, true);
+    setHidden(errorState, false);
+
+    if (errorMessage) {
+      errorMessage.textContent = message;
+    }
   }
 
   function initReveal() {
@@ -67,9 +94,7 @@
           }
         });
       },
-      {
-        threshold: 0.14
-      }
+      { threshold: 0.14 }
     );
 
     revealNodes.forEach(function (node) {
@@ -103,30 +128,8 @@
           behavior: motionPreference.matches ? "auto" : "smooth",
           block: "start"
         });
-
-        if (window.history && typeof window.history.replaceState === "function") {
-          window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
-        }
       });
     });
-  }
-
-  function setHidden(element, hidden) {
-    if (!element) {
-      return;
-    }
-
-    element.classList.toggle("is-hidden", hidden);
-  }
-
-  function showError(message) {
-    setHidden(loadingState, true);
-    setHidden(contentState, true);
-    setHidden(errorState, false);
-
-    if (errorMessage) {
-      errorMessage.textContent = message;
-    }
   }
 
   function groupByTable(invitations) {
@@ -148,21 +151,31 @@
     }
 
     const groups = groupByTable(invitations);
-    const groupEntries = Object.keys(groups).sort(function (a, b) {
+    const entries = Object.keys(groups).sort(function (a, b) {
       return a.localeCompare(b, "fr", { sensitivity: "base" });
     });
 
-    tablesGrid.innerHTML = groupEntries
+    tablesGrid.innerHTML = entries
       .map(function (tableName) {
         const rows = groups[tableName]
           .map(function (invitation) {
+            const invitationUrl = buildInvitationUrl(invitation);
+            const qrCardUrl = buildQrCardUrl(invitation);
+            const publicLink = buildPublicInvitationUrl(invitation.token);
+
             return `
-              <li class="guest-row">
-                <div>
+              <li class="guest-row guest-row-rich">
+                <div class="guest-info">
                   <strong>${invitation.guestName}</strong>
                   <span>${invitation.seats} place${invitation.seats > 1 ? "s" : ""}</span>
                 </div>
-                <a class="guest-link" href="${buildInvitationUrl(invitation)}">Ouvrir</a>
+                <div class="guest-actions">
+                  <a class="guest-link" href="${invitationUrl}">Invitation</a>
+                  <a class="guest-link guest-link-alt" href="${qrCardUrl}">Page QR</a>
+                  <button class="guest-link guest-link-copy" type="button" data-copy-link="${publicLink}">
+                    Copier le lien
+                  </button>
+                </div>
               </li>
             `;
           })
@@ -183,18 +196,47 @@
       .join("");
   }
 
+  function initCopyButtons() {
+    if (!tablesGrid) {
+      return;
+    }
+
+    tablesGrid.addEventListener("click", async function (event) {
+      const trigger = event.target.closest("[data-copy-link]");
+
+      if (!trigger) {
+        return;
+      }
+
+      const link = trigger.getAttribute("data-copy-link");
+
+      if (!link) {
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(link);
+        const previousLabel = trigger.textContent;
+        trigger.textContent = "Lien copie";
+
+        window.setTimeout(function () {
+          trigger.textContent = previousLabel;
+        }, 1600);
+      } catch (error) {
+        window.alert(link);
+      }
+    });
+  }
+
   function hydrateSpace(space) {
-    document.title = `Espace client | ${space.coupleNames}`;
+    document.title = `Espace client | ${space.coupleNames || "Hope Events"}`;
 
     if (titleNode) {
       titleNode.textContent = space.coupleNames || "Espace client";
     }
 
     if (metaNode) {
-      metaNode.textContent = [
-        space.dateLabel || "Date a confirmer",
-        space.venueName || "Lieu a confirmer"
-      ]
+      metaNode.textContent = [space.dateLabel || "Date a confirmer", space.venueName || "Lieu a confirmer"]
         .filter(Boolean)
         .join(" • ");
     }
@@ -218,8 +260,9 @@
   }
 
   async function init() {
-    initSectionAnchors();
     initReveal();
+    initSectionAnchors();
+    initCopyButtons();
 
     const key = resolveKey();
 
@@ -229,7 +272,7 @@
     }
 
     if (!window.HopeEventsApi || typeof window.HopeEventsApi.getEventSpace !== "function") {
-      showError("Le module d'acces prive n'est pas disponible.");
+      showError("Le module d'acces client n'est pas disponible.");
       return;
     }
 

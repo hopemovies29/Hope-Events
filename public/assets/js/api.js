@@ -131,6 +131,9 @@
     },
     savePreferences: function (payload) {
       return postJson("/api/preferences", payload);
+    },
+    saveRsvp: function (payload) {
+      return postJson("/api/rsvp", payload);
     }
   };
 })();

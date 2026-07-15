@@ -1,78 +1,199 @@
 (function () {
-  const base = {
-    id: "christian-sephora-2026",
-    slug: "christian-sephora-2026",
-    accessKey: "HE-CLSM-2026",
-    coupleNames: "Christian Lengbe et Sephora Malanda",
-    title: "Leur grande promesse",
-    dateIso: "",
-    dateLabel: "Date et lieu à confirmer avec le client",
-    intro:
-      "Avec beaucoup d'affection et une vraie intention de partage, Christian Lengbe et Sephora Malanda vous ouvrent les portes de leur journée la plus précieuse.",
-    story:
-      "Cette invitation a été pensée comme une expérience plus sensible qu'un simple carton numérique : une lecture élégante, un rythme visuel doux et un ton qui reste intime tout en étant marquant.",
-    note:
-      "Quand les derniers détails du mariage seront validés, cette base pourra accueillir la vraie date, l'adresse exacte, la table attribuée et le lien personnalisé définitif.",
-    venueName: "Lieu de célébration à confirmer",
-    venueAddress: "Les informations logistiques seront ajoutées dès validation finale.",
-    mapUrl: "https://maps.google.com/?q=Kinshasa",
-    ceremonyLabel: "Mariage religieux",
-    celebrationLabel: "Réception privée",
-    schedule: [
-      {
-        label: "Accueil des invités",
-        time: "Heure à définir",
-        note: "Une arrivée fluide, posée et chaleureuse pour installer l'atmosphère."
-      },
-      {
-        label: "Cérémonie religieuse",
-        time: "À confirmer",
-        note: "Le moment central, pensé pour l'émotion et la solennité."
-      },
-      {
-        label: "Photos & félicitations",
-        time: "Ensuite",
-        note: "Un temps de retrouvailles, de sourires et de souvenirs partagés."
-      },
-      {
-        label: "Réception & ambiance",
-        time: "Plus tard",
-        note: "Place à la joie, aux échanges et à la fête dans de belles conditions."
-      }
-    ],
-    palette: {
-      base: "#f3e3d5",
-      accent: "#b56339",
-      accentSoft: "#ebbc98",
-      ink: "#2f1d17",
-      highlight: "#7a553f"
-    },
-    coverImage: "/assets/img/mariage.jpeg",
-    footerBrand: "Invitation signée Hope Events by Dr Tech",
-    whatsappLink: "https://wa.me/243827274226",
-    preferences: {
-      alcoholic: [
-        "Champagne",
-        "Vin rouge",
-        "Vin blanc",
-        "Mojito",
-        "Castel",
-        "Primus"
+  const events = {
+    "ben-lumu-julie-2026": {
+      id: "ben-lumu-julie-2026",
+      slug: "ben-lumu-julie-2026",
+      accessKey: "HE-BLJ-2026",
+      coupleNames: "Ben Lumu et Julie",
+      title: "Vous êtes invités au mariage de Ben Lumu et Julie",
+      eventPhrase:
+        "Une belle histoire se poursuit, soyez à nos côtés pour écrire avec nous le prochain chapitre de notre amour.",
+      intro:
+        "Ben Lumu et Julie seraient honorés de vous compter parmi les personnes qui partageront cette soirée précieuse.",
+      story:
+        "Cette invitation web est pensée comme la porte d'entrée de toute l'expérience : informations pratiques, partage, confirmation de présence et future personnalisation par invité.",
+      note:
+        "Scannez, ouvrez, confirmez et partagez facilement. Le QR individuel par invité viendra ensuite sur cette même base technique.",
+      dateIso: "2026-08-07T19:00:00+01:00",
+      dateLabel: "Vendredi 7 août 2026",
+      timeLabel: "19h00",
+      venueName: "Salle Emmaüs,",
+      venueAddress: "Saint-Sacrement, Kinshasa, RDC",
+      mapUrl: "https://maps.google.com/?q=Saint+Sacrement+Kinshasa",
+      ceremonyLabel: "Réception de mariage",
+      celebrationLabel: "Soirée nuptiale",
+      schedule: [
+        {
+          label: "Accueil des invités",
+          time: "18h30",
+          note: "Ouverture de la salle et installation dans une ambiance élégante."
+        },
+        {
+          label: "Début de la célébration",
+          time: "19h00",
+          note: "Le moment principal où commence cette nouvelle page de leur histoire."
+        },
+        {
+          label: "Partage et festivités",
+          time: "Après la cérémonie",
+          note: "Photos, joie, repas et bonheur à vivre ensemble."
+        }
       ],
-      soft: [
-        "Eau pétillante",
-        "Jus d'ananas",
-        "Coca-Cola",
-        "Fanta",
-        "Maltina",
-        "Tonic"
-      ]
+      palette: {
+        base: "#111010",
+        accent: "#d5a253",
+        accentSoft: "#f0d2a1",
+        ink: "#f7f0e8",
+        highlight: "#6f4a1d"
+      },
+      coverImage: "",
+      footerBrand: "Invitation signée Hope Events by Dr Tech",
+      publicBaseUrl: "https://hope-events.vercel.app",
+      qrCallout:
+        "Scannez ce QR pour accéder à l'invitation web, confirmer votre présence et partager ce moment avec les mariés.",
+      whatsappLink:
+        "https://wa.me/243827274226?text=Bonjour%20Hope%20Events%2C%20je%20souhaite%20des%20informations%20sur%20l%27invitation%20de%20Ben%20Lumu%20et%20Julie.",
+      preferences: {
+        alcoholic: [
+          "Champagne",
+          "Vin rouge",
+          "Vin blanc",
+          "Mojito",
+          "Castel",
+          "Primus"
+        ],
+        soft: [
+          "Eau",
+          "Jus d'ananas",
+          "Coca-Cola",
+          "Fanta",
+          "Maltina",
+          "Tonic"
+        ]
+      }
+    },
+    "christian-sephora-2026": {
+      id: "christian-sephora-2026",
+      slug: "christian-sephora-2026",
+      accessKey: "HE-CLSM-2026",
+      coupleNames: "Christian Lengbe et Sephora Malanda",
+      title: "Leur grande promesse",
+      eventPhrase:
+        "Une union pensee avec delicatesse pour celebrer l'amour, la famille et la joie de partager.",
+      intro:
+        "Avec beaucoup d'affection et une vraie intention de partage, Christian Lengbe et Sephora Malanda vous ouvrent les portes de leur journee la plus precieuse.",
+      story:
+        "Cette invitation a ete pensee comme une experience plus sensible qu'un simple carton numerique : une lecture elegante, un rythme visuel doux et un ton qui reste intime tout en etant marquant.",
+      note:
+        "Quand les derniers details du mariage seront valides, cette base pourra accueillir la vraie date, l'adresse exacte, la table attribuee et le lien personnalise definitif.",
+      dateIso: "",
+      dateLabel: "Date et lieu a confirmer avec le client",
+      timeLabel: "Heure a confirmer",
+      venueName: "Lieu de celebration a confirmer",
+      venueAddress: "Les informations logistiques seront ajoutees des validation finale.",
+      mapUrl: "https://maps.google.com/?q=Kinshasa",
+      ceremonyLabel: "Mariage religieux",
+      celebrationLabel: "Reception privee",
+      schedule: [
+        {
+          label: "Accueil des invites",
+          time: "Heure a definir",
+          note: "Une arrivee fluide, posee et chaleureuse pour installer l'atmosphere."
+        },
+        {
+          label: "Ceremonie religieuse",
+          time: "A confirmer",
+          note: "Le moment central, pense pour l'emotion et la solennite."
+        },
+        {
+          label: "Photos & felicitations",
+          time: "Ensuite",
+          note: "Un temps de retrouvailles, de sourires et de souvenirs partages."
+        },
+        {
+          label: "Reception & ambiance",
+          time: "Plus tard",
+          note: "Place a la joie, aux echanges et a la fete dans de belles conditions."
+        }
+      ],
+      palette: {
+        base: "#f3e3d5",
+        accent: "#b56339",
+        accentSoft: "#ebbc98",
+        ink: "#2f1d17",
+        highlight: "#7a553f"
+      },
+      coverImage: "/assets/img/mariage.jpeg",
+      footerBrand: "Invitation signee Hope Events by Dr Tech",
+      publicBaseUrl: "https://hope-events.vercel.app",
+      qrCallout:
+        "Scannez ce QR pour retrouver l'invitation web complete et les details de la celebration.",
+      whatsappLink: "https://wa.me/243827274226",
+      preferences: {
+        alcoholic: [
+          "Champagne",
+          "Vin rouge",
+          "Vin blanc",
+          "Mojito",
+          "Castel",
+          "Primus"
+        ],
+        soft: [
+          "Eau petillante",
+          "Jus d'ananas",
+          "Coca-Cola",
+          "Fanta",
+          "Maltina",
+          "Tonic"
+        ]
+      }
     }
   };
 
   const invitations = {
+    "amour-couple-kuanzambi": {
+      token: "amour-couple-kuanzambi",
+      eventId: "ben-lumu-julie-2026",
+      guestName: "Couple Kuanzambi",
+      salutation: "Chers Kuanzambi",
+    seats: 2,
+    tableName: "Table Amour",
+    tableSlug: "table-amour",
+    qrPagePath: "./Table%20amour/couple-kuanzambi/qr-code-couple-kuanzambi.html",
+    invitationImage: "",
+    exportName: "invitation-couple-kuanzambi-amour",
+    personalMessage:
+        "Ben Lumu et Julie seraient très heureux de vous savoir présents pour vivre ce moment d'amour avec eux."
+    },
+    "famille-lumu-demo": {
+      token: "famille-lumu-demo",
+      eventId: "ben-lumu-julie-2026",
+      guestName: "Famille Lumu",
+      salutation: "Chere famille",
+      seats: 4,
+      tableName: "Table Famille",
+      tableSlug: "table-famille",
+      invitationImage: "",
+      exportName: "invitation-famille-lumu",
+      personalMessage:
+        "Votre place dans cette célébration est naturelle, intime et précieuse pour le couple."
+    },
+    "amis-du-couple-demo": {
+      token: "amis-du-couple-demo",
+      eventId: "ben-lumu-julie-2026",
+      guestName: "Amis du couple",
+      salutation: "Chers amis",
+      seats: 2,
+      tableName: "Table Amis",
+      tableSlug: "table-amis",
+      invitationImage: "",
+      exportName: "invitation-amis-ben-julie",
+      personalMessage:
+        "Merci d'être de ceux qui rendent les plus beaux souvenirs encore plus lumineux."
+    },
     "charite-couple-lonkeke": {
       token: "charite-couple-lonkeke",
+      eventId: "christian-sephora-2026",
       guestName: "Couple Lonkeke",
       salutation: "Chers Lonkeke",
       seats: 2,
@@ -81,10 +202,11 @@
       invitationImage: "/Table charité/couple-lonkeke.jpg",
       exportName: "invitation-couple-lonkeke-charite",
       personalMessage:
-        "Votre présence compte sincèrement pour Christian et Sephora, et ils seraient très heureux de vous voir partager cette journée avec eux."
+        "Votre presence compte sincerement pour Christian et Sephora, et ils seraient tres heureux de vous voir partager cette journee avec eux."
     },
     "confiance-couple-kuanzambi": {
       token: "confiance-couple-kuanzambi",
+      eventId: "christian-sephora-2026",
       guestName: "Couple Kuanzambi",
       salutation: "Chers Kuanzambi",
       seats: 2,
@@ -93,39 +215,55 @@
       invitationImage: "/Table confiance/couple-kuanzambi.jpg",
       exportName: "invitation-couple-kuanzambi-confiance",
       personalMessage:
-        "Votre présence compte sincèrement pour Christian et Sephora, et ils seraient très heureux de vous voir partager cette journée avec eux."
+        "Votre presence compte sincerement pour Christian et Sephora, et ils seraient tres heureux de vous voir partager cette journee avec eux."
     }
   };
 
-  const invitationIndex = Object.values(invitations).map(function (invitation) {
-    return {
-      token: invitation.token,
-      guestName: invitation.guestName,
-      seats: invitation.seats,
-      tableName: invitation.tableName,
-      url: "./invitation.html?token=" + encodeURIComponent(invitation.token)
-    };
-  });
+  function getEventByKey(key) {
+    const candidate = String(key || "").trim().replace(/[\s_]+/g, "-");
+    const variants = [candidate, candidate.toUpperCase(), candidate.toLowerCase()];
+
+    return Object.values(events).find(function (event) {
+      return variants.includes(event.accessKey) || variants.includes(event.slug);
+    }) || null;
+  }
+
+  function buildInvitationIndex(eventId) {
+    return Object.values(invitations)
+      .filter(function (invitation) {
+        return invitation.eventId === eventId;
+      })
+      .map(function (invitation) {
+        return {
+          token: invitation.token,
+          guestName: invitation.guestName,
+          seats: invitation.seats,
+          tableName: invitation.tableName,
+          url: "./invitation.html?token=" + encodeURIComponent(invitation.token)
+        };
+      });
+  }
 
   window.HopeEventsDemo = {
-    defaultToken: "charite-couple-lonkeke",
-    invitationIndex: invitationIndex,
+    defaultToken: "amour-couple-kuanzambi",
     getEventSpace: function (key) {
-      const candidate = String(key || "").trim().replace(/[\s_]+/g, "-");
+      const event = getEventByKey(key);
 
-      if (candidate !== base.accessKey && candidate !== base.slug) {
+      if (!event) {
         return null;
       }
 
+      const invitationIndex = buildInvitationIndex(event.id);
+
       return {
-        id: base.id,
-        slug: base.slug,
-        accessKey: base.accessKey,
-        coupleNames: base.coupleNames,
-        dateLabel: base.dateLabel,
-        venueName: base.venueName,
-        venueAddress: base.venueAddress,
-        mapUrl: base.mapUrl,
+        id: event.id,
+        slug: event.slug,
+        accessKey: event.accessKey,
+        coupleNames: event.coupleNames,
+        dateLabel: event.dateLabel,
+        venueName: event.venueName,
+        venueAddress: event.venueAddress,
+        mapUrl: event.mapUrl,
         invitations: invitationIndex.map(function (item) {
           const invitation = invitations[item.token];
 
@@ -134,6 +272,7 @@
             guestName: invitation.guestName,
             tableName: invitation.tableName,
             tableSlug: invitation.tableSlug,
+            qrPagePath: invitation.qrPagePath || "",
             seats: invitation.seats,
             invitationUrl: item.url
           };
@@ -147,7 +286,13 @@
         return null;
       }
 
-      return Object.assign({}, base, invitation);
+      const event = events[invitation.eventId];
+
+      if (!event) {
+        return null;
+      }
+
+      return Object.assign({}, event, invitation);
     }
   };
 })();

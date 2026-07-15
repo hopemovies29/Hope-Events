@@ -1,0 +1,60 @@
+@import url("../assets/css/main.css");
+
+body {
+  --accent: #bb7a3f;
+  --accent-strong: #8a5529;
+}
+
+.client-space-helper {
+  max-width: 48rem;
+  margin: 0.9rem 0 0;
+  color: rgba(255, 241, 226, 0.72);
+  line-height: 1.75;
+}
+
+.guest-row-rich {
+  align-items: center;
+}
+
+.guest-info {
+  min-width: 0;
+}
+
+.guest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.guest-link-copy {
+  appearance: none;
+  cursor: pointer;
+}
+
+.guest-link-alt {
+  background: linear-gradient(135deg, rgba(255, 223, 188, 0.12), rgba(255, 223, 188, 0.04));
+}
+
+@media (max-width: 860px) {
+  .guest-row-rich {
+    align-items: flex-start;
+  }
+
+  .guest-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .guest-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .guest-link,
+  .guest-link-copy {
+    width: 100%;
+  }
+}

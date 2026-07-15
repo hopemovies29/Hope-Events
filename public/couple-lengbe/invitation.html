@@ -3,62 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invitation QR | Hope Events</title>
+    <title>Invitation | Christian Lengbe et Sephora Malanda</title>
     <meta
       name="description"
-      content="Invitation web QR Hope Events pour les mariages et evenements prives."
+      content="Invitation de Christian Lengbe et Sephora Malanda."
     />
-    <script>
-      document.write('<base href="' + (window.location.protocol === "file:" ? "./" : "/") + '">');
-    </script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dosis:wght@400;500;600;700&family=Great+Vibes&display=swap"
     />
-    <link rel="icon" type="image/jpeg" href="assets/img/logo.jpg" />
-    <link rel="stylesheet" href="assets/css/hope-events-invitation.css" />
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo.jpg" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="invitation-page">
     <div class="coeur" aria-hidden="true"></div>
 
     <div class="invitation-shell">
       <header class="invite-header reveal-card">
-        <a class="invite-brand" href="index.html" aria-label="Hope Events">
-          <img src="assets/img/logo.jpg" alt="Hope Events" />
+        <a class="invite-brand" href="../index.html" aria-label="Hope Events">
+          <img src="../assets/img/logo.jpg" alt="Hope Events" />
           <span>
             <strong>Hope Events</strong>
-            <small>Invitation QR by Dr Tech</small>
+            <small>Invitation by Dr Tech</small>
           </span>
         </a>
 
-        <span class="invite-badge" id="inviteBadge">Invitation QR</span>
+        <span class="invite-badge" id="inviteBadge">Invitation privee</span>
       </header>
 
       <main class="invitation-layout">
         <section class="hero-card reveal-card">
           <div class="hero-copy">
             <p class="hero-kicker" id="heroKicker">Vous etes invites au mariage de</p>
-            <h1 class="hero-title" id="heroCoupleNames">Ben Lumu et Julie</h1>
+            <h1 class="hero-title" id="heroCoupleNames">Christian Lengbe et Sephora Malanda</h1>
             <p class="hero-phrase" id="heroPhrase">
-              Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.
+              Une union pensee avec delicatesse pour celebrer l'amour, la famille et la joie de partager.
             </p>
 
             <div class="hero-meta-grid">
               <article class="meta-tile">
                 <span class="meta-label">Date</span>
-                <strong id="heroDateLabel">Vendredi 7 aout 2026</strong>
+                <strong id="heroDateLabel">Date a confirmer</strong>
               </article>
               <article class="meta-tile">
                 <span class="meta-label">Heure</span>
-                <strong id="heroTimeLabel">19h00</strong>
+                <strong id="heroTimeLabel">Heure a confirmer</strong>
               </article>
               <article class="meta-tile">
                 <span class="meta-label">Salle</span>
-                <strong id="heroVenueName">Salle Emmaus</strong>
+                <strong id="heroVenueName">Lieu a confirmer</strong>
               </article>
               <article class="meta-tile">
                 <span class="meta-label">Lieu</span>
-                <strong id="heroVenueAddress">Saint Sacrement, Kinshasa</strong>
+                <strong id="heroVenueAddress">Informations a confirmer</strong>
               </article>
             </div>
 
@@ -66,7 +63,7 @@
               <a
                 id="mapButton"
                 class="primary-action"
-                href="https://maps.google.com/?q=Saint+Sacrement+Kinshasa"
+                href="https://maps.google.com/?q=Kinshasa"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -82,7 +79,7 @@
           </div>
 
           <aside class="qr-card">
-            <p class="qr-kicker">Votre acces QR</p>
+            <p class="qr-kicker">Votre acces</p>
             <a
               id="qrPreviewLink"
               class="qr-frame"
@@ -98,7 +95,7 @@
               />
             </a>
             <p class="qr-copy" id="qrCallout">
-              Scannez ce QR pour acceder a l'invitation web, confirmer votre presence et partager ce moment avec les maries.
+              Scannez ce QR pour retrouver l'invitation web complete et les details de la celebration.
             </p>
             <div class="qr-actions">
               <a
@@ -126,19 +123,19 @@
 
           <div class="countdown-grid">
             <article class="countdown-box">
-              <strong id="daysValue">00</strong>
+              <strong id="daysValue">--</strong>
               <span>Jours</span>
             </article>
             <article class="countdown-box">
-              <strong id="hoursValue">00</strong>
+              <strong id="hoursValue">--</strong>
               <span>Heures</span>
             </article>
             <article class="countdown-box">
-              <strong id="minutesValue">00</strong>
+              <strong id="minutesValue">--</strong>
               <span>Minutes</span>
             </article>
             <article class="countdown-box">
-              <strong id="secondsValue">00</strong>
+              <strong id="secondsValue">--</strong>
               <span>Secondes</span>
             </article>
           </div>
@@ -148,15 +145,9 @@
           <article class="story-card reveal-card">
             <p class="section-kicker">Leur histoire</p>
             <h2 class="section-title-dark">Une invitation pensee pour ceux qui comptent.</h2>
-            <p class="section-paragraph" id="storyText">
-              Cette invitation web est pensee comme la porte d'entree de toute l'experience : informations pratiques, partage, confirmation de presence et future personnalisation par invite.
-            </p>
-            <blockquote class="love-quote" id="loveQuote">
-              Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.
-            </blockquote>
-            <p class="section-paragraph" id="personalMessage">
-              Ben Lumu et Julie seraient tres heureux de vous savoir presents pour vivre ce moment avec eux.
-            </p>
+            <p class="section-paragraph" id="storyText"></p>
+            <blockquote class="love-quote" id="loveQuote"></blockquote>
+            <p class="section-paragraph" id="personalMessage"></p>
           </article>
 
           <article class="program-card reveal-card">
@@ -166,7 +157,7 @@
           </article>
         </section>
 
-        <section class="visual-card is-hidden reveal-card" id="personalCardSection">
+        <section class="visual-card reveal-card" id="personalCardSection">
           <div class="section-intro center">
             <p class="section-kicker">Carte personnalisee</p>
             <h2 class="section-title-dark">Votre visuel d'invitation</h2>
@@ -204,23 +195,43 @@
               <h2 class="section-title-dark">Confirmez votre presence</h2>
             </div>
 
-            <div class="rsvp-simple-card">
-              <p class="rsvp-simple-copy">
-                Cette invitation est deja liee a
-                <strong id="rsvpGuestName">votre nom</strong>.
-                Un seul clic suffit pour confirmer votre presence.
-              </p>
+            <form id="rsvp-form" class="event-form">
+              <label class="field-label" for="rsvp-name">Votre nom</label>
+              <input id="rsvp-name" class="field-input" type="text" placeholder="Ex: Couple Lonkeke" required />
 
-              <button id="rsvpConfirmButton" class="primary-action full-width" type="button">
-                Confirmer ma presence
+              <label class="field-label" for="rsvp-phone">Telephone / WhatsApp</label>
+              <input id="rsvp-phone" class="field-input" type="text" placeholder="Ex: +243..." />
+
+              <label class="field-label" for="rsvp-attendance">Votre reponse</label>
+              <select id="rsvp-attendance" class="field-input" required>
+                <option value="">Choisir une reponse</option>
+                <option value="oui">Oui, nous serons presents</option>
+                <option value="peut-etre">Peut-etre</option>
+                <option value="non">Non, nous ne pourrons pas venir</option>
+              </select>
+
+              <label class="field-label" for="rsvp-companions">Nombre d'accompagnants</label>
+              <select id="rsvp-companions" class="field-input">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+
+              <label class="field-label" for="rsvp-note">Message pratique</label>
+              <textarea
+                id="rsvp-note"
+                class="field-input field-textarea"
+                rows="4"
+                placeholder="Ex: nous serons la avec joie."
+              ></textarea>
+
+              <button class="primary-action full-width" type="submit">
+                Envoyer ma confirmation
               </button>
-
-              <p class="rsvp-simple-note" id="rsvpSimpleNote">
-                Hope Events enregistrera directement cette confirmation pour le couple invite.
-              </p>
-
               <p class="form-feedback" id="rsvp-feedback"></p>
-            </div>
+            </form>
           </article>
 
           <article class="form-card reveal-card" id="guestbook">
@@ -235,7 +246,7 @@
                 id="guestbook-author"
                 class="field-input"
                 type="text"
-                placeholder="Ex: Grace et Patrick"
+                placeholder="Ex: Couple Lonkeke"
                 required
               />
 
@@ -245,7 +256,7 @@
                 required
                 class="field-input field-textarea"
                 rows="6"
-                placeholder="Que Dieu benisse votre union et remplisse votre foyer de joie."
+                placeholder="Merci pour l'invitation, nous vous souhaitons beaucoup de bonheur."
               ></textarea>
 
               <button class="primary-action full-width" type="submit">
@@ -300,8 +311,9 @@
       </footer>
     </div>
 
-    <script src="assets/js/demo-data.js"></script>
-    <script src="assets/js/api.js"></script>
-    <script src="assets/js/hope-events-invitation.js"></script>
+    <script src="../assets/js/demo-data.js"></script>
+    <script src="./config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/hope-events-invitation.js"></script>
   </body>
 </html>

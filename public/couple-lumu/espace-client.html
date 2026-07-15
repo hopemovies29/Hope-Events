@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espace Client | Ben Lumu et Julie</title>
+    <meta
+      name="description"
+      content="Espace client de Ben Lumu et Julie pour les tables et invitations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo.jpg" />
+    <link rel="stylesheet" href="./client.css" />
+  </head>
+  <body class="home-page">
+    <div class="backdrop-noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Hope Events">
+        <img class="brand-logo" src="../assets/img/logo.jpg" alt="Logo Hope Events" />
+        <span class="brand-text">
+          <strong>Hope Events</strong>
+          <small>Signature Dr Tech</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="#tables">Tables</a>
+      </nav>
+    </header>
+
+    <main class="section client-space-page">
+      <section class="client-space-hero" data-reveal>
+        <p class="eyebrow">Espace client prive</p>
+        <h1 id="client-space-title">Chargement de l'evenement...</h1>
+        <p class="hero-text" id="client-space-meta">
+          Nous preparons les tables et la liste des invites.
+        </p>
+        <p class="client-space-helper">
+          Depuis cet espace, le marie peut ouvrir chaque invitation, afficher sa carte QR personnalisee et copier le lien public a envoyer.
+        </p>
+      </section>
+
+      <section class="client-space-state" id="client-space-loading" data-reveal>
+        <div class="client-space-panel">
+          <p>Chargement des informations de l'evenement...</p>
+        </div>
+      </section>
+
+      <section class="client-space-state is-hidden" id="client-space-error" data-reveal>
+        <div class="client-space-panel">
+          <p class="eyebrow">Acces indisponible</p>
+          <h2>Impossible d'ouvrir cet espace.</h2>
+          <p id="client-space-error-message">
+            Verifie le code remis par Hope Events.
+          </p>
+          <a class="button button-primary" href="../index.html">Retour a l'accueil</a>
+        </div>
+      </section>
+
+      <section class="client-space-content is-hidden" id="client-space-content">
+        <div class="client-summary-grid" data-reveal>
+          <article class="summary-card">
+            <span>Evenement</span>
+            <strong id="summary-couple">-</strong>
+          </article>
+          <article class="summary-card">
+            <span>Date</span>
+            <strong id="summary-date">-</strong>
+          </article>
+          <article class="summary-card">
+            <span>Invitations</span>
+            <strong id="summary-count">0</strong>
+          </article>
+        </div>
+
+        <section class="tables-section" id="tables" data-reveal>
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Tables et invites</p>
+            <h2>Invitations pretes a etre partagees.</h2>
+          </div>
+          <div class="tables-grid" id="tables-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="../assets/js/demo-data.js"></script>
+    <script src="./config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="./espace-client.js"></script>
+  </body>
+</html>
