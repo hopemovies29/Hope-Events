@@ -3,12 +3,12 @@ const demoEvents = {
     id: "ben-lumu-julie-2026",
     slug: "ben-lumu-julie-2026",
     accessKey: "HE-BLJ-2026",
-    coupleNames: "Ben Lumu et Julie",
-    title: "Vous êtes invités au mariage de Ben Lumu et Julie",
+    coupleNames: "Ben et Julie",
+    title: "Vous êtes invités au mariage de Ben et Julie",
     eventPhrase:
       "Une belle histoire se poursuit, soyez à nos côtés pour écrire avec nous le prochain chapitre de notre amour.",
     intro:
-      "Ben Lumu et Julie seraient honorés de vous compter parmi les personnes qui partageront cette soirée précieuse.",
+      "Ben et Julie seraient honorés de vous compter parmi les personnes qui partageront cette soirée précieuse.",
     story:
       "Cette invitation web est pensée comme la porte d'entrée de toute l'expérience : informations pratiques, partage, confirmation de présence et future personnalisation par invité.",
     note:
@@ -51,7 +51,7 @@ const demoEvents = {
     qrCallout:
       "Scannez ce QR pour accéder à l'invitation web, confirmer votre présence et partager ce moment avec les mariés.",
     whatsappLink:
-      "https://wa.me/243827274226?text=Bonjour%20Hope%20Events%2C%20je%20souhaite%20des%20informations%20sur%20l%27invitation%20de%20Ben%20Lumu%20et%20Julie.",
+      "https://wa.me/243827274226?text=Bonjour%20Hope%20Events%2C%20je%20souhaite%20des%20informations%20sur%20l%27invitation%20de%20Ben%20et%20Julie.",
     preferences: {
       alcoholic: [
         "Champagne",
@@ -162,7 +162,7 @@ const demoInvitations = {
     invitationImage: "",
     exportName: "invitation-couple-kuanzambi-amour",
     personalMessage:
-      "Ben Lumu et Julie seraient très heureux de vous savoir présents pour vivre ce moment d'amour avec eux."
+      "Ben et Julie seraient très heureux de vous savoir présents pour vivre ce moment d'amour avec eux."
   },
   "famille-lumu-demo": {
     token: "famille-lumu-demo",

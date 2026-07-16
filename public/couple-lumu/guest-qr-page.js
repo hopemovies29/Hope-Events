@@ -7,6 +7,7 @@
   const invitationButton = document.getElementById("openInvitationButton");
   const confirmButton = document.getElementById("confirmPresenceButton");
   const shareButton = document.getElementById("shareQrPageButton");
+  const splashNode = document.getElementById("guestQrSplash");
   let currentInvitation = null;
   let confirmLocked = false;
 
@@ -84,6 +85,18 @@
 
     feedbackNode.textContent = message || "";
     feedbackNode.style.color = isError ? "#ffb8b8" : "rgba(247, 239, 229, 0.74)";
+  }
+
+  function initSplash() {
+    document.body.classList.add("splash-active");
+
+    window.setTimeout(function () {
+      if (splashNode) {
+        splashNode.classList.add("is-hidden");
+      }
+
+      document.body.classList.remove("splash-active");
+    }, 2000);
   }
 
   function getPosterPath() {
@@ -184,6 +197,16 @@
         await window.HopeEventsApi.saveRsvp({
           token,
           guestName,
+          eventId: (currentInvitation && currentInvitation.eventId) || "",
+          coupleNames:
+            (currentInvitation && currentInvitation.coupleNames) ||
+            pageConfig.coupleNames ||
+            "",
+          tableName:
+            (currentInvitation && currentInvitation.tableName) ||
+            pageConfig.tableName ||
+            "",
+          sourcePath: window.location.pathname || "",
           phone: "",
           attendance: "oui",
           companions: 0,
@@ -219,6 +242,7 @@
   }
 
   applyPoster();
+  initSplash();
   initStaticActions();
   initConfirmButton();
   hydrate();

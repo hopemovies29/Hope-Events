@@ -9,6 +9,11 @@ module.exports = async function handler(req, res) {
   try {
     const body = await readBody(req);
     const token = String(body.token || "").trim();
+    const guestName = String(body.guestName || "").trim();
+    const eventId = String(body.eventId || "").trim();
+    const coupleNames = String(body.coupleNames || "").trim();
+    const tableName = String(body.tableName || "").trim();
+    const sourcePath = String(body.sourcePath || "").trim();
     const author = String(body.author || "").trim();
     const message = String(body.message || "").trim();
 
@@ -30,6 +35,11 @@ module.exports = async function handler(req, res) {
 
     const result = await saveGuestbookMessage({
       token,
+      guestName,
+      eventId,
+      coupleNames,
+      tableName,
+      sourcePath,
       author,
       message
     });
@@ -46,4 +56,3 @@ module.exports = async function handler(req, res) {
     });
   }
 };
-

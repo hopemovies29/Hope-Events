@@ -28,6 +28,11 @@ body.guest-qr-page {
   background:
     radial-gradient(circle at top, rgba(116, 76, 38, 0.22), transparent 28rem),
     linear-gradient(180deg, #20140d 0%, #140d09 52%, #0f0907 100%);
+  overflow-x: hidden;
+}
+
+body.guest-qr-page.splash-active {
+  overflow: hidden;
 }
 
 .guest-qr-shell {
@@ -38,6 +43,121 @@ body.guest-qr-page {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.guest-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top, rgba(31, 59, 101, 0.24), transparent 22rem),
+    radial-gradient(circle at bottom, rgba(216, 167, 102, 0.18), transparent 24rem),
+    linear-gradient(180deg, rgba(11, 8, 6, 0.98), rgba(22, 14, 10, 0.98));
+  transition:
+    opacity 520ms ease,
+    visibility 520ms ease;
+}
+
+.guest-splash.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.guest-splash-card {
+  width: min(100%, 24rem);
+  padding: 2rem 1.4rem 1.6rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(216, 167, 102, 0.18);
+  background:
+    linear-gradient(180deg, rgba(36, 23, 15, 0.96), rgba(18, 13, 9, 0.98));
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.42);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: splashLift 2s ease both;
+}
+
+.guest-splash-card::before,
+.guest-splash-card::after {
+  content: "";
+  position: absolute;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.26;
+}
+
+.guest-splash-card::before {
+  top: -6rem;
+  left: -4rem;
+  background: rgba(216, 167, 102, 0.36);
+}
+
+.guest-splash-card::after {
+  right: -5rem;
+  bottom: -6rem;
+  background: rgba(31, 59, 101, 0.34);
+}
+
+.guest-splash-heart {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 999px;
+  color: var(--qr-accent);
+  background: rgba(216, 167, 102, 0.1);
+  border: 1px solid rgba(216, 167, 102, 0.18);
+  font-size: 2rem;
+  animation: splashPulse 1.3s ease-in-out infinite;
+}
+
+.guest-splash-kicker,
+.guest-splash-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.guest-splash-kicker {
+  margin: 0;
+  color: var(--qr-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.guest-splash-title {
+  position: relative;
+  z-index: 1;
+  margin: 0.55rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 10vw, 4.2rem);
+  line-height: 0.92;
+  color: #fff7ee;
+}
+
+.guest-splash-copy {
+  margin: 0.8rem auto 0;
+  max-width: 17rem;
+  color: var(--qr-muted);
+  line-height: 1.55;
+}
+
+.guest-splash-ribbon {
+  position: relative;
+  z-index: 1;
+  width: 7rem;
+  height: 1px;
+  margin: 1.1rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--qr-accent), transparent);
 }
 
 .guest-qr-card {
@@ -53,12 +173,15 @@ body.guest-qr-page {
   border: 1px solid var(--qr-line);
   background: #050403;
   box-shadow: var(--qr-shadow);
+  animation: qrCardAppear 900ms ease both;
 }
 
 .poster-frame img {
   display: block;
   width: 100%;
   height: auto;
+  transform-origin: center;
+  animation: posterBreath 8s ease-in-out infinite;
 }
 
 .guest-qr-actions {
@@ -92,6 +215,19 @@ body.guest-qr-page {
     transform 180ms ease,
     border-color 180ms ease,
     background-color 180ms ease;
+  animation: actionRise 720ms ease both;
+}
+
+.guest-action:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.guest-action:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.guest-action:nth-child(4) {
+  animation-delay: 230ms;
 }
 
 .guest-action:hover,
@@ -132,6 +268,66 @@ body.guest-qr-page {
   font-size: 0.88rem;
   line-height: 1.45;
   color: var(--qr-muted);
+}
+
+@keyframes splashLift {
+  0% {
+    transform: translateY(18px) scale(0.96);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes splashPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(216, 167, 102, 0);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 14px rgba(216, 167, 102, 0.04);
+  }
+}
+
+@keyframes qrCardAppear {
+  0% {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes posterBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.018);
+  }
+}
+
+@keyframes actionRise {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 420px) {

@@ -5,8 +5,10 @@
     invitation: null,
     selectedAttendance: "",
     selectedChoices: [],
-    countdownTimer: null
+    countdownTimer: null,
+    heartsTimer: null
   };
+  const splashNode = document.getElementById("invitationSplash");
 
   const drinkIcons = {
     "Coca-Cola": "🥤",
@@ -38,10 +40,6 @@
     );
   }
 
-  function isFileMode() {
-    return window.location.protocol === "file:";
-  }
-
   function buildPublicInvitationUrl(token) {
     const publicPath = String(
       pageConfig.publicPagePath ||
@@ -57,6 +55,15 @@
       .replace(/\/+$/, "");
 
     return `${publicBaseUrl}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
+  }
+
+  function getDisplayCoupleNames(invitation) {
+    return (
+      pageConfig.displayCoupleNames ||
+      invitation.displayCoupleNames ||
+      invitation.coupleNames ||
+      "Ben et Julie"
+    );
   }
 
   function setText(id, value) {
@@ -76,6 +83,18 @@
 
     node.textContent = message || "";
     node.style.color = isError ? "#b33f2f" : "";
+  }
+
+  function initSplash() {
+    document.body.classList.add("splash-active");
+
+    window.setTimeout(function () {
+      if (splashNode) {
+        splashNode.classList.add("is-hidden");
+      }
+
+      document.body.classList.remove("splash-active");
+    }, 2000);
   }
 
   function cleanVenueName(value) {
@@ -248,13 +267,79 @@
     }
   }
 
+  function initReveal() {
+    const revealNodes = document.querySelectorAll("[data-reveal]");
+
+    if (!revealNodes.length) {
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      revealNodes.forEach(function (node) {
+        node.classList.add("is-visible");
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    revealNodes.forEach(function (node, index) {
+      node.style.transitionDelay = `${Math.min(index * 70, 240)}ms`;
+      observer.observe(node);
+    });
+  }
+
+  function spawnHeart() {
+    const heartsRoot = document.getElementById("floatingHearts");
+
+    if (!heartsRoot || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const heart = document.createElement("span");
+    heart.className = "floating-heart";
+    heart.textContent = Math.random() > 0.35 ? "❤" : "♥";
+    heart.style.left = `${Math.random() * 100}%`;
+    heart.style.fontSize = `${0.8 + Math.random() * 1.35}rem`;
+    heart.style.animationDuration = `${8 + Math.random() * 7}s`;
+    heart.style.setProperty("--drift-x", `${-40 + Math.random() * 80}px`);
+
+    heartsRoot.appendChild(heart);
+
+    window.setTimeout(function () {
+      heart.remove();
+    }, 16000);
+  }
+
+  function initFloatingHearts() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    for (let index = 0; index < 7; index += 1) {
+      window.setTimeout(spawnHeart, index * 520);
+    }
+
+    state.heartsTimer = window.setInterval(spawnHeart, 1900);
+  }
+
   function applyInvitation(invitation) {
     state.invitation = invitation;
+    const displayCoupleNames = getDisplayCoupleNames(invitation);
 
-    setText("coupleNames", invitation.coupleNames || "Ben & Julie");
+    setText("coupleNames", displayCoupleNames);
     setText("dateLabel", invitation.dateLabel || "");
-    setText("heroVenue", invitation.venueName || "");
-    setText("venueLabel", invitation.venueName || "");
+    setText("venueLabel", cleanVenueName(invitation.venueName || ""));
     setText("addressLabel", invitation.venueAddress || "");
     setText("lovePhrase", invitation.eventPhrase || "");
     setText("inviteeChip", invitation.guestName || "Cher invité");
@@ -268,9 +353,7 @@
     setText("dressCodeValue", pageConfig.dressCode || "Élégant");
     setText("contactValue", pageConfig.contactLabel || "+243 827274226");
 
-    document.title = `Invitation | ${invitation.coupleNames || "Ben et Julie"} | ${
-      invitation.guestName || "Invité"
-    }`;
+    document.title = `Invitation | ${displayCoupleNames} | ${invitation.guestName || "Invité"}`;
 
     const guestbookAuthor = document.getElementById("guestbookAuthor");
     const contactButton = document.getElementById("footerContactButton");
@@ -297,9 +380,12 @@
 
     if (companionsSelect) {
       const maxSeats = Math.max(0, Number(invitation.seats || 0));
-      companionsSelect.innerHTML = Array.from({ length: Math.max(maxSeats, 2) + 1 }, function (_, index) {
-        return `<option value="${index}">${index}</option>`;
-      }).join("");
+      companionsSelect.innerHTML = Array.from(
+        { length: Math.max(maxSeats, 2) + 1 },
+        function (_, index) {
+          return `<option value="${index}">${index}</option>`;
+        }
+      ).join("");
     }
 
     renderStory();
@@ -321,7 +407,7 @@
         if (navigator.share) {
           await navigator.share({
             title: document.title,
-            text: "Ben Lumu et Julie vous invitent à leur mariage.",
+            text: "Ben et Julie vous invitent à leur mariage.",
             url: link
           });
           return;
@@ -400,6 +486,10 @@
         await window.HopeEventsApi.saveRsvp({
           token: state.invitation.token,
           guestName: state.invitation.guestName || "Invité",
+          eventId: state.invitation.eventId || "",
+          coupleNames: getDisplayCoupleNames(state.invitation),
+          tableName: state.invitation.tableName || "",
+          sourcePath: window.location.pathname || "",
           phone: "",
           attendance: state.selectedAttendance,
           companions: Number(companionsSelect ? companionsSelect.value : 0),
@@ -439,6 +529,10 @@
         await window.HopeEventsApi.savePreferences({
           token: state.invitation.token,
           guestName: state.invitation.guestName || "Invité",
+          eventId: state.invitation.eventId || "",
+          coupleNames: getDisplayCoupleNames(state.invitation),
+          tableName: state.invitation.tableName || "",
+          sourcePath: window.location.pathname || "",
           choices: state.selectedChoices.slice(0, 2)
         });
 
@@ -483,6 +577,11 @@
       try {
         await window.HopeEventsApi.saveGuestbookMessage({
           token: state.invitation.token,
+          guestName: state.invitation.guestName || "Invité",
+          eventId: state.invitation.eventId || "",
+          coupleNames: getDisplayCoupleNames(state.invitation),
+          tableName: state.invitation.tableName || "",
+          sourcePath: window.location.pathname || "",
           author: author,
           message: message
         });
@@ -523,6 +622,9 @@
     }
   }
 
+  initSplash();
+  initReveal();
+  initFloatingHearts();
   initShareAndCopy();
   initRsvp();
   initPreferences();

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invitation | Ben Lumu et Julie</title>
+    <title>Invitation | Ben et Julie</title>
     <meta
       name="description"
-      content="Invitation web complete pour le mariage de Ben Lumu et Julie."
+      content="Invitation web complète pour le mariage de Ben et Julie."
     />
     <link
       rel="stylesheet"
@@ -16,22 +16,35 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="guest-invitation-page">
+    <div class="invitation-splash" id="invitationSplash" aria-hidden="true">
+      <div class="invitation-splash-shell">
+        <div class="invitation-splash-envelope">
+          <div class="invitation-splash-heart">♥</div>
+        </div>
+        <p class="invitation-splash-kicker">Votre invitation s'ouvre</p>
+        <h1 class="invitation-splash-title">Ben et Julie</h1>
+        <p class="invitation-splash-copy">Une entrée douce, élégante et pleine d'amour avant de découvrir le grand jour.</p>
+      </div>
+    </div>
+
     <div class="page-glow" aria-hidden="true"></div>
+    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
 
     <main class="invitation-shell">
-      <section class="hero-panel">
+      <section class="hero-panel" data-reveal>
         <div class="hero-media">
           <img
             id="heroMainImage"
             class="hero-main-image"
             src="../../assets/ben-julie-portrait-1.jpeg"
-            alt="Ben Lumu et Julie"
+            alt="Ben et Julie"
           />
+          <div class="hero-bloom hero-bloom-left" aria-hidden="true"></div>
           <div class="hero-floating-card">
             <img
               id="heroSideImage"
               src="../../assets/ben-julie-portrait-2.jpeg"
-              alt="Ben Lumu et Julie souriants"
+              alt="Ben et Julie souriants"
             />
           </div>
         </div>
@@ -49,8 +62,8 @@
           </div>
 
           <p class="hero-kicker">Bienvenue à notre mariage <span>♥</span></p>
-          <h1 id="coupleNames" class="hero-title">Ben & Julie</h1>
-          <div class="hero-divider"></div>
+          <h1 id="coupleNames" class="hero-title">Ben et Julie</h1>
+          <div class="hero-divider" aria-hidden="true"></div>
 
           <p class="hero-date" id="dateLabel">Vendredi 7 août 2026</p>
           <p class="hero-location">
@@ -76,7 +89,7 @@
         </div>
       </section>
 
-      <section class="countdown-panel panel-surface" id="countdownSection">
+      <section class="countdown-panel panel-surface" id="countdownSection" data-reveal>
         <div class="section-heading section-heading-center">
           <span>Notre grand jour arrive dans</span>
           <h2>Chaque seconde nous rapproche de ce moment.</h2>
@@ -102,7 +115,7 @@
         </div>
       </section>
 
-      <section class="story-panel panel-surface">
+      <section class="story-panel panel-surface" data-reveal>
         <div class="section-heading section-heading-center">
           <span>Notre histoire</span>
           <h2>Quelques moments qui nous ont conduits ici.</h2>
@@ -112,7 +125,7 @@
         <p class="story-copy" id="storyCopy"></p>
       </section>
 
-      <section class="details-grid">
+      <section class="details-grid" data-reveal>
         <article class="panel-surface details-card">
           <div class="section-heading">
             <span>Informations</span>
@@ -195,7 +208,7 @@
         </article>
       </section>
 
-      <section class="gallery-panel panel-surface" id="gallerySection">
+      <section class="gallery-panel panel-surface" id="gallerySection" data-reveal>
         <div class="section-heading section-heading-center">
           <span>Galerie</span>
           <h2>Quelques images de notre histoire</h2>
@@ -204,7 +217,7 @@
         <div class="gallery-grid" id="galleryGrid"></div>
       </section>
 
-      <section class="interaction-grid">
+      <section class="interaction-grid" data-reveal>
         <article class="panel-surface interaction-card interaction-card-dark">
           <div class="section-heading">
             <span>Confirmer votre présence</span>
@@ -281,9 +294,9 @@
         </article>
       </section>
 
-      <footer class="thanks-panel panel-surface">
+      <footer class="thanks-panel panel-surface" data-reveal>
         <p>Merci d'être une partie de notre histoire.</p>
-        <strong>Ben & Julie</strong>
+        <strong>Ben et Julie</strong>
 
         <div class="footer-actions">
           <button id="footerShareButton" type="button" class="footer-link">
@@ -312,6 +325,7 @@
     <script>
       window.HopeEventsGuestInvitationConfig = {
         defaultToken: "amour-couple-kuanzambi",
+        displayCoupleNames: "Ben et Julie",
         publicPagePath:
           "/couple-lumu/Table%20amour/couple-kuanzambi/invitation.html",
         storyMilestones: [

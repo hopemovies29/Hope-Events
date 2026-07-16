@@ -10,6 +10,10 @@ module.exports = async function handler(req, res) {
     const body = await readBody(req);
     const token = String(body.token || "").trim();
     const guestName = String(body.guestName || "").trim();
+    const eventId = String(body.eventId || "").trim();
+    const coupleNames = String(body.coupleNames || "").trim();
+    const tableName = String(body.tableName || "").trim();
+    const sourcePath = String(body.sourcePath || "").trim();
     const choices = Array.isArray(body.choices) ? body.choices : [];
 
     if (!token) {
@@ -31,6 +35,10 @@ module.exports = async function handler(req, res) {
     const result = await savePreferences({
       token,
       guestName,
+      eventId,
+      coupleNames,
+      tableName,
+      sourcePath,
       choices
     });
 
@@ -46,4 +54,3 @@ module.exports = async function handler(req, res) {
     });
   }
 };
-

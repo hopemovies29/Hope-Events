@@ -10,6 +10,10 @@ module.exports = async function handler(req, res) {
     const body = await readBody(req);
     const token = String(body.token || "").trim();
     const guestName = String(body.guestName || "").trim();
+    const eventId = String(body.eventId || "").trim();
+    const coupleNames = String(body.coupleNames || "").trim();
+    const tableName = String(body.tableName || "").trim();
+    const sourcePath = String(body.sourcePath || "").trim();
     const phone = String(body.phone || "").trim();
     const attendance = String(body.attendance || "").trim();
     const companions = Number(body.companions || 0);
@@ -42,6 +46,10 @@ module.exports = async function handler(req, res) {
     const result = await saveRsvpSubmission({
       token,
       guestName,
+      eventId,
+      coupleNames,
+      tableName,
+      sourcePath,
       phone,
       attendance,
       companions,
