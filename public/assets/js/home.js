@@ -4,13 +4,15 @@
   const codeInput = document.getElementById("client-code");
   const accessFeedback = document.getElementById("access-feedback");
   const clientRoutes = {
-    "HE-BLJ-2026": {
-      file: "./couple-lumu/espace-client.html",
-      web: "/couple-lumu/espace-client.html"
+    "07082026": {
+      file: "./couple-lumu/espace-client-ben-julie.html",
+      web: "/couple-lumu/espace-client-ben-julie",
+      queryParam: "code"
     },
-    "HE-CLSM-2026": {
-      file: "./couple-lengbe/espace-client.html",
-      web: "/couple-lengbe/espace-client.html"
+    "HE-BLJ-2026": {
+      file: "./couple-lumu/espace-client-ben-julie.html",
+      web: "/couple-lumu/espace-client-ben-julie",
+      queryParam: "key"
     }
   };
 
@@ -47,22 +49,21 @@
       .replace(/[\s_]+/g, "-")
       .replace(/-+/g, "-")
       .toUpperCase();
-    const encodedCode = encodeURIComponent(normalizedCode);
-    const route = clientRoutes[normalizedCode];
+    const route = clientRoutes[normalizedCode] || clientRoutes[code.trim()];
+
+    if (!route) {
+      return "";
+    }
+
+    const rawCode = code.trim();
+    const queryParam = route.queryParam || "code";
+    const encodedCode = encodeURIComponent(rawCode);
 
     if (window.location.protocol === "file:") {
-      if (route) {
-        return `${route.file}?key=${encodedCode}`;
-      }
-
-      return `./espace-client.html?key=${encodedCode}`;
+      return `${route.file}?${queryParam}=${encodedCode}`;
     }
 
-    if (route) {
-      return `${route.web}?key=${encodedCode}`;
-    }
-
-    return `/espace-client?key=${encodedCode}`;
+    return `${route.web}?${queryParam}=${encodedCode}`;
   }
 
   function initPrivateAccess() {
@@ -80,8 +81,15 @@
         return;
       }
 
+      const destination = buildClientSpaceUrl(code);
+
+      if (!destination) {
+        accessFeedback.textContent = "Code prive inconnu ou espace non configure.";
+        return;
+      }
+
       accessFeedback.textContent = "Ouverture de votre espace prive...";
-      window.location.href = buildClientSpaceUrl(code);
+      window.location.href = destination;
     });
   }
 

@@ -20,12 +20,23 @@
   function resolveKey() {
     const url = new URL(window.location.href);
     const queryKey = url.searchParams.get("key") || url.searchParams.get("code");
+    const aliases = pageConfig.accessAliases || {};
 
-    if (queryKey) {
-      return queryKey;
+    function normalize(input) {
+      const normalized = String(input || "")
+        .trim()
+        .replace(/[\s_]+/g, "-")
+        .replace(/-+/g, "-")
+        .toUpperCase();
+
+      return aliases[normalized] || aliases[input] || normalized;
     }
 
-    return pageConfig.defaultKey || "HE-BLJ-2026";
+    if (queryKey) {
+      return normalize(queryKey);
+    }
+
+    return normalize(pageConfig.defaultKey || "HE-BLJ-2026");
   }
 
   function buildLocalPageUrl(pagePath, token) {
@@ -33,8 +44,16 @@
     return `${pagePath}${separator}token=${encodeURIComponent(token || "")}`;
   }
 
+  function getGuestRoute(invitation) {
+    const routes = pageConfig.guestRoutes || {};
+    return routes[invitation.token] || {};
+  }
+
   function buildPublicInvitationUrl(token) {
-    const publicPath = String(pageConfig.publicInvitationPath || "/couple-lumu/invitation.html").trim();
+    const guestRoute = (pageConfig.guestRoutes || {})[token] || {};
+    const publicPath = String(
+      guestRoute.publicInvitationPath || pageConfig.publicInvitationPath || ""
+    ).trim();
     const normalizedPath = publicPath.startsWith("/") ? publicPath : `/${publicPath}`;
 
     if (!isFileMode()) {
@@ -46,17 +65,37 @@
   }
 
   function buildInvitationUrl(invitation) {
-    return buildLocalPageUrl(pageConfig.invitationPagePath || "./invitation.html", invitation.token);
+    const guestRoute = getGuestRoute(invitation);
+    const invitationPath = String(
+      guestRoute.invitationPagePath || invitation.invitationPagePath || ""
+    ).trim();
+
+    if (invitationPath) {
+      return buildLocalPageUrl(invitationPath, invitation.token);
+    }
+
+    const fallbackQrPath = String(invitation.qrPagePath || guestRoute.qrPagePath || "").trim();
+
+    if (fallbackQrPath) {
+      return buildLocalPageUrl(fallbackQrPath.replace(/qr-code[^/]*\.html?$/i, "invitation.html"), invitation.token);
+    }
+
+    return buildLocalPageUrl("./Table amour/couple-kuanzambi/invitation.html", invitation.token);
   }
 
   function buildQrCardUrl(invitation) {
+    const guestRoute = getGuestRoute(invitation);
     const customPath = String(invitation.qrPagePath || "").trim();
 
     if (customPath) {
       return buildLocalPageUrl(customPath, invitation.token);
     }
 
-    return buildLocalPageUrl(pageConfig.qrCardPath || "./qr-card.html", invitation.token);
+    if (guestRoute.qrPagePath) {
+      return buildLocalPageUrl(guestRoute.qrPagePath, invitation.token);
+    }
+
+    return buildLocalPageUrl("./Table amour/couple-kuanzambi/qr-code-couple-kuanzambi.html", invitation.token);
   }
 
   function setHidden(element, hidden) {
