@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation | Christian et Sephora</title>
+    <meta
+      name="description"
+      content="Invitation web complète pour le mariage de Christian et Sephora."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
+    />
+    <link rel="icon" type="image/jpeg" href="../../../assets/img/logo.jpg" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="guest-invitation-page">
+    <div class="invitation-splash" id="invitationSplash" aria-hidden="true">
+      <div class="invitation-splash-shell">
+        <div class="invitation-splash-envelope">
+          <div class="invitation-splash-heart">♥</div>
+        </div>
+        <p class="invitation-splash-kicker">Votre invitation s'ouvre</p>
+        <h1 class="invitation-splash-title">Christian et Sephora</h1>
+        <p class="invitation-splash-copy">Une entrée douce, élégante et pleine d'amour avant de découvrir le grand jour.</p>
+      </div>
+    </div>
+
+    <div class="page-glow" aria-hidden="true"></div>
+    <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+    <div class="hero-copy">
+          <div class="brand-row">
+            <div class="brand-mark">
+              <img src="../../../assets/img/logo.jpg" alt="Hope Events" />
+              <span>Hope Events</span>
+            </div>
+
+            <button id="shareButton" type="button" class="icon-button">
+              Partager
+            </button>
+          </div>
+    <main class="invitation-shell">
+      <section class="hero-panel" data-reveal>
+        <div class="hero-media">
+          <img
+            id="heroMainImage"
+            class="hero-main-image"
+            src="../../assets/christian-sephora.jpeg"
+            alt="Christian et Sephora"
+          />
+          <div class="hero-bloom hero-bloom-left" aria-hidden="true"></div>
+          <div class="hero-floating-card">
+            <img
+              id="heroSideImage"
+              src="../../assets/christian-sephora.jpeg"
+              alt="Christian et Sephora"
+            />
+          </div>
+        </div>
+
+        
+
+          <p class="hero-kicker">Bienvenue à notre mariage <span>♥</span></p>
+          <h1 id="coupleNames" class="hero-title">Christian et Sephora</h1>
+          <div class="hero-divider" aria-hidden="true"></div>
+
+          <p class="hero-date" id="dateLabel">Samedi 12 septembre 2026</p>
+          <p class="hero-location">
+            <span id="venueLabel">N°31, avenue Macampagne</span>
+            <span id="addressLabel">Commune de Ngaliema · Réf. : arrêt Auado, coin Bocage</span>
+          </p>
+
+          <p class="hero-phrase" id="lovePhrase">
+            Une belle histoire se poursuit, soyez à nos côtés pour écrire avec nous le prochain chapitre de notre amour.
+          </p>
+
+          <div class="hero-tags">
+            <span class="hero-tag" id="inviteeChip">Thomas salumu</span>
+            <span class="hero-tag hero-tag-soft" id="tableChip">Goyave</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#countdownSection" class="button-primary">Découvrir notre mariage</a>
+            <button id="copyLinkButton" type="button" class="button-secondary">
+              Copier le lien
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown-panel panel-surface" id="countdownSection" data-reveal>
+        <div class="section-heading section-heading-center">
+          <span>Notre grand jour arrive dans</span>
+          <h2>Chaque seconde nous rapproche de ce moment.</h2>
+        </div>
+
+        <div class="countdown-grid">
+          <article class="countdown-box">
+            <strong id="daysValue">00</strong>
+            <span>Jours</span>
+          </article>
+          <article class="countdown-box">
+            <strong id="hoursValue">00</strong>
+            <span>Heures</span>
+          </article>
+          <article class="countdown-box">
+            <strong id="minutesValue">00</strong>
+            <span>Minutes</span>
+          </article>
+          <article class="countdown-box">
+            <strong id="secondsValue">00</strong>
+            <span>Secondes</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-panel panel-surface" data-reveal>
+        <div class="section-heading section-heading-center">
+          <span>Notre histoire</span>
+          <h2>Quelques moments qui nous ont conduits ici.</h2>
+        </div>
+
+        <div class="story-track" id="storyTrack"></div>
+        <p class="story-copy" id="storyCopy"></p>
+      </section>
+
+      <section class="details-grid" data-reveal>
+        <article class="panel-surface details-card">
+          <div class="section-heading">
+            <span>Informations</span>
+            <h2>Les détails de votre soirée</h2>
+          </div>
+
+          <div class="details-list">
+            <div class="detail-row">
+              <span class="detail-icon">📅</span>
+              <div>
+                <strong>Date</strong>
+                <span id="infoDate">Samedi 12 septembre 2026</span>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">🕖</span>
+              <div>
+                <strong>Heure</strong>
+                <span id="timeLabelInfo">Bénédiction 11h00 · Soirée 19h00</span>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">📍</span>
+              <div>
+                <strong>Lieu</strong>
+                <span id="venueLabelInfo">N°31, avenue Macampagne, commune de Ngaliema</span>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">👗</span>
+              <div>
+                <strong>Dress code</strong>
+                <span id="dressCodeValue">Chic en noir</span>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">💬</span>
+              <div>
+                <strong>Contact</strong>
+                <span id="contactValue">+243 827274226</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-notes">
+            <p>
+              <strong>Bénédiction · 11h00</strong>
+              Paroisse Saint-Cyprien, au croisement des avenues de l'École et Escorte.
+              Réf. : Marché Sola à l'Ozone.
+            </p>
+            <p>
+              <strong>Soirée dansante · 19h00</strong>
+              N°31, avenue Macampagne, commune de Ngaliema.
+              Réf. : arrêt Auado, coin Bocage.
+            </p>
+          </div>
+        </article>
+
+        <article class="panel-surface map-card">
+          <div class="section-heading">
+            <span>Plan d'accès</span>
+            <h2>Retrouvez facilement la salle</h2>
+          </div>
+
+          <div class="map-frame-wrap">
+            <iframe
+              id="mapFrame"
+              title="Carte du lieu de réception"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Avenue+Macampagne+31+Ngaliema+Kinshasa&output=embed"
+            ></iframe>
+          </div>
+
+          <a
+            id="mapButton"
+            class="button-dark"
+            href="https://maps.google.com/?q=Avenue+Macampagne+31+Ngaliema+Kinshasa"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Voir l'itinéraire
+          </a>
+        </article>
+
+        <article class="panel-surface programme-card">
+          <div class="section-heading">
+            <span>Programme</span>
+            <h2>Le déroulé de la célébration</h2>
+          </div>
+
+          <ul class="programme-list" id="programmeList"></ul>
+        </article>
+      </section>
+
+      <section class="gallery-panel panel-surface" id="gallerySection" data-reveal>
+        <div class="section-heading section-heading-center">
+          <span>Galerie</span>
+          <h2>Quelques images de notre histoire</h2>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="interaction-grid" data-reveal>
+        <article class="panel-surface interaction-card interaction-card-dark">
+          <div class="section-heading">
+            <span>Confirmer votre présence</span>
+            <h2>Serez-vous présent ?</h2>
+          </div>
+
+          <div class="rsvp-options" id="rsvpOptions">
+            <button class="rsvp-choice" type="button" data-attendance="oui">
+              <span>✔</span>
+              <strong>Oui</strong>
+            </button>
+            <button class="rsvp-choice" type="button" data-attendance="peut-etre">
+              <span>?</span>
+              <strong>Peut-être</strong>
+            </button>
+            <button class="rsvp-choice" type="button" data-attendance="non">
+              <span>✕</span>
+              <strong>Non</strong>
+            </button>
+          </div>
+
+          <label class="field-label" for="companionsSelect">Nombre d'accompagnants</label>
+          <select id="companionsSelect" class="field-input">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+
+          <button id="saveRsvpButton" type="button" class="button-light">
+            Répondre maintenant
+          </button>
+          <p class="feedback-line" id="rsvpFeedback"></p>
+        </article>
+
+        <article class="panel-surface interaction-card interaction-card-warm">
+          <div class="section-heading">
+            <span>Choix des boissons</span>
+            <h2>Que préférez-vous ?</h2>
+          </div>
+
+          <div class="drinks-grid" id="drinkChoices"></div>
+
+          <button id="savePreferencesButton" type="button" class="button-warm">
+            Enregistrer mon choix
+          </button>
+          <p class="feedback-line" id="preferencesFeedback"></p>
+        </article>
+
+        <article class="panel-surface interaction-card">
+          <div class="section-heading">
+            <span>Un message aux mariés</span>
+            <h2>Laissez quelques mots doux</h2>
+          </div>
+
+          <label class="field-label" for="guestbookAuthor">Votre nom</label>
+          <input
+            id="guestbookAuthor"
+            class="field-input"
+            type="text"
+            placeholder="Votre nom"
+          />
+
+          <label class="field-label" for="guestbookMessage">Votre message</label>
+          <textarea
+            id="guestbookMessage"
+            class="field-input field-textarea"
+            placeholder="Votre message..."
+          ></textarea>
+
+          <button id="sendGuestbookButton" type="button" class="button-primary">
+            Envoyer le message
+          </button>
+          <p class="feedback-line" id="guestbookFeedback"></p>
+        </article>
+      </section>
+
+      <footer class="thanks-panel panel-surface" data-reveal>
+        <p>Merci d'être une partie de notre histoire.</p>
+        <strong>Christian et Sephora</strong>
+
+        <div class="footer-actions">
+          <button id="footerShareButton" type="button" class="footer-link">
+            Partager
+          </button>
+          <a
+            id="footerContactButton"
+            class="footer-link"
+            href="https://wa.me/243827274226"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Nous contacter
+          </a>
+          <a
+            id="footerQrButton"
+            class="footer-link"
+            href="./qr-code-thomas-salumu.html"
+          >
+            Retour carte QR
+          </a>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      window.HopeEventsGuestInvitationConfig = {
+        defaultToken: "goyave-thomas-salumu",
+        displayCoupleNames: "Christian et Sephora",
+        publicPagePath:
+          "/couple-christian-sephora/Goyave/thomas-salumu/invitation",
+        storyMilestones: [
+          { icon: "❤", title: "Notre rencontre", year: "Notre histoire" },
+          { icon: "💍", title: "Notre promesse", year: "Pour la vie" },
+          { icon: "♡", title: "Notre mariage", year: "2026" }
+        ],
+        storyText:
+          "Deux coeurs, une promesse et la joie de vous compter parmi ceux qui accompagneront Christian et Sephora dans ce nouveau chapitre de leur histoire.",
+        dressCode: "Chic en noir",
+        contactLabel: "+243 827274226",
+        contactLink:
+          "https://wa.me/243827274226?text=Bonjour%20Hope%20Events%2C%20j%27ai%20une%20question%20sur%20l%27invitation%20de%20Christian%20et%20Sephora.",
+        mapEmbedQuery: "Avenue Macampagne 31 Ngaliema Kinshasa RDC",
+        programme: [
+          { time: "11h00", label: "Bénédiction nuptiale à la paroisse Saint-Cyprien" },
+          { time: "Après", label: "Félicitations et photos" },
+          { time: "19h00", label: "Accueil à la soirée dansante" },
+          { time: "Soirée", label: "Réception au n°31, avenue Macampagne" }
+        ],
+        galleryImages: [
+          {
+            src: "../../assets/christian-sephora.jpeg",
+            alt: "Christian et Sephora"
+          },
+          {
+            src: "../../assets/christian-sephora.jpeg",
+            alt: "Christian et Sephora"
+          },
+          {
+            src: "../../assets/christian-sephora.jpeg",
+            alt: "Carte de mariage du Couple PALAMA"
+          },
+          {
+            src: "../../assets/christian-sephora.jpeg",
+            alt: "Christian et Sephora lors d'un moment complice"
+          }
+        ]
+      };
+    </script>
+    <script src="../../../assets/js/demo-data.js"></script>
+    <script src="../../config.js"></script>
+    <script src="../../guests-data.js"></script>
+    <script src="../../../assets/js/api.js"></script>
+    <script src="./invitation.js"></script>
+  </body>
+</html>

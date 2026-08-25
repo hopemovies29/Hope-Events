@@ -13,6 +13,21 @@
       file: "./couple-lumu/espace-client-ben-julie.html",
       web: "/couple-lumu/espace-client-ben-julie",
       queryParam: "key"
+    },
+    "CS-PRIVE-2026": {
+      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
+      web: "/couple-christian-sephora/espace-client-christian-sephora",
+      queryParam: "code"
+    },
+    "12092026": {
+      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
+      web: "/couple-christian-sephora/espace-client-christian-sephora",
+      queryParam: "code"
+    },
+    "HE-CSM-2026": {
+      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
+      web: "/couple-christian-sephora/espace-client-christian-sephora",
+      queryParam: "key"
     }
   };
 

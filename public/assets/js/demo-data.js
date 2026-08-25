@@ -147,6 +147,52 @@
           "Tonic"
         ]
       }
+    },
+    "christian-sephora-palama-2026": {
+      id: "christian-sephora-palama-2026",
+      slug: "christian-sephora-palama-2026",
+      accessKey: "HE-CSM-2026",
+      coupleNames: "Christian Lengbe et Sephora Malanda",
+      title: "Vous etes invites au mariage de Christian et Sephora",
+      eventPhrase:
+        "Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.",
+      intro:
+        "Christian et Sephora seraient heureux de vous compter parmi les personnes qui partageront cette journee de benediction et de fete.",
+      story:
+        "Deux coeurs, une promesse et la joie de celebrer l'amour avec les personnes qui comptent.",
+      note:
+        "Votre presence, votre message et vos preferences peuvent etre enregistres directement depuis cette invitation.",
+      dateIso: "2026-09-12T19:00:00+01:00",
+      dateLabel: "Samedi 12 septembre 2026",
+      timeLabel: "Benediction 11h00 - Soiree 19h00",
+      venueName: "N°31, avenue Macampagne,",
+      venueAddress: "Commune de Ngaliema - Ref. : arret Auado, coin Bocage",
+      mapUrl: "https://maps.google.com/?q=Avenue+Macampagne+31+Ngaliema+Kinshasa",
+      ceremonyLabel: "Benediction nuptiale",
+      celebrationLabel: "Soiree dansante",
+      schedule: [
+        { label: "Benediction nuptiale", time: "11h00" },
+        { label: "Felicitations et photos", time: "Apres la benediction" },
+        { label: "Accueil de la soiree", time: "19h00" },
+        { label: "Soiree dansante", time: "Avenue Macampagne, n°31" }
+      ],
+      palette: {
+        base: "#f3e3d5",
+        accent: "#b56339",
+        accentSoft: "#ebbc98",
+        ink: "#2f1d17",
+        highlight: "#7a553f"
+      },
+      coverImage: "/couple-christian-sephora/assets/christian-sephora.jpeg",
+      footerBrand: "Invitation signee Hope Events by Dr Tech",
+      publicBaseUrl: "https://hope-events.vercel.app",
+      qrCallout:
+        "Scannez ce QR pour acceder a l'invitation web complete et confirmer votre presence.",
+      whatsappLink: "https://wa.me/243827274226",
+      preferences: {
+        alcoholic: ["Champagne", "Vin rouge", "Vin blanc", "Mojito", "Castel", "Primus"],
+        soft: ["Eau", "Jus", "Coca-Cola", "Fanta", "Maltina", "Tonic"]
+      }
     }
   };
 
@@ -216,6 +262,22 @@
       exportName: "invitation-couple-kuanzambi-confiance",
       personalMessage:
         "Votre presence compte sincerement pour Christian et Sephora, et ils seraient tres heureux de vous voir partager cette journee avec eux."
+    },
+    "clou-de-girofle-couple-palama": {
+      token: "clou-de-girofle-couple-palama",
+      eventId: "christian-sephora-palama-2026",
+      guestName: "Couple Palama",
+      salutation: "Chers Palama",
+      seats: 2,
+      tableName: "Table Clou de girofle",
+      tableSlug: "table-clou-de-girofle",
+      qrPagePath:
+        "./Table%20Clou%20de%20girofle/couple-palama/qr-code-couple-palama.html",
+      invitationImage:
+        "/couple-christian-sephora/Table%20Clou%20de%20girofle/couple-palama/Invitation_Couple_Palama_Table_Clou_de_girofle.png",
+      exportName: "invitation-couple-palama-clou-de-girofle",
+      personalMessage:
+        "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
     }
   };
 
