@@ -297,6 +297,12 @@
     setHidden(loadingState, true);
     setHidden(errorState, true);
     setHidden(contentState, false);
+
+    // The table section starts hidden for its reveal animation. It is mounted
+    // after the observer starts, so reveal it once the event data is ready.
+    contentState.querySelectorAll("[data-reveal]").forEach(function (node) {
+      node.classList.add("is-visible");
+    });
   }
 
   async function init() {
