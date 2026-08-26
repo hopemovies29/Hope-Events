@@ -36,6 +36,16 @@ body {
   background: linear-gradient(135deg, rgba(255, 223, 188, 0.12), rgba(255, 223, 188, 0.04));
 }
 
+.guest-link-whatsapp {
+  border-color: rgba(111, 212, 149, 0.45);
+  background: linear-gradient(135deg, rgba(47, 156, 92, 0.28), rgba(24, 103, 57, 0.2));
+}
+
+.guest-link-whatsapp:hover {
+  border-color: rgba(149, 240, 182, 0.72);
+  background: linear-gradient(135deg, rgba(56, 181, 105, 0.42), rgba(24, 103, 57, 0.3));
+}
+
 .reports-section {
   margin-top: 4.5rem;
 }

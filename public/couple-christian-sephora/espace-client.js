@@ -71,6 +71,23 @@
     return `${publicBaseUrl}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
   }
 
+  function buildWhatsAppShareUrl(invitation, publicLink) {
+    const guestName = String(invitation.guestName || "cher invite").trim();
+    const message = [
+      "Christian & Sephora",
+      "",
+      `Bonjour ${guestName},`,
+      "",
+      "Votre presence sera pour nous un honneur et rendra cette journee encore plus memorable.",
+      "",
+      "Cliquez sur le lien ci-dessous pour visualiser votre invitation personnelle.",
+      "",
+      publicLink
+    ].join("\n");
+
+    return `https://wa.me/?text=${encodeURIComponent(message)}`;
+  }
+
   function buildInvitationUrl(invitation) {
     const guestRoute = getGuestRoute(invitation);
     const invitationPath = String(
@@ -211,6 +228,7 @@
             const invitationUrl = buildInvitationUrl(invitation);
             const qrCardUrl = buildQrCardUrl(invitation);
             const publicLink = buildPublicInvitationUrl(invitation.token);
+            const whatsappUrl = buildWhatsAppShareUrl(invitation, publicLink);
 
             return `
               <li class="guest-row guest-row-rich">
@@ -221,6 +239,9 @@
                 <div class="guest-actions">
                   <a class="guest-link" href="${invitationUrl}">Invitation</a>
                   <a class="guest-link guest-link-alt" href="${qrCardUrl}">Page QR</a>
+                  <a class="guest-link guest-link-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
+                    Envoyer WhatsApp
+                  </a>
                   <button class="guest-link guest-link-copy" type="button" data-copy-link="${publicLink}">
                     Copier le lien
                   </button>
