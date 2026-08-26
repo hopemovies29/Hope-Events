@@ -3,33 +3,6 @@
   const accessForm = document.getElementById("private-access-form");
   const codeInput = document.getElementById("client-code");
   const accessFeedback = document.getElementById("access-feedback");
-  const clientRoutes = {
-    "07082026": {
-      file: "./couple-lumu/espace-client-ben-julie.html",
-      web: "/couple-lumu/espace-client-ben-julie",
-      queryParam: "code"
-    },
-    "HE-BLJ-2026": {
-      file: "./couple-lumu/espace-client-ben-julie.html",
-      web: "/couple-lumu/espace-client-ben-julie",
-      queryParam: "key"
-    },
-    "CS-PRIVE-2026": {
-      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
-      web: "/couple-christian-sephora/espace-client-christian-sephora",
-      queryParam: "code"
-    },
-    "12092026": {
-      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
-      web: "/couple-christian-sephora/espace-client-christian-sephora",
-      queryParam: "code"
-    },
-    "HE-CSM-2026": {
-      file: "./couple-christian-sephora/espace-client-christian-sephora.html",
-      web: "/couple-christian-sephora/espace-client-christian-sephora",
-      queryParam: "key"
-    }
-  };
 
   function initReveal() {
     if (!("IntersectionObserver" in window) || !revealNodes.length) {
@@ -58,35 +31,12 @@
     });
   }
 
-  function buildClientSpaceUrl(code) {
-    const normalizedCode = code
-      .trim()
-      .replace(/[\s_]+/g, "-")
-      .replace(/-+/g, "-")
-      .toUpperCase();
-    const route = clientRoutes[normalizedCode] || clientRoutes[code.trim()];
-
-    if (!route) {
-      return "";
-    }
-
-    const rawCode = code.trim();
-    const queryParam = route.queryParam || "code";
-    const encodedCode = encodeURIComponent(rawCode);
-
-    if (window.location.protocol === "file:") {
-      return `${route.file}?${queryParam}=${encodedCode}`;
-    }
-
-    return `${route.web}?${queryParam}=${encodedCode}`;
-  }
-
   function initPrivateAccess() {
     if (!accessForm || !codeInput || !accessFeedback) {
       return;
     }
 
-    accessForm.addEventListener("submit", function (event) {
+    accessForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
       const code = codeInput.value.trim();
@@ -96,15 +46,31 @@
         return;
       }
 
-      const destination = buildClientSpaceUrl(code);
-
-      if (!destination) {
-        accessFeedback.textContent = "Code prive inconnu ou espace non configure.";
+      if (window.location.protocol === "file:") {
+        accessFeedback.textContent = "Utilise la version en ligne pour ouvrir un espace prive.";
         return;
       }
 
-      accessFeedback.textContent = "Ouverture de votre espace prive...";
-      window.location.href = destination;
+      accessFeedback.textContent = "Verification du code prive...";
+
+      try {
+        const response = await fetch("/api/client-access", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code })
+        });
+        const payload = await response.json();
+
+        if (!response.ok || !payload.path) {
+          throw new Error("Code prive inconnu ou espace non configure.");
+        }
+
+        window.sessionStorage.setItem("hope-events-client-code", code);
+        accessFeedback.textContent = "Ouverture de votre espace prive...";
+        window.location.href = payload.path;
+      } catch (error) {
+        accessFeedback.textContent = error.message || "Verification impossible.";
+      }
     });
   }
 

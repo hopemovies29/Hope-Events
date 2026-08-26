@@ -355,6 +355,13 @@ img {
   filter: saturate(1.05) contrast(1.02);
 }
 
+.tile-wedding .showcase-art {
+  background:
+    radial-gradient(circle at 22% 20%, rgba(241, 205, 148, 0.42), transparent 15%),
+    radial-gradient(circle at 78% 78%, rgba(164, 92, 39, 0.36), transparent 20%),
+    linear-gradient(140deg, #21130d 0%, #5b3019 48%, #1b100c 100%);
+}
+
 .tile-gala .showcase-art {
   background:
     radial-gradient(circle at top right, rgba(255, 202, 136, 0.28), transparent 22%),

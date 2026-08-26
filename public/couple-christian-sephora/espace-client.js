@@ -26,23 +26,16 @@
   function resolveKey() {
     const url = new URL(window.location.href);
     const queryKey = url.searchParams.get("key") || url.searchParams.get("code");
-    const aliases = pageConfig.accessAliases || {};
-
     function normalize(input) {
-      const normalized = String(input || "")
-        .trim()
-        .replace(/[\s_]+/g, "-")
-        .replace(/-+/g, "-")
-        .toUpperCase();
-
-      return aliases[normalized] || aliases[input] || normalized;
+      return String(input || "").trim();
     }
 
     if (queryKey) {
-      return normalize(queryKey);
+      window.sessionStorage.setItem("hope-events-client-code", normalize(queryKey));
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
 
-    return normalize(pageConfig.defaultKey || "HE-CSM-2026");
+    return normalize(queryKey || window.sessionStorage.getItem("hope-events-client-code"));
   }
 
   function buildLocalPageUrl(pagePath, token) {

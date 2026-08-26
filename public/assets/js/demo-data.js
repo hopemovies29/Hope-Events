@@ -3,7 +3,7 @@
     "ben-lumu-julie-2026": {
       id: "ben-lumu-julie-2026",
       slug: "ben-lumu-julie-2026",
-      accessKey: "HE-BLJ-2026",
+      accessKey: "PUBLIC-DEMO-BLJ",
       coupleNames: "Ben et Julie",
       title: "Vous êtes invités au mariage de Ben et Julie",
       eventPhrase:
@@ -75,7 +75,7 @@
     "christian-sephora-2026": {
       id: "christian-sephora-2026",
       slug: "christian-sephora-2026",
-      accessKey: "HE-CLSM-2026",
+      accessKey: "PUBLIC-DEMO-CLSM",
       coupleNames: "Christian Lengbe et Sephora Malanda",
       title: "Leur grande promesse",
       eventPhrase:
@@ -151,7 +151,7 @@
     "christian-sephora-palama-2026": {
       id: "christian-sephora-palama-2026",
       slug: "christian-sephora-palama-2026",
-      accessKey: "HE-CSM-2026",
+      accessKey: "PUBLIC-DEMO-CSM",
       coupleNames: "Christian Lengbe et Sephora Malanda",
       title: "Vous etes invites au mariage de Christian et Sephora",
       eventPhrase:

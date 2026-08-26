@@ -1,13 +1,6 @@
 window.HopeEventsPageConfig = {
   eventSlug: "christian-sephora-2026",
   eventId: "christian-sephora-palama-2026",
-  defaultKey: "HE-CSM-2026",
-  accessCode: "12092026",
-  accessAliases: {
-    "12092026": "HE-CSM-2026",
-    "CS-PRIVE-2026": "HE-CSM-2026",
-    "HE-CSM-2026": "HE-CSM-2026"
-  },
   defaultToken: "clou-de-girofle-couple-palama",
   publicBaseUrl: "https://hope-events.vercel.app",
   clientSpacePath: "./espace-client-christian-sephora.html",

@@ -224,54 +224,14 @@ def write_guest_data(guests: list[dict[str, str | int]], routes: dict[str, dict[
             "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous.",
         }
 
-    output = f"""window.HopeEventsGuestDirectory = {json.dumps(routes, ensure_ascii=False, indent=2)};
+    output = f"""// Private invitation directory used only by Vercel API routes.
+const event = {json.dumps(EVENT, ensure_ascii=False, indent=2)};
+const invitations = {json.dumps(invitation_data, ensure_ascii=False, indent=2)};
+const routes = {json.dumps(routes, ensure_ascii=False, indent=2)};
 
-(function () {{
-  const base = window.HopeEventsDemo || {{}};
-  const event = {json.dumps(EVENT, ensure_ascii=False, indent=2)};
-  const invitations = {json.dumps(invitation_data, ensure_ascii=False, indent=2)};
-
-  function matchesEvent(key) {{
-    const normalized = String(key || \"\").trim().replace(/[\\s_]+/g, \"-\").toUpperCase();
-    return normalized === event.accessKey || normalized === event.slug.toUpperCase();
-  }}
-
-  window.HopeEventsDemo = Object.assign({{}}, base, {{
-    getInvitation: function (token) {{
-      const invitation = invitations[token];
-      return invitation ? Object.assign({{}}, event, invitation) : base.getInvitation(token);
-    }},
-    getEventSpace: function (key) {{
-      if (!matchesEvent(key)) {{
-        return base.getEventSpace(key);
-      }}
-
-      return {{
-        id: event.id,
-        slug: event.slug,
-        accessKey: event.accessKey,
-        coupleNames: event.coupleNames,
-        dateLabel: event.dateLabel,
-        venueName: event.venueName,
-        venueAddress: event.venueAddress,
-        mapUrl: event.mapUrl,
-        invitations: Object.values(invitations).map(function (invitation) {{
-          return {{
-            token: invitation.token,
-            guestName: invitation.guestName,
-            tableName: invitation.tableName,
-            tableSlug: invitation.tableSlug,
-            qrPagePath: (window.HopeEventsGuestDirectory[invitation.token] || {{}}).qrPagePath || \"\",
-            seats: invitation.seats,
-            invitationUrl: (window.HopeEventsGuestDirectory[invitation.token] || {{}}).invitationPagePath || \"\"
-          }};
-        }})
-      }};
-    }}
-  }});
-}})();
+module.exports = {{ event, invitations, routes }};
 """
-    (EVENT_ROOT / "guests-data.js").write_text(output, encoding="utf-8")
+    (ROOT / "data" / "christian-sephora-guests.js").write_text(output, encoding="utf-8")
 
 
 def main() -> None:

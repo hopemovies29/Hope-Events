@@ -6,7 +6,13 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const key = String(req.query.key || "").trim();
+  const suppliedKey = String(req.query.key || "").trim();
+  const privateKeys = {
+    "12092026": "HE-CSM-2026",
+    "CS-PRIVE-2026": "HE-CSM-2026",
+    "07082026": "HE-BLJ-2026"
+  };
+  const key = privateKeys[suppliedKey.toUpperCase()] || suppliedKey;
 
   if (!key) {
     sendJson(res, 400, {
