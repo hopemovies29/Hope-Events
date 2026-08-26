@@ -87,19 +87,12 @@
       return demoPayload;
     }
 
-    try {
-      return await requestJson("/api/event-space?key=" + encodeURIComponent(key), {
-        method: "GET"
-      });
-    } catch (error) {
-      const demoPayload = getDemoEventSpace(key);
+    const token = String(window.HopeEventsOwnerAccessToken || "").trim();
 
-      if (demoPayload) {
-        return demoPayload;
-      }
-
-      throw error;
-    }
+    return requestJson("/api/event-space?key=" + encodeURIComponent(key), {
+      method: "GET",
+      headers: token ? { Authorization: "Bearer " + token } : {}
+    });
   }
 
   async function postJson(url, body) {

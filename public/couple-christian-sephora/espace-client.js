@@ -339,5 +339,9 @@
     }
   }
 
-  init();
+  document.addEventListener("hope-events-owner-authenticated", init, { once: true });
+
+  if (window.HopeEventsOwnerAccessToken) {
+    init();
+  }
 })();

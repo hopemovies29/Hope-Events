@@ -20,6 +20,24 @@
   <body class="home-page">
     <div class="backdrop-noise" aria-hidden="true"></div>
 
+    <section class="owner-auth-gate" id="ownerAuthGate">
+      <div class="owner-auth-card">
+        <p class="eyebrow">Espace client sécurisé</p>
+        <h1>Confirmez votre numéro.</h1>
+        <p>Un code SMS est envoyé uniquement aux numéros autorisés par Hope Events.</p>
+        <label for="ownerPhone">Votre numéro</label>
+        <input id="ownerPhone" type="tel" inputmode="tel" placeholder="+243..." autocomplete="tel" />
+        <button id="sendOwnerCode" class="button button-primary" type="button">Recevoir le code SMS</button>
+        <div id="ownerCodeStep" hidden>
+          <label for="ownerSmsCode">Code reçu par SMS</label>
+          <input id="ownerSmsCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000" />
+          <button id="verifyOwnerCode" class="button button-primary" type="button">Ouvrir mon espace</button>
+        </div>
+        <div id="ownerRecaptcha"></div>
+        <p class="owner-auth-feedback" id="ownerAuthFeedback" aria-live="polite"></p>
+      </div>
+    </section>
+
     <header class="site-header">
       <a class="brand" href="../index.html" aria-label="Hope Events">
         <img class="brand-logo" src="../assets/img/logo.jpg" alt="Logo Hope Events" />
@@ -95,5 +113,6 @@
     <script src="./guests-data.js"></script>
     <script src="../assets/js/api.js"></script>
     <script src="./espace-client.js"></script>
+    <script type="module" src="./owner-auth.js"></script>
   </body>
 </html>
