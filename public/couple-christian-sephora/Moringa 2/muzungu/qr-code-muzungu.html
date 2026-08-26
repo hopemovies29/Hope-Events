@@ -3,94 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carte invitée | MUZUNGU | Christian et Sephora</title>
-    <meta
-      name="description"
-      content="Carte d'invitation privée avec actions rapides pour le MUZUNGU."
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
-    />
+    <title>Carte QR | MUZUNGU | Christian et Sephora</title>
+    <meta name="description" content="Carte QR personnelle du MUZUNGU." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/jpeg" href="../../../assets/img/logo.jpg" />
     <link rel="stylesheet" href="../../guest-qr-page.css" />
   </head>
   <body class="guest-qr-page">
-    <div class="guest-splash" id="guestQrSplash" aria-hidden="true">
-      <div class="guest-splash-card">
-        <div class="guest-splash-heart">♥</div>
-        <p class="guest-splash-kicker">Hope Events présente</p>
-        <h1 class="guest-splash-title">Christian et Sephora</h1>
-        <p class="guest-splash-copy">Votre carte privée s'ouvre avec douceur, amour et élégance.</p>
-        <div class="guest-splash-ribbon"></div>
-      </div>
-    </div>
-
     <main class="guest-qr-shell">
+      <p class="qr-kicker">Carte privée · Hope Events</p>
       <section class="guest-qr-card">
-        <div class="poster-frame">
-          <img
-            id="posterViewer"
-            src="../../Table Clou de girofle/couple-palama/Invitation_Couple_Palama_Table_Clou_de_girofle.png"
-            alt="Carte d'invitation du MUZUNGU"
-          />
-        </div>
-
-        <div class="guest-qr-actions">
-          <a
-            id="openCardButton"
-            class="guest-action"
-            href="../../Table Clou de girofle/couple-palama/Invitation_Couple_Palama_Table_Clou_de_girofle.png"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="guest-action-icon">🖼</span>
-            <span class="guest-action-label">Voir la carte</span>
-          </a>
-
-          <a
-            id="openInvitationButton"
-            class="guest-action is-primary"
-            href="./invitation.html?token=moringa-2-muzungu"
-          >
-            <span class="guest-action-icon">🔗</span>
-            <span class="guest-action-label">Invitation</span>
-          </a>
-
-          <button id="confirmPresenceButton" type="button" class="guest-action">
-            <span class="guest-action-icon">✔</span>
-            <span class="guest-action-label">Confirmer</span>
-          </button>
-
-          <button id="shareQrPageButton" type="button" class="guest-action">
-            <span class="guest-action-icon">⤴</span>
-            <span class="guest-action-label">Partager</span>
-          </button>
-        </div>
-
-        <p class="guest-qr-feedback" id="guestQrFeedback"></p>
+        <img id="posterViewer" src="./carte-qr.webp" alt="Carte QR du MUZUNGU" />
       </section>
+      <p class="qr-helper">Scannez le QR de votre carte ou utilisez une action ci-dessous.</p>
+      <div class="guest-qr-actions">
+        <a id="openInvitationButton" class="guest-action is-primary" href="./invitation.html?token=moringa-2-muzungu"><span>Accéder à l'invitation</span></a>
+        <button id="confirmPresenceButton" class="guest-action" type="button"><span>Confirmer ma présence</span></button>
+        <a id="downloadCardButton" class="guest-action" href="./carte-qr.webp" download="Carte-QR-Couple-Palama.webp"><span>Télécharger la carte</span></a>
+        <button id="shareQrPageButton" class="guest-action" type="button"><span>Partager</span></button>
+      </div>
+      <p class="guest-qr-feedback" id="guestQrFeedback" aria-live="polite"></p>
     </main>
-
     <script>
       window.HopeEventsGuestQrPageConfig = {
         defaultToken: "moringa-2-muzungu",
         guestName: "MUZUNGU",
         tableName: "Moringa 2",
         coupleNames: "Christian et Sephora",
-        posterPath: "../../Table Clou de girofle/couple-palama/Invitation_Couple_Palama_Table_Clou_de_girofle.png",
-        posterDownloadPath: "../../Table Clou de girofle/couple-palama/Invitation_Couple_Palama_Table_Clou_de_girofle.png",
+        posterPath: "./carte-qr.webp",
+        posterDownloadPath: "./carte-qr.webp",
         invitationPagePath: "./invitation.html",
-        publicInvitationPath:
-          "/couple-christian-sephora/Moringa%202/muzungu/invitation",
-        publicPagePath:
-          "/couple-christian-sephora/Moringa%202/muzungu/qr-code-muzungu"
+        publicInvitationPath: "/couple-christian-sephora/Moringa%202/muzungu/invitation",
+        publicPagePath: "/couple-christian-sephora/Moringa%202/muzungu/qr-code-muzungu"
       };
     </script>
-    <script src="../../../assets/js/demo-data.js"></script>
-    <script src="../../config.js"></script>
-    <script src="../../guests-data.js"></script>
-    <script src="../../../assets/js/api.js"></script>
-    <script src="../../guest-qr-page.js"></script>
+    <script src="../../../assets/js/demo-data.js"></script><script src="../../config.js"></script><script src="../../guests-data.js"></script><script src="../../../assets/js/api.js"></script><script src="../../guest-qr-page.js"></script>
   </body>
 </html>

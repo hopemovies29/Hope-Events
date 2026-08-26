@@ -1,633 +1,129 @@
 (function () {
   const rootConfig = window.HopeEventsPageConfig || {};
   const pageConfig = window.HopeEventsGuestInvitationConfig || {};
-  const state = {
-    invitation: null,
-    selectedAttendance: "",
-    selectedChoices: [],
-    countdownTimer: null,
-    heartsTimer: null
-  };
-  const splashNode = document.getElementById("invitationSplash");
+  const state = { invitation: null, attendance: "", drinks: [] };
 
-  const drinkIcons = {
-    "Coca-Cola": "🥤",
-    Coca: "🥤",
-    Fanta: "🧡",
-    Sprite: "🥛",
-    Eau: "💧",
-    "Vin rouge": "🍷",
-    "Vin blanc": "🥂",
-    Vin: "🍷",
-    Jus: "🧃",
-    Bière: "🍺",
-    Primus: "🍺",
-    Castel: "🍺",
-    Champagne: "🥂",
-    Mojito: "🍸",
-    Maltina: "🥤",
-    Tonic: "🥛",
-    "Jus d'ananas": "🍍"
-  };
-
-  function resolveToken() {
-    const url = new URL(window.location.href);
-    return (
-      url.searchParams.get("token") ||
-      pageConfig.defaultToken ||
-      rootConfig.defaultToken ||
-      "table-pamplemousse-couple-dianga"
-    );
+  function token() {
+    return new URL(window.location.href).searchParams.get("token") || pageConfig.defaultToken || rootConfig.defaultToken || "";
   }
 
-  function buildPublicInvitationUrl(token) {
-    const publicPath = String(
-      pageConfig.publicPagePath ||
-        pageConfig.publicInvitationPath ||
-        rootConfig.publicInvitationPath ||
-        ""
-    ).trim();
-    const normalizedPath = publicPath.startsWith("/") ? publicPath : `/${publicPath}`;
-    const publicBaseUrl = String(
-      pageConfig.publicBaseUrl || rootConfig.publicBaseUrl || "https://hope-events.vercel.app"
-    )
-      .trim()
-      .replace(/\/+$/, "");
-
-    return `${publicBaseUrl}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
-  }
-
-  function getDisplayCoupleNames(invitation) {
-    return (
-      pageConfig.displayCoupleNames ||
-      invitation.displayCoupleNames ||
-      invitation.coupleNames ||
-      "Christian et Sephora"
-    );
+  function feedback(id, message, error) {
+    const node = document.getElementById(id);
+    if (node) { node.textContent = message || ""; node.classList.toggle("is-error", Boolean(error)); }
   }
 
   function setText(id, value) {
     const node = document.getElementById(id);
-
-    if (node) {
-      node.textContent = value || "";
-    }
+    if (node && value) node.textContent = value;
   }
 
-  function setFeedback(id, message, isError) {
-    const node = document.getElementById(id);
-
-    if (!node) {
-      return;
-    }
-
-    node.textContent = message || "";
-    node.style.color = isError ? "#b33f2f" : "";
+  function invitationUrl() {
+    const path = String(pageConfig.publicPagePath || "").trim();
+    const base = String(rootConfig.publicBaseUrl || "https://hope-events.vercel.app").replace(/\/+$/, "");
+    return `${base}${path.startsWith("/") ? path : `/${path}`}?token=${encodeURIComponent(token())}`;
   }
 
-  function initSplash() {
-    document.body.classList.add("splash-active");
-
-    window.setTimeout(function () {
-      if (splashNode) {
-        splashNode.classList.add("is-hidden");
-      }
-
-      document.body.classList.remove("splash-active");
-    }, 2000);
+  function reveal() {
+    document.querySelectorAll("[data-reveal]").forEach(function (node, index) {
+      window.setTimeout(function () { node.classList.add("is-visible"); }, 120 + index * 110);
+    });
   }
 
-  function cleanVenueName(value) {
-    return String(value || "").replace(/\s*,\s*$/, "").trim();
-  }
-
-  function buildMapEmbedSrc(invitation) {
-    const query =
-      pageConfig.mapEmbedQuery ||
-      [invitation.venueName, invitation.venueAddress].filter(Boolean).join(" ");
-
-    return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
-  }
-
-  function renderStory() {
-    const storyTrack = document.getElementById("storyTrack");
-    const storyCopy = document.getElementById("storyCopy");
-    const milestones = Array.isArray(pageConfig.storyMilestones) ? pageConfig.storyMilestones : [];
-
-    if (storyTrack) {
-      storyTrack.innerHTML = milestones
-        .map(function (item) {
-          return `
-            <article class="story-item">
-              <div class="story-icon">${item.icon || "❤"}</div>
-              <strong>${item.title || ""}</strong>
-              <span>${item.year || ""}</span>
-            </article>
-          `;
-        })
-        .join("");
-    }
-
-    if (storyCopy) {
-      storyCopy.textContent = pageConfig.storyText || "";
-    }
-  }
-
-  function renderProgramme(invitation) {
-    const programmeList = document.getElementById("programmeList");
-    const items = Array.isArray(pageConfig.programme) && pageConfig.programme.length
-      ? pageConfig.programme
-      : Array.isArray(invitation.schedule)
-        ? invitation.schedule
-        : [];
-
-    if (!programmeList) {
-      return;
-    }
-
-    programmeList.innerHTML = items
-      .map(function (item) {
-        return `
-          <li>
-            <strong class="programme-time">${item.time || ""}</strong>
-            <span class="programme-label">${item.label || item.note || ""}</span>
-          </li>
-        `;
-      })
-      .join("");
-  }
-
-  function renderGallery() {
-    const galleryGrid = document.getElementById("galleryGrid");
-    const items = Array.isArray(pageConfig.galleryImages) ? pageConfig.galleryImages : [];
-
-    if (!galleryGrid) {
-      return;
-    }
-
-    galleryGrid.innerHTML = items
-      .map(function (item) {
-        return `
-          <figure class="gallery-item">
-            <img src="${item.src}" alt="${item.alt || "Christian et Sephora"}" />
-          </figure>
-        `;
-      })
-      .join("");
+  function splash() {
+    const node = document.getElementById("invitationSplash");
+    window.setTimeout(function () { if (node) node.classList.add("is-hidden"); }, 1500);
   }
 
   function renderDrinks(invitation) {
-    const drinkChoices = document.getElementById("drinkChoices");
-
-    if (!drinkChoices) {
-      return;
-    }
-
+    const container = document.getElementById("drinkChoices");
+    if (!container) return;
     const preferences = invitation.preferences || {};
-    const options = Array.from(
-      new Set([]
-        .concat(Array.isArray(preferences.soft) ? preferences.soft : [])
-        .concat(Array.isArray(preferences.alcoholic) ? preferences.alcoholic : []))
-    ).slice(0, 8);
-
-    drinkChoices.innerHTML = options
-      .map(function (choice) {
-        return `
-          <button class="drink-choice" type="button" data-choice="${choice}">
-            <span>${drinkIcons[choice] || "🍹"}</span>
-            <strong>${choice}</strong>
-          </button>
-        `;
-      })
-      .join("");
-
-    drinkChoices.addEventListener("click", function (event) {
-      const button = event.target.closest("[data-choice]");
-
-      if (!button) {
-        return;
-      }
-
-      const choice = button.getAttribute("data-choice");
-      const index = state.selectedChoices.indexOf(choice);
-
-      if (index >= 0) {
-        state.selectedChoices.splice(index, 1);
-      } else {
-        if (state.selectedChoices.length >= 2) {
-          state.selectedChoices.shift();
-        }
-
-        state.selectedChoices.push(choice);
-      }
-
-      drinkChoices.querySelectorAll("[data-choice]").forEach(function (node) {
-        node.classList.toggle(
-          "is-active",
-          state.selectedChoices.includes(node.getAttribute("data-choice"))
-        );
+    const options = [].concat(preferences.soft || [], preferences.alcoholic || []).slice(0, 8);
+    container.innerHTML = options.map(function (drink) {
+      return `<button type="button" class="drink-choice" data-drink="${drink}">${drink}</button>`;
+    }).join("");
+    container.addEventListener("click", function (event) {
+      const choice = event.target.closest("[data-drink]");
+      if (!choice) return;
+      const drink = choice.dataset.drink;
+      const index = state.drinks.indexOf(drink);
+      if (index >= 0) state.drinks.splice(index, 1);
+      else if (state.drinks.length < 2) state.drinks.push(drink);
+      else { feedback("preferencesFeedback", "Choisissez au maximum deux boissons.", true); return; }
+      container.querySelectorAll("[data-drink]").forEach(function (button) {
+        button.classList.toggle("is-selected", state.drinks.includes(button.dataset.drink));
       });
+      feedback("preferencesFeedback", "", false);
     });
   }
 
-  function startCountdown(dateIso) {
-    const target = dateIso ? new Date(dateIso) : null;
-
-    if (state.countdownTimer) {
-      window.clearInterval(state.countdownTimer);
-      state.countdownTimer = null;
-    }
-
-    function update() {
-      if (!target || Number.isNaN(target.getTime())) {
-        setText("daysValue", "--");
-        setText("hoursValue", "--");
-        setText("minutesValue", "--");
-        setText("secondsValue", "--");
-        return;
-      }
-
-      const diffMs = Math.max(target.getTime() - Date.now(), 0);
-      const totalSeconds = Math.floor(diffMs / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-
-      setText("daysValue", String(days).padStart(2, "0"));
-      setText("hoursValue", String(hours).padStart(2, "0"));
-      setText("minutesValue", String(minutes).padStart(2, "0"));
-      setText("secondsValue", String(seconds).padStart(2, "0"));
-    }
-
-    update();
-
-    if (target && !Number.isNaN(target.getTime())) {
-      state.countdownTimer = window.setInterval(update, 1000);
-    }
-  }
-
-  function initReveal() {
-    const revealNodes = document.querySelectorAll("[data-reveal]");
-
-    if (!revealNodes.length) {
-      return;
-    }
-
-    if (!("IntersectionObserver" in window)) {
-      revealNodes.forEach(function (node) {
-        node.classList.add("is-visible");
-      });
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealNodes.forEach(function (node, index) {
-      node.style.transitionDelay = `${Math.min(index * 70, 240)}ms`;
-      observer.observe(node);
-    });
-  }
-
-  function spawnHeart() {
-    const heartsRoot = document.getElementById("floatingHearts");
-
-    if (!heartsRoot || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    const heart = document.createElement("span");
-    heart.className = "floating-heart";
-    heart.textContent = Math.random() > 0.35 ? "❤" : "♥";
-    heart.style.left = `${Math.random() * 100}%`;
-    heart.style.fontSize = `${0.8 + Math.random() * 1.35}rem`;
-    heart.style.animationDuration = `${8 + Math.random() * 7}s`;
-    heart.style.setProperty("--drift-x", `${-40 + Math.random() * 80}px`);
-
-    heartsRoot.appendChild(heart);
-
-    window.setTimeout(function () {
-      heart.remove();
-    }, 16000);
-  }
-
-  function initFloatingHearts() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    for (let index = 0; index < 7; index += 1) {
-      window.setTimeout(spawnHeart, index * 520);
-    }
-
-    state.heartsTimer = window.setInterval(spawnHeart, 1900);
-  }
-
-  function applyInvitation(invitation) {
+  function hydrate(invitation) {
     state.invitation = invitation;
-    const displayCoupleNames = getDisplayCoupleNames(invitation);
-
-    setText("coupleNames", displayCoupleNames);
-    setText("dateLabel", invitation.dateLabel || "");
-    setText("venueLabel", cleanVenueName(invitation.venueName || ""));
-    setText("addressLabel", invitation.venueAddress || "");
-    setText("lovePhrase", invitation.eventPhrase || "");
-    setText("inviteeChip", invitation.guestName || "Cher invité");
-    setText("tableChip", invitation.tableName || "");
-    setText("infoDate", invitation.dateLabel || "");
-    setText("timeLabelInfo", invitation.timeLabel || "");
-    setText(
-      "venueLabelInfo",
-      [cleanVenueName(invitation.venueName), invitation.venueAddress].filter(Boolean).join(", ")
-    );
-    setText("dressCodeValue", pageConfig.dressCode || "Élégant");
-    setText("contactValue", pageConfig.contactLabel || "+243 827274226");
-
-    document.title = `Invitation | ${displayCoupleNames} | ${invitation.guestName || "Invité"}`;
-
-    const guestbookAuthor = document.getElementById("guestbookAuthor");
-    const contactButton = document.getElementById("footerContactButton");
-    const mapButton = document.getElementById("mapButton");
-    const mapFrame = document.getElementById("mapFrame");
-
-    if (guestbookAuthor && !guestbookAuthor.value) {
-      guestbookAuthor.value = invitation.guestName || "";
-    }
-
-    if (contactButton && pageConfig.contactLink) {
-      contactButton.href = pageConfig.contactLink;
-    }
-
-    if (mapButton && invitation.mapUrl) {
-      mapButton.href = invitation.mapUrl;
-    }
-
-    if (mapFrame) {
-      mapFrame.src = buildMapEmbedSrc(invitation);
-    }
-
-    const companionsSelect = document.getElementById("companionsSelect");
-
-    if (companionsSelect) {
-      const maxSeats = Math.max(0, Number(invitation.seats || 0));
-      companionsSelect.innerHTML = Array.from(
-        { length: Math.max(maxSeats, 2) + 1 },
-        function (_, index) {
-          return `<option value="${index}">${index}</option>`;
-        }
-      ).join("");
-    }
-
-    renderStory();
-    renderProgramme(invitation);
-    renderGallery();
+    document.title = `Invitation | ${invitation.guestName || "Invité"} | Christian et Sephora`;
+    setText("coupleNames", pageConfig.displayCoupleNames || invitation.coupleNames);
+    setText("dateLabel", `${invitation.dateLabel || "Samedi 12 septembre 2026"} · 19h00`);
+    setText("venueLabel", invitation.venueName);
+    setText("addressLabel", invitation.venueAddress);
+    setText("inviteeChip", invitation.guestName);
+    setText("tableChip", invitation.tableName);
+    const author = document.getElementById("guestbookAuthor");
+    if (author) author.value = invitation.guestName || "";
+    const map = document.getElementById("mapButton");
+    if (map && invitation.mapUrl) map.href = invitation.mapUrl;
     renderDrinks(invitation);
-    startCountdown(invitation.dateIso);
-  }
-
-  function initShareAndCopy() {
-    const copyLinkButton = document.getElementById("copyLinkButton");
-    const shareButton = document.getElementById("shareButton");
-    const footerShareButton = document.getElementById("footerShareButton");
-
-    async function shareInvitation() {
-      const link = buildPublicInvitationUrl(resolveToken());
-
-      try {
-        if (navigator.share) {
-          await navigator.share({
-            title: document.title,
-            text: "Christian et Sephora vous invitent à leur mariage.",
-            url: link
-          });
-          return;
-        }
-
-        await navigator.clipboard.writeText(link);
-        setFeedback("guestbookFeedback", "Lien copié. Vous pouvez maintenant le partager.", false);
-      } catch (error) {
-        window.alert(link);
-      }
-    }
-
-    if (copyLinkButton) {
-      copyLinkButton.addEventListener("click", async function () {
-        const link = buildPublicInvitationUrl(resolveToken());
-
-        try {
-          await navigator.clipboard.writeText(link);
-          setFeedback("guestbookFeedback", "Lien copié.", false);
-        } catch (error) {
-          window.alert(link);
-        }
-      });
-    }
-
-    if (shareButton) {
-      shareButton.addEventListener("click", shareInvitation);
-    }
-
-    if (footerShareButton) {
-      footerShareButton.addEventListener("click", shareInvitation);
-    }
   }
 
   function initRsvp() {
-    const rsvpOptions = document.getElementById("rsvpOptions");
-    const saveRsvpButton = document.getElementById("saveRsvpButton");
-    const companionsSelect = document.getElementById("companionsSelect");
-
-    if (rsvpOptions) {
-      rsvpOptions.addEventListener("click", function (event) {
-        const button = event.target.closest("[data-attendance]");
-
-        if (!button) {
-          return;
-        }
-
-        state.selectedAttendance = button.getAttribute("data-attendance") || "";
-        rsvpOptions.querySelectorAll("[data-attendance]").forEach(function (node) {
-          node.classList.toggle(
-            "is-active",
-            node.getAttribute("data-attendance") === state.selectedAttendance
-          );
-        });
-      });
-    }
-
-    if (!saveRsvpButton) {
-      return;
-    }
-
-    saveRsvpButton.addEventListener("click", async function () {
-      if (!state.invitation || !window.HopeEventsApi || typeof window.HopeEventsApi.saveRsvp !== "function") {
-        return;
-      }
-
-      if (!state.selectedAttendance) {
-        setFeedback("rsvpFeedback", "Choisissez d'abord votre réponse.", true);
-        return;
-      }
-
-      saveRsvpButton.disabled = true;
-      setFeedback("rsvpFeedback", "Enregistrement de votre réponse...", false);
-
+    document.getElementById("rsvpOptions").addEventListener("click", function (event) {
+      const choice = event.target.closest("[data-attendance]");
+      if (!choice) return;
+      state.attendance = choice.dataset.attendance;
+      document.querySelectorAll("[data-attendance]").forEach(function (button) { button.classList.toggle("is-selected", button === choice); });
+    });
+    document.getElementById("saveRsvpButton").addEventListener("click", async function () {
+      if (!state.attendance) { feedback("rsvpFeedback", "Choisissez votre réponse.", true); return; }
+      const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.saveRsvp({
-          token: state.invitation.token,
-          guestName: state.invitation.guestName || "Invité",
-          eventId: state.invitation.eventId || "",
-          coupleNames: getDisplayCoupleNames(state.invitation),
-          tableName: state.invitation.tableName || "",
-          sourcePath: window.location.pathname || "",
-          phone: "",
-          attendance: state.selectedAttendance,
-          companions: Number(companionsSelect ? companionsSelect.value : 0),
-          note: "Réponse envoyée depuis l'invitation complète"
-        });
-
-        setFeedback("rsvpFeedback", "Votre présence a bien été enregistrée.", false);
-      } catch (error) {
-        setFeedback("rsvpFeedback", error.message || "Impossible d'enregistrer la réponse.", true);
-      } finally {
-        saveRsvpButton.disabled = false;
-      }
+        await window.HopeEventsApi.saveRsvp({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, attendance: state.attendance, companions: Number(document.getElementById("companionsSelect").value), sourcePath: location.pathname, phone: "" });
+        feedback("rsvpFeedback", "Merci, votre réponse est enregistrée.", false);
+      } catch (error) { feedback("rsvpFeedback", error.message || "Enregistrement impossible.", true); }
+      finally { button.disabled = false; }
     });
   }
 
   function initPreferences() {
-    const savePreferencesButton = document.getElementById("savePreferencesButton");
-
-    if (!savePreferencesButton) {
-      return;
-    }
-
-    savePreferencesButton.addEventListener("click", async function () {
-      if (!state.invitation || !window.HopeEventsApi || typeof window.HopeEventsApi.savePreferences !== "function") {
-        return;
-      }
-
-      if (!state.selectedChoices.length || state.selectedChoices.length > 2) {
-        setFeedback("preferencesFeedback", "Choisissez une ou deux boissons.", true);
-        return;
-      }
-
-      savePreferencesButton.disabled = true;
-      setFeedback("preferencesFeedback", "Enregistrement de votre choix...", false);
-
+    document.getElementById("savePreferencesButton").addEventListener("click", async function () {
+      if (!state.drinks.length) { feedback("preferencesFeedback", "Choisissez une ou deux boissons.", true); return; }
+      const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.savePreferences({
-          token: state.invitation.token,
-          guestName: state.invitation.guestName || "Invité",
-          eventId: state.invitation.eventId || "",
-          coupleNames: getDisplayCoupleNames(state.invitation),
-          tableName: state.invitation.tableName || "",
-          sourcePath: window.location.pathname || "",
-          choices: state.selectedChoices.slice(0, 2)
-        });
-
-        setFeedback("preferencesFeedback", "Préférences enregistrées avec succès.", false);
-      } catch (error) {
-        setFeedback(
-          "preferencesFeedback",
-          error.message || "Impossible d'enregistrer vos préférences.",
-          true
-        );
-      } finally {
-        savePreferencesButton.disabled = false;
-      }
+        await window.HopeEventsApi.savePreferences({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, choices: state.drinks, sourcePath: location.pathname });
+        feedback("preferencesFeedback", "Vos préférences sont enregistrées.", false);
+      } catch (error) { feedback("preferencesFeedback", error.message || "Enregistrement impossible.", true); }
+      finally { button.disabled = false; }
     });
   }
 
   function initGuestbook() {
-    const sendGuestbookButton = document.getElementById("sendGuestbookButton");
-    const authorInput = document.getElementById("guestbookAuthor");
-    const messageInput = document.getElementById("guestbookMessage");
-
-    if (!sendGuestbookButton || !authorInput || !messageInput) {
-      return;
-    }
-
-    sendGuestbookButton.addEventListener("click", async function () {
-      if (!state.invitation || !window.HopeEventsApi || typeof window.HopeEventsApi.saveGuestbookMessage !== "function") {
-        return;
-      }
-
-      const author = authorInput.value.trim();
-      const message = messageInput.value.trim();
-
-      if (!author || !message) {
-        setFeedback("guestbookFeedback", "Renseignez votre nom et votre message.", true);
-        return;
-      }
-
-      sendGuestbookButton.disabled = true;
-      setFeedback("guestbookFeedback", "Envoi de votre message...", false);
-
+    document.getElementById("sendGuestbookButton").addEventListener("click", async function () {
+      const author = document.getElementById("guestbookAuthor").value.trim();
+      const message = document.getElementById("guestbookMessage").value.trim();
+      if (!author || !message) { feedback("guestbookFeedback", "Écrivez votre nom et votre message.", true); return; }
+      const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.saveGuestbookMessage({
-          token: state.invitation.token,
-          guestName: state.invitation.guestName || "Invité",
-          eventId: state.invitation.eventId || "",
-          coupleNames: getDisplayCoupleNames(state.invitation),
-          tableName: state.invitation.tableName || "",
-          sourcePath: window.location.pathname || "",
-          author: author,
-          message: message
-        });
-
-        messageInput.value = "";
-        setFeedback("guestbookFeedback", "Votre message a été envoyé aux mariés.", false);
-      } catch (error) {
-        setFeedback("guestbookFeedback", error.message || "Impossible d'envoyer le message.", true);
-      } finally {
-        sendGuestbookButton.disabled = false;
-      }
+        await window.HopeEventsApi.saveGuestbookMessage({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, author, message, sourcePath: location.pathname });
+        document.getElementById("guestbookMessage").value = "";
+        feedback("guestbookFeedback", "Votre message est envoyé aux mariés.", false);
+      } catch (error) { feedback("guestbookFeedback", error.message || "Envoi impossible.", true); }
+      finally { button.disabled = false; }
     });
   }
 
-  async function hydrate() {
-    const token = resolveToken();
+  document.getElementById("shareButton").addEventListener("click", async function () {
+    const url = invitationUrl();
+    try { if (navigator.share) await navigator.share({ title: document.title, url }); else await navigator.clipboard.writeText(url); }
+    catch (error) { window.prompt("Copiez ce lien", url); }
+  });
 
-    if (!window.HopeEventsApi || typeof window.HopeEventsApi.getInvitation !== "function") {
-      return;
-    }
-
-    try {
-      const payload = await window.HopeEventsApi.getInvitation(token);
-
-      if (!payload || !payload.data) {
-        return;
-      }
-
-      applyInvitation(payload.data);
-
-      if (typeof window.HopeEventsApi.recordView === "function") {
-        window.HopeEventsApi.recordView(token).catch(function () {
-          return null;
-        });
-      }
-    } catch (error) {
-      setFeedback("guestbookFeedback", "Impossible de charger cette invitation pour le moment.", true);
-    }
-  }
-
-  initSplash();
-  initReveal();
-  initFloatingHearts();
-  initShareAndCopy();
-  initRsvp();
-  initPreferences();
-  initGuestbook();
-  hydrate();
+  splash(); reveal(); initRsvp(); initPreferences(); initGuestbook();
+  window.HopeEventsApi.getInvitation(token()).then(function (payload) { if (payload && payload.data) hydrate(payload.data); }).catch(function () { feedback("rsvpFeedback", "Invitation indisponible pour le moment.", true); });
 })();
