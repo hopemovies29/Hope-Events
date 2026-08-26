@@ -102,6 +102,21 @@
     }
   }
 
+  async function getEventReports(key, eventId) {
+    if (isFileMode()) {
+      return {
+        ok: true,
+        mode: "demo",
+        data: { summary: {}, rsvps: [], preferences: [], messages: [] }
+      };
+    }
+
+    return requestJson(
+      "/api/event-reports?key=" + encodeURIComponent(key) + "&eventId=" + encodeURIComponent(eventId),
+      { method: "GET" }
+    );
+  }
+
   async function postJson(url, body) {
     if (isFileMode()) {
       return {
@@ -123,6 +138,7 @@
   window.HopeEventsApi = {
     getInvitation,
     getEventSpace,
+    getEventReports,
     recordView: function (token) {
       return postJson("/api/view", { token: token });
     },

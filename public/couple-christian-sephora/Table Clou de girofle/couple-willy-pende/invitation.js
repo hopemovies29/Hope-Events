@@ -90,7 +90,7 @@
       if (!state.attendance) { feedback("rsvpFeedback", "Choisissez votre réponse.", true); return; }
       const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.saveRsvp({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, attendance: state.attendance, companions: Number(document.getElementById("companionsSelect").value), sourcePath: location.pathname, phone: "" });
+        await window.HopeEventsApi.saveRsvp({ token: token(), guestName: state.invitation.guestName, eventId: pageConfig.eventId || state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, attendance: state.attendance, companions: Number(document.getElementById("companionsSelect").value), sourcePath: location.pathname, phone: "" });
         feedback("rsvpFeedback", "Merci, votre réponse est enregistrée.", false);
       } catch (error) { feedback("rsvpFeedback", error.message || "Enregistrement impossible.", true); }
       finally { button.disabled = false; }
@@ -102,7 +102,7 @@
       if (!state.drinks.length) { feedback("preferencesFeedback", "Choisissez une ou deux boissons.", true); return; }
       const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.savePreferences({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, choices: state.drinks, sourcePath: location.pathname });
+        await window.HopeEventsApi.savePreferences({ token: token(), guestName: state.invitation.guestName, eventId: pageConfig.eventId || state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, choices: state.drinks, sourcePath: location.pathname });
         feedback("preferencesFeedback", "Vos préférences sont enregistrées.", false);
       } catch (error) { feedback("preferencesFeedback", error.message || "Enregistrement impossible.", true); }
       finally { button.disabled = false; }
@@ -116,7 +116,7 @@
       if (!author || !message) { feedback("guestbookFeedback", "Écrivez votre nom et votre message.", true); return; }
       const button = this; button.disabled = true;
       try {
-        await window.HopeEventsApi.saveGuestbookMessage({ token: token(), guestName: state.invitation.guestName, eventId: state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, author, message, sourcePath: location.pathname });
+        await window.HopeEventsApi.saveGuestbookMessage({ token: token(), guestName: state.invitation.guestName, eventId: pageConfig.eventId || state.invitation.eventId, coupleNames: pageConfig.displayCoupleNames, tableName: state.invitation.tableName, author, message, sourcePath: location.pathname });
         document.getElementById("guestbookMessage").value = "";
         feedback("guestbookFeedback", "Votre message est envoyé aux mariés.", false);
       } catch (error) { feedback("guestbookFeedback", error.message || "Envoi impossible.", true); }

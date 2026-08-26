@@ -1,5 +1,6 @@
 window.HopeEventsPageConfig = {
   eventSlug: "christian-sephora-2026",
+  eventId: "christian-sephora-palama-2026",
   defaultKey: "HE-CSM-2026",
   accessCode: "12092026",
   accessAliases: {

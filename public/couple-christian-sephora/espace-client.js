@@ -10,6 +10,10 @@
   const summaryDate = document.getElementById("summary-date");
   const summaryCount = document.getElementById("summary-count");
   const tablesGrid = document.getElementById("tables-grid");
+  const reportsSummary = document.getElementById("reports-summary");
+  const rsvpReport = document.getElementById("rsvp-report");
+  const preferencesReport = document.getElementById("preferences-report");
+  const messagesReport = document.getElementById("messages-report");
   const revealNodes = document.querySelectorAll("[data-reveal]");
   const sectionAnchors = document.querySelectorAll('a[href^="#"]');
 
@@ -271,6 +275,87 @@
     });
   }
 
+  function escapeHtml(value) {
+    return String(value || "").replace(/[&<>'\"]/g, function (character) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        '"': "&quot;"
+      }[character];
+    });
+  }
+
+  function emptyReport(message) {
+    return `<p class="report-empty">${escapeHtml(message)}</p>`;
+  }
+
+  function attendanceLabel(value) {
+    return {
+      oui: "Present",
+      "peut-etre": "Peut-etre",
+      non: "Absent"
+    }[value] || "Sans reponse";
+  }
+
+  function renderReports(reportData) {
+    if (!reportsSummary || !rsvpReport || !preferencesReport || !messagesReport) {
+      return;
+    }
+
+    const summary = reportData.summary || {};
+    const rsvps = reportData.rsvps || [];
+    const preferences = reportData.preferences || [];
+    const messages = reportData.messages || [];
+    const stats = [
+      ["Confirmes", summary.confirmed || 0],
+      ["Peut-etre", summary.maybe || 0],
+      ["Accompagnants", summary.companions || 0],
+      ["Messages", summary.messageCount || 0]
+    ];
+
+    reportsSummary.innerHTML = stats.map(function (stat) {
+      return `<article class="report-stat"><span>${stat[0]}</span><strong>${stat[1]}</strong></article>`;
+    }).join("");
+
+    rsvpReport.innerHTML = rsvps.length ? `<ul class="report-list">${rsvps.map(function (item) {
+      const companionText = Number(item.companions || 0) ? ` + ${item.companions} accompagnant${Number(item.companions) > 1 ? "s" : ""}` : "";
+      return `<li class="report-line"><div><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span></div><strong>${attendanceLabel(item.attendance)}${companionText}</strong></li>`;
+    }).join("")}</ul>` : emptyReport("Aucune confirmation recue pour le moment.");
+
+    preferencesReport.innerHTML = preferences.length ? `<ul class="report-list">${preferences.map(function (item) {
+      return `<li class="report-line"><div><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span></div><strong>${escapeHtml((item.choices || []).join(", "))}</strong></li>`;
+    }).join("")}</ul>` : emptyReport("Aucun choix de boisson recu pour le moment.");
+
+    messagesReport.innerHTML = messages.length ? `<ul class="report-list">${messages.map(function (item) {
+      return `<li><strong>${escapeHtml(item.author || item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span><p class="report-message">${escapeHtml(item.message)}</p></li>`;
+    }).join("")}</ul>` : emptyReport("Les premiers mots doux des invites apparaitront ici.");
+  }
+
+  async function loadReports(key) {
+    if (!window.HopeEventsApi || typeof window.HopeEventsApi.getEventReports !== "function") {
+      return;
+    }
+
+    try {
+      const payload = await window.HopeEventsApi.getEventReports(key, pageConfig.eventId);
+      if (payload && payload.data) {
+        renderReports(payload.data);
+      }
+    } catch (error) {
+      if (rsvpReport) {
+        rsvpReport.innerHTML = emptyReport("Le suivi sera disponible des que Firebase aura recu les premieres reponses.");
+      }
+      if (preferencesReport) {
+        preferencesReport.innerHTML = emptyReport("Les choix de boissons apparaitront ici.");
+      }
+      if (messagesReport) {
+        messagesReport.innerHTML = emptyReport("Les messages des invites apparaitront ici.");
+      }
+    }
+  }
+
   function hydrateSpace(space) {
     document.title = `Espace client | ${space.coupleNames || "Hope Events"}`;
 
@@ -334,6 +419,7 @@
       }
 
       hydrateSpace(payload.data);
+      await loadReports(key);
     } catch (error) {
       showError(error.message || "Impossible de charger cet espace client.");
     }
