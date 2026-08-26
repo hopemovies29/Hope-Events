@@ -197,6 +197,9 @@
 
     tablesGrid.innerHTML = entries
       .map(function (tableName) {
+        const scans = groups[tableName].reduce(function (total, invitation) {
+          return total + Number(invitation.viewCount || 0);
+        }, 0);
         const rows = groups[tableName]
           .map(function (invitation) {
             const invitationUrl = buildInvitationUrl(invitation);
@@ -225,7 +228,7 @@
           <article class="table-card">
             <div class="table-card-head">
               <span class="table-chip">${tableName}</span>
-              <strong>${groups[tableName].length} invite${groups[tableName].length > 1 ? "s" : ""}</strong>
+              <strong>${groups[tableName].length} invite${groups[tableName].length > 1 ? "s" : ""} · ${scans} ouverture${scans > 1 ? "s" : ""}</strong>
             </div>
             <ul class="guest-list">
               ${rows}

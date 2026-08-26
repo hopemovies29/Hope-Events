@@ -30,8 +30,9 @@ EVENT = {
     "mapUrl": "https://maps.google.com/?q=Avenue+Macampagne+31+Ngaliema+Kinshasa",
     "eventPhrase": "Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.",
     "preferences": {
-        "alcoholic": ["Champagne", "Vin rouge", "Vin blanc", "Mojito", "Castel", "Primus"],
-        "soft": ["Eau", "Jus", "Coca-Cola", "Fanta", "Maltina", "Tonic"],
+        "beers": ["Heineken", "Likofi", "Castel", "Tembo", "Beaufort", "Primus", "Turbo King", "Nkoyi Grand", "33 Export", "Savanna", "Bavaria"],
+        "wine": ["Vin rouge", "Champagne", "Whisky"],
+        "soft": ["Coca-Cola", "Fanta", "Sprite", "Vital'O", "Maltina", "Énergie Malt", "XXL", "Top", "Eau"],
     },
 }
 

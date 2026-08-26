@@ -37,10 +37,16 @@
   function renderDrinks(invitation) {
     const container = document.getElementById("drinkChoices");
     if (!container) return;
-    const preferences = invitation.preferences || {};
-    const options = [].concat(preferences.soft || [], preferences.alcoholic || []).slice(0, 8);
-    container.innerHTML = options.map(function (drink) {
-      return `<button type="button" class="drink-choice" data-drink="${drink}">${drink}</button>`;
+    const preferences = pageConfig.drinkPreferences || invitation.preferences || {};
+    const categories = [
+      { label: "Bières & alcoolisées", items: preferences.beers || preferences.alcoholic || [] },
+      { label: "Vins & champagne", items: preferences.wine || [] },
+      { label: "Sans alcool", items: preferences.soft || [] }
+    ].filter(function (category) { return category.items.length; });
+    container.innerHTML = categories.map(function (category) {
+      return `<div class="drink-category"><p>${category.label}</p><div class="drink-options">${category.items.map(function (drink) {
+        return `<button type="button" class="drink-choice" data-drink="${drink}">${drink}</button>`;
+      }).join("")}</div></div>`;
     }).join("");
     container.addEventListener("click", function (event) {
       const choice = event.target.closest("[data-drink]");
@@ -125,5 +131,12 @@
   });
 
   splash(); reveal(); initRsvp(); initPreferences(); initGuestbook();
-  window.HopeEventsApi.getInvitation(token()).then(function (payload) { if (payload && payload.data) hydrate(payload.data); }).catch(function () { feedback("rsvpFeedback", "Invitation indisponible pour le moment.", true); });
+  window.HopeEventsApi.getInvitation(token()).then(function (payload) {
+    if (payload && payload.data) {
+      hydrate(payload.data);
+      if (typeof window.HopeEventsApi.recordView === "function") {
+        window.HopeEventsApi.recordView(token()).catch(function () { return null; });
+      }
+    }
+  }).catch(function () { feedback("rsvpFeedback", "Invitation indisponible pour le moment.", true); });
 })();
