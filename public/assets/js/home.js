@@ -4,6 +4,30 @@
   const codeInput = document.getElementById("client-code");
   const accessFeedback = document.getElementById("access-feedback");
 
+  async function redirectGuestToken() {
+    const token = new URL(window.location.href).searchParams.get("token");
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const response = await fetch(`/api/invitation?token=${encodeURIComponent(token)}`);
+      const payload = await response.json();
+      const publicQrPagePath = payload && payload.data && payload.data.publicQrPagePath;
+
+      if (!response.ok || !publicQrPagePath) {
+        throw new Error("Invitation introuvable");
+      }
+
+      const separator = publicQrPagePath.indexOf("?") === -1 ? "?" : "&";
+      window.location.replace(`${publicQrPagePath}${separator}token=${encodeURIComponent(token)}`);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
   function initReveal() {
     if (!("IntersectionObserver" in window) || !revealNodes.length) {
       revealNodes.forEach(function (node) {
@@ -74,6 +98,12 @@
     });
   }
 
-  initReveal();
-  initPrivateAccess();
+  redirectGuestToken().then(function (isRedirecting) {
+    if (isRedirecting) {
+      return;
+    }
+
+    initReveal();
+    initPrivateAccess();
+  });
 })();

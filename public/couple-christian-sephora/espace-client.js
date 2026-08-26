@@ -50,24 +50,18 @@
   }
 
   function buildPublicInvitationUrl(token) {
-    const guestRoute = (pageConfig.guestRoutes || {})[token] || {};
-    const publicPath = String(
-      guestRoute.publicInvitationPath || pageConfig.publicInvitationPath || ""
-    ).trim();
-    const normalizedPath = publicPath.startsWith("/") ? publicPath : `/${publicPath}`;
-
     if (!isFileMode()) {
-      return `${window.location.origin}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
+      return `${window.location.origin}/?token=${encodeURIComponent(token || "")}`;
     }
 
     const publicBaseUrl = String(pageConfig.publicBaseUrl || "https://hope-events.vercel.app").trim().replace(/\/+$/, "");
-    return `${publicBaseUrl}${normalizedPath}?token=${encodeURIComponent(token || "")}`;
+    return `${publicBaseUrl}/?token=${encodeURIComponent(token || "")}`;
   }
 
   function buildWhatsAppShareUrl(invitation, publicLink) {
     const guestName = String(invitation.guestName || "cher invite").trim();
     const message = [
-      "Christian & Sephora",
+      "Mariage : Christian & Sephora",
       "",
       `Bonjour ${guestName},`,
       "",
