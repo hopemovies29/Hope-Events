@@ -14,6 +14,8 @@
   const rsvpReport = document.getElementById("rsvp-report");
   const preferencesReport = document.getElementById("preferences-report");
   const messagesReport = document.getElementById("messages-report");
+  const reportsStatus = document.getElementById("reports-status");
+  const reportsRefresh = document.getElementById("reports-refresh");
   const revealNodes = document.querySelectorAll("[data-reveal]");
   const sectionAnchors = document.querySelectorAll('a[href^="#"]');
 
@@ -299,15 +301,39 @@
     }[value] || "Sans reponse";
   }
 
+  function sortNewest(items) {
+    return (items || []).slice().sort(function (left, right) {
+      return new Date(right.updatedAt || 0).getTime() - new Date(left.updatedAt || 0).getTime();
+    });
+  }
+
+  function formatUpdate(value) {
+    if (!value) {
+      return "Reponse recue";
+    }
+
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) {
+      return "Reponse recue";
+    }
+
+    return date.toLocaleString("fr-FR", {
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  }
+
   function renderReports(reportData) {
     if (!reportsSummary || !rsvpReport || !preferencesReport || !messagesReport) {
       return;
     }
 
     const summary = reportData.summary || {};
-    const rsvps = reportData.rsvps || [];
-    const preferences = reportData.preferences || [];
-    const messages = reportData.messages || [];
+    const rsvps = sortNewest(reportData.rsvps);
+    const preferences = sortNewest(reportData.preferences);
+    const messages = sortNewest(reportData.messages);
     const stats = [
       ["Confirmes", summary.confirmed || 0],
       ["Peut-etre", summary.maybe || 0],
@@ -319,18 +345,22 @@
       return `<article class="report-stat"><span>${stat[0]}</span><strong>${stat[1]}</strong></article>`;
     }).join("");
 
-    rsvpReport.innerHTML = rsvps.length ? `<ul class="report-list">${rsvps.map(function (item) {
+    rsvpReport.innerHTML = rsvps.length ? `<ul class="report-list report-list-scroll">${rsvps.map(function (item) {
       const companionText = Number(item.companions || 0) ? ` + ${item.companions} accompagnant${Number(item.companions) > 1 ? "s" : ""}` : "";
-      return `<li class="report-line"><div><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span></div><strong>${attendanceLabel(item.attendance)}${companionText}</strong></li>`;
+      return `<li class="report-line"><div class="report-person"><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)} · ${formatUpdate(item.updatedAt)}</span></div><strong class="report-badge report-badge-${escapeHtml(item.attendance)}">${attendanceLabel(item.attendance)}${companionText}</strong></li>`;
     }).join("")}</ul>` : emptyReport("Aucune confirmation recue pour le moment.");
 
-    preferencesReport.innerHTML = preferences.length ? `<ul class="report-list">${preferences.map(function (item) {
-      return `<li class="report-line"><div><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span></div><strong>${escapeHtml((item.choices || []).join(", "))}</strong></li>`;
+    preferencesReport.innerHTML = preferences.length ? `<ul class="report-list report-list-scroll">${preferences.map(function (item) {
+      return `<li class="report-line"><div class="report-person"><strong>${escapeHtml(item.guestName)}</strong><span>${escapeHtml(item.tableName)} · ${formatUpdate(item.updatedAt)}</span></div><strong class="drink-answer">${escapeHtml((item.choices || []).join(", "))}</strong></li>`;
     }).join("")}</ul>` : emptyReport("Aucun choix de boisson recu pour le moment.");
 
-    messagesReport.innerHTML = messages.length ? `<ul class="report-list">${messages.map(function (item) {
-      return `<li><strong>${escapeHtml(item.author || item.guestName)}</strong><span>${escapeHtml(item.tableName)}</span><p class="report-message">${escapeHtml(item.message)}</p></li>`;
+    messagesReport.innerHTML = messages.length ? `<ul class="report-list report-list-scroll report-message-list">${messages.map(function (item) {
+      return `<li class="report-message-entry"><div class="report-message-head"><strong>${escapeHtml(item.author || item.guestName)}</strong><span>${escapeHtml(item.tableName)} · ${formatUpdate(item.updatedAt)}</span></div><p class="report-message">${escapeHtml(item.message)}</p></li>`;
     }).join("")}</ul>` : emptyReport("Les premiers mots doux des invites apparaitront ici.");
+
+    if (reportsStatus) {
+      reportsStatus.textContent = `${summary.totalResponses || 0} reponse${Number(summary.totalResponses || 0) > 1 ? "s" : ""} de presence · ${summary.preferencesCount || 0} choix de boissons · ${summary.messageCount || 0} message${Number(summary.messageCount || 0) > 1 ? "s" : ""}`;
+    }
   }
 
   async function loadReports(key) {
@@ -339,6 +369,10 @@
     }
 
     try {
+      if (reportsRefresh) {
+        reportsRefresh.disabled = true;
+        reportsRefresh.textContent = "Actualisation...";
+      }
       const payload = await window.HopeEventsApi.getEventReports(key, pageConfig.eventId);
       if (payload && payload.data) {
         renderReports(payload.data);
@@ -352,6 +386,14 @@
       }
       if (messagesReport) {
         messagesReport.innerHTML = emptyReport("Les messages des invites apparaitront ici.");
+      }
+      if (reportsStatus) {
+        reportsStatus.textContent = "Impossible d'actualiser le suivi pour le moment.";
+      }
+    } finally {
+      if (reportsRefresh) {
+        reportsRefresh.disabled = false;
+        reportsRefresh.textContent = "Actualiser le suivi";
       }
     }
   }
@@ -399,6 +441,12 @@
     initCopyButtons();
 
     const key = resolveKey();
+
+    if (reportsRefresh) {
+      reportsRefresh.addEventListener("click", function () {
+        loadReports(key);
+      });
+    }
 
     if (!key) {
       showError("Aucun code evenement n'a ete detecte.");

@@ -32,6 +32,7 @@
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="../index.html">Accueil</a>
         <a href="#tables">Tables</a>
+        <a href="#suivi">Suivi</a>
       </nav>
     </header>
 
@@ -92,7 +93,11 @@
           <div class="section-heading compact-heading">
             <p class="eyebrow">Suivi des reponses</p>
             <h2>Organisation du mariage en un regard.</h2>
-            <p class="client-space-helper">Les reponses envoyees depuis les invitations apparaissent ici. Actualisez cette page pour voir les nouvelles reponses.</p>
+            <p class="client-space-helper">Les reponses envoyees depuis les invitations apparaissent ici. La plus recente apparait toujours en premier.</p>
+          </div>
+          <div class="reports-toolbar">
+            <p id="reports-status" aria-live="polite">Chargement du suivi...</p>
+            <button class="reports-refresh" id="reports-refresh" type="button">Actualiser le suivi</button>
           </div>
           <div class="reports-summary-grid" id="reports-summary"></div>
           <div class="reports-grid">
