@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import unicodedata
+from difflib import SequenceMatcher
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
@@ -114,20 +116,32 @@ def table_columns(sheet: openpyxl.worksheet.worksheet.Worksheet) -> dict[int, st
     return columns
 
 
-def previous_tokens_by_guest() -> dict[str, list[str]]:
-    """Reuse old tokens so QR cards already sent to guests keep working."""
-    directory = ROOT / "data" / "christian-sephora-guests.js"
+def previous_directory() -> dict[str, dict]:
+    """Read the previous directory before replacing it during generation."""
+    directory = Path(
+        os.environ.get(
+            "CHRISTIAN_SEPHORA_PREVIOUS_DIRECTORY",
+            ROOT / "data" / "christian-sephora-guests.js",
+        )
+    )
 
     if not directory.exists():
-        return {}
+        return {"invitations": {}, "routes": {}}
 
     source = directory.read_text(encoding="utf-8")
     match = re.search(r"const invitations = (\{.*?\});\nconst routes", source, re.DOTALL)
 
     if not match:
-        return {}
+        return {"invitations": {}, "routes": {}}
 
     invitations = json.loads(match.group(1))
+    routes_match = re.search(r"const routes = (\{.*?\});\n\nmodule.exports", source, re.DOTALL)
+    routes = json.loads(routes_match.group(1)) if routes_match else {}
+    return {"invitations": invitations, "routes": routes}
+
+
+def previous_tokens_by_guest(invitations: dict[str, dict]) -> dict[str, list[str]]:
+    """Reuse old tokens so QR cards already sent to guests keep working."""
     tokens: defaultdict[str, list[str]] = defaultdict(list)
     for token, invitation in invitations.items():
         guest_name = text(invitation.get("guestName"))
@@ -136,10 +150,64 @@ def previous_tokens_by_guest() -> dict[str, list[str]]:
     return tokens
 
 
+def guest_identity(value: str) -> str:
+    """Normalize titles and spacing so renamed spreadsheet entries retain their QR token."""
+    return (
+        slug(value)
+        .replace("couple", "")
+        .replace("cpl", "")
+        .replace("mme", "")
+        .replace("mr", "")
+        .replace("dr", "")
+        .replace("honorable", "")
+        .replace("onorable", "")
+    )
+
+
+def find_previous_token(
+    guest_name: str,
+    previous_invitations: dict[str, dict],
+    previous_tokens: dict[str, list[str]],
+    used_tokens: set[str],
+) -> str:
+    exact_tokens = previous_tokens.get(slug(guest_name), [])
+    while exact_tokens:
+        token = exact_tokens.pop(0)
+        if token not in used_tokens:
+            return token
+
+    identity = guest_identity(guest_name)
+    candidates = [
+        (token, invitation)
+        for token, invitation in previous_invitations.items()
+        if token not in used_tokens
+    ]
+
+    for token, invitation in candidates:
+        previous_identity = guest_identity(text(invitation.get("guestName")))
+        if identity and (identity == previous_identity or identity in previous_identity or previous_identity in identity):
+            return token
+
+    scored = [
+        (
+            SequenceMatcher(
+                None, identity, guest_identity(text(invitation.get("guestName")))
+            ).ratio(),
+            token,
+        )
+        for token, invitation in candidates
+    ]
+    score, token = max(scored, default=(0, ""))
+    return token if score >= 0.82 else ""
+
+
 def extract_guests(
-    workbook: openpyxl.Workbook, previous_tokens: dict[str, list[str]]
+    workbook: openpyxl.Workbook,
+    previous_invitations: dict[str, dict],
+    previous_tokens: dict[str, list[str]],
 ) -> list[dict[str, str | int]]:
     records: list[dict[str, str | int]] = []
+    used_previous_tokens: set[str] = set()
 
     for sheet in workbook.worksheets:
         header_row, _ = table_layout(sheet)
@@ -155,8 +223,16 @@ def extract_guests(
                 base_slug = f"{table_token_slug(table_name)}-{slug(guest_name)}"
                 used_slugs[base_slug] += 1
                 suffix = "" if used_slugs[base_slug] == 1 else f"-{used_slugs[base_slug]}"
-                existing_tokens = previous_tokens.get(slug(guest_name), [])
-                token = existing_tokens.pop(0) if existing_tokens else f"{base_slug}{suffix}"
+                token = find_previous_token(
+                    guest_name,
+                    previous_invitations,
+                    previous_tokens,
+                    used_previous_tokens,
+                )
+                if token:
+                    used_previous_tokens.add(token)
+                else:
+                    token = f"{base_slug}{suffix}"
                 records.append(
                     {
                         "token": token,
@@ -168,6 +244,33 @@ def extract_guests(
                 )
 
     return records
+
+
+def merge_legacy_guests(
+    guests: list[dict[str, str | int]], previous: dict[str, dict]
+) -> list[dict[str, str | int]]:
+    """Keep prior invite records that are not present in a replacement workbook."""
+    active_tokens = {str(guest["token"]) for guest in guests}
+
+    for token, invitation in previous["invitations"].items():
+        if token in active_tokens:
+            continue
+
+        route = previous["routes"].get(token, {})
+        invitation_path = str(route.get("invitationPagePath", ""))
+        path_parts = invitation_path.replace("\\", "/").split("/")
+        folder_slug = path_parts[-2] if len(path_parts) >= 2 else slug(text(invitation.get("guestName")))
+        guests.append(
+            {
+                "token": token,
+                "guestName": text(invitation.get("guestName")),
+                "tableName": text(invitation.get("tableName")) or "Table a attribuer",
+                "tableSlug": text(invitation.get("tableSlug")) or "table-a-attribuer",
+                "folderSlug": folder_slug,
+            }
+        )
+
+    return guests
 
 
 def public_paths(table_name: str, guest_slug: str) -> tuple[str, str]:
@@ -254,8 +357,37 @@ module.exports = {{ event, invitations, routes }};
 
 def main() -> None:
     workbook = openpyxl.load_workbook(WORKBOOK, data_only=True)
-    guests = extract_guests(workbook, previous_tokens_by_guest())
-    routes = {str(guest["token"]): write_guest_pages(guest) for guest in guests}
+    previous = previous_directory()
+    guests = extract_guests(
+        workbook,
+        previous["invitations"],
+        previous_tokens_by_guest(previous["invitations"]),
+    )
+    if previous["invitations"]:
+        # The existing QR list is authoritative; unmatched new rows require a separate QR issue.
+        guests = [
+            guest
+            for guest in guests
+            if str(guest["token"]) in previous["invitations"]
+        ]
+    unique_guests = {}
+    for guest in guests:
+        unique_guests.setdefault(str(guest["token"]), guest)
+    guests = list(unique_guests.values())
+    current_tokens = {str(guest["token"]) for guest in guests}
+    guests = merge_legacy_guests(guests, previous)
+    routes = {
+        str(guest["token"]): write_guest_pages(guest)
+        for guest in guests
+        if str(guest["token"]) in current_tokens
+    }
+    routes.update(
+        {
+            token: route
+            for token, route in previous["routes"].items()
+            if token not in current_tokens
+        }
+    )
     write_guest_data(guests, routes)
     print(f"Generated {len(guests)} guest folders across {len(set(str(item['tableName']) for item in guests))} tables.")
 
