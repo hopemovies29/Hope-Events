@@ -13,7 +13,7 @@ import openpyxl
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WORKBOOK = ROOT.parent / "INVITES MARIAGE RELIGIEUX CHRISTIAN NEW.xlsx"
+WORKBOOK = ROOT.parent / "Mes invités.xlsx"
 EVENT_ROOT = ROOT / "public" / "couple-christian-sephora"
 TEMPLATE = EVENT_ROOT / "Table Clou de girofle" / "couple-palama"
 PUBLIC_ROOT = "https://hope-events.vercel.app"
@@ -25,13 +25,13 @@ EVENT = {
     "dateIso": "2026-09-12T19:00:00+01:00",
     "dateLabel": "Samedi 12 septembre 2026",
     "timeLabel": "Benediction 11h00 - Soiree 19h00",
-    "venueName": "N°31, avenue Macampagne,",
-    "venueAddress": "Commune de Ngaliema - Ref. : arret Auado, coin Bocage",
-    "mapUrl": "https://maps.google.com/?q=Avenue+Macampagne+31+Ngaliema+Kinshasa",
+    "venueName": "Salle Chapiteau La Colombe",
+    "venueAddress": "Av. Macampagne N°31 — Arrêt Quado, Coin Bocage",
+    "mapUrl": "https://maps.google.com/?q=Salle+Chapiteau+La+Colombe+Macampagne+31+Ngaliema+Kinshasa",
     "eventPhrase": "Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.",
     "preferences": {
         "beers": ["Heineken", "Likofi", "Castel", "Tembo", "Beaufort", "Primus", "Turbo King", "Nkoyi Grand", "33 Export", "Savanna", "Bavaria"],
-        "wine": ["Vin rouge", "Champagne", "Whisky"],
+        "wine": ["Vin rouge", "Whisky"],
         "soft": ["Coca-Cola", "Fanta", "Sprite", "Vital'O", "Maltina", "Énergie Malt", "XXL", "Top", "Eau"],
     },
 }
@@ -61,25 +61,45 @@ def table_token_slug(table_name: str) -> str:
 
 def usable_guest(value: object) -> bool:
     candidate = text(value)
-    return bool(candidate) and not candidate.isdigit() and candidate.upper() not in {"TOTAL", "TABLES", "SEPHORA"}
+    if not candidate or candidate.upper() in {"TOTAL", "TABLES", "SEPHORA"}:
+        return False
+
+    try:
+        float(candidate.replace(",", "."))
+        return False
+    except ValueError:
+        return True
 
 
-def table_columns(sheet: openpyxl.worksheet.worksheet.Worksheet) -> dict[int, str]:
+def table_layout(sheet: openpyxl.worksheet.worksheet.Worksheet) -> tuple[int, int]:
+    """Return the header row and first table column for each supplied workbook layout."""
+    normalized_title = slug(sheet.title)
+
+    if normalized_title == "lengbe-christian":
+        return 5, 2
+
+    if normalized_title == "malanda-sephora":
+        return 3, 4
+
+    # Keep the earlier workbook layout supported for a safe regeneration fallback.
     if sheet.title == "Christian":
         header_row = next(
             row
             for row in range(1, sheet.max_row + 1)
             if text(sheet.cell(row, 1).value).lower() == "tables"
         )
-        start_column = 2
-    else:
-        title_row = next(
-            row
-            for row in range(1, sheet.max_row + 1)
-            if text(sheet.cell(row, 2).value).upper() == "SEPHORA"
-        )
-        header_row = title_row
-        start_column = 3
+        return header_row, 2
+
+    title_row = next(
+        row
+        for row in range(1, sheet.max_row + 1)
+        if text(sheet.cell(row, 2).value).upper() == "SEPHORA"
+    )
+    return title_row, 3
+
+
+def table_columns(sheet: openpyxl.worksheet.worksheet.Worksheet) -> dict[int, str]:
+    header_row, start_column = table_layout(sheet)
 
     columns = {}
     duplicate_names: defaultdict[str, int] = defaultdict(int)
@@ -94,21 +114,37 @@ def table_columns(sheet: openpyxl.worksheet.worksheet.Worksheet) -> dict[int, st
     return columns
 
 
-def extract_guests(workbook: openpyxl.Workbook) -> list[dict[str, str | int]]:
+def previous_tokens_by_guest() -> dict[str, list[str]]:
+    """Reuse old tokens so QR cards already sent to guests keep working."""
+    directory = ROOT / "data" / "christian-sephora-guests.js"
+
+    if not directory.exists():
+        return {}
+
+    source = directory.read_text(encoding="utf-8")
+    match = re.search(r"const invitations = (\{.*?\});\nconst routes", source, re.DOTALL)
+
+    if not match:
+        return {}
+
+    invitations = json.loads(match.group(1))
+    tokens: defaultdict[str, list[str]] = defaultdict(list)
+    for token, invitation in invitations.items():
+        guest_name = text(invitation.get("guestName"))
+        if guest_name:
+            tokens[slug(guest_name)].append(token)
+    return tokens
+
+
+def extract_guests(
+    workbook: openpyxl.Workbook, previous_tokens: dict[str, list[str]]
+) -> list[dict[str, str | int]]:
     records: list[dict[str, str | int]] = []
 
     for sheet in workbook.worksheets:
+        header_row, _ = table_layout(sheet)
         columns = table_columns(sheet)
-        if sheet.title == "Christian":
-            first_guest_row = 4
-        else:
-            first_guest_row = next(
-                row
-                for row in range(1, sheet.max_row + 1)
-                if text(sheet.cell(row, 2).value).upper() == "SEPHORA"
-            ) + 1
-
-        fallback_table = "Table a attribuer"
+        first_guest_row = header_row + 1
         used_slugs: defaultdict[str, int] = defaultdict(int)
 
         for column, table_name in columns.items():
@@ -119,35 +155,17 @@ def extract_guests(workbook: openpyxl.Workbook) -> list[dict[str, str | int]]:
                 base_slug = f"{table_token_slug(table_name)}-{slug(guest_name)}"
                 used_slugs[base_slug] += 1
                 suffix = "" if used_slugs[base_slug] == 1 else f"-{used_slugs[base_slug]}"
+                existing_tokens = previous_tokens.get(slug(guest_name), [])
+                token = existing_tokens.pop(0) if existing_tokens else f"{base_slug}{suffix}"
                 records.append(
                     {
-                        "token": f"{base_slug}{suffix}",
+                        "token": token,
                         "guestName": guest_name,
                         "tableName": table_name,
                         "tableSlug": table_token_slug(table_name),
                         "folderSlug": f"{slug(guest_name)}{suffix}",
                     }
                 )
-
-        # The Sephora sheet has guests in P:R without a visible table label.
-        if sheet.title == "Sephora":
-            for column in range(16, sheet.max_column + 1):
-                for row in range(first_guest_row, sheet.max_row + 1):
-                    guest_name = text(sheet.cell(row, column).value)
-                    if not usable_guest(guest_name):
-                        continue
-                    base_slug = f"{slug(fallback_table)}-{slug(guest_name)}"
-                    used_slugs[base_slug] += 1
-                    suffix = "" if used_slugs[base_slug] == 1 else f"-{used_slugs[base_slug]}"
-                    records.append(
-                        {
-                            "token": f"{base_slug}{suffix}",
-                            "guestName": guest_name,
-                            "tableName": fallback_table,
-                            "tableSlug": slug(fallback_table),
-                            "folderSlug": f"{slug(guest_name)}{suffix}",
-                        }
-                    )
 
     return records
 
@@ -236,7 +254,7 @@ module.exports = {{ event, invitations, routes }};
 
 def main() -> None:
     workbook = openpyxl.load_workbook(WORKBOOK, data_only=True)
-    guests = extract_guests(workbook)
+    guests = extract_guests(workbook, previous_tokens_by_guest())
     routes = {str(guest["token"]): write_guest_pages(guest) for guest in guests}
     write_guest_data(guests, routes)
     print(f"Generated {len(guests)} guest folders across {len(set(str(item['tableName']) for item in guests))} tables.")

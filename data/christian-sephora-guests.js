@@ -7,9 +7,9 @@ const event = {
   "dateIso": "2026-09-12T19:00:00+01:00",
   "dateLabel": "Samedi 12 septembre 2026",
   "timeLabel": "Benediction 11h00 - Soiree 19h00",
-  "venueName": "N°31, avenue Macampagne,",
-  "venueAddress": "Commune de Ngaliema - Ref. : arret Auado, coin Bocage",
-  "mapUrl": "https://maps.google.com/?q=Avenue+Macampagne+31+Ngaliema+Kinshasa",
+  "venueName": "Salle Chapiteau La Colombe",
+  "venueAddress": "Av. Macampagne N°31 — Arrêt Quado, Coin Bocage",
+  "mapUrl": "https://maps.google.com/?q=Salle+Chapiteau+La+Colombe+Macampagne+31+Ngaliema+Kinshasa",
   "eventPhrase": "Une belle histoire se poursuit, soyez a nos cotes pour ecrire avec nous le prochain chapitre de notre amour.",
   "preferences": {
     "beers": [
@@ -27,7 +27,6 @@ const event = {
     ],
     "wine": [
       "Vin rouge",
-      "Champagne",
       "Whisky"
     ],
     "soft": [
@@ -110,17 +109,6 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "clou-de-girofle-mme-mete-2": {
-    "token": "clou-de-girofle-mme-mete-2",
-    "guestName": "Mme METE",
-    "tableName": "Table Clou de girofle",
-    "tableSlug": "clou-de-girofle",
-    "folderSlug": "mme-mete-2",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
   "citronnelle-couple-roger-ndanu": {
     "token": "citronnelle-couple-roger-ndanu",
     "guestName": "Couple Roger NDANU",
@@ -182,17 +170,6 @@ const invitations = {
     "tableName": "Citronnelle",
     "tableSlug": "citronnelle",
     "folderSlug": "mme-costa",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "citronnelle-mme-costa-2": {
-    "token": "citronnelle-mme-costa-2",
-    "guestName": "Mme Costa",
-    "tableName": "Citronnelle",
-    "tableSlug": "citronnelle",
-    "folderSlug": "mme-costa-2",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -308,12 +285,12 @@ const invitations = {
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "ananas-couple-nzangi": {
-    "token": "ananas-couple-nzangi",
-    "guestName": "Couple Nzangi",
+  "ananas-couple-onorable-nzangi": {
+    "token": "ananas-couple-onorable-nzangi",
+    "guestName": "Couple onorable Nzangi",
     "tableName": "Ananas",
     "tableSlug": "ananas",
-    "folderSlug": "couple-nzangi",
+    "folderSlug": "couple-onorable-nzangi",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
@@ -374,23 +351,12 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "ananas-mme-koko-marie-2": {
-    "token": "ananas-mme-koko-marie-2",
-    "guestName": "Mme koko Marie",
-    "tableName": "Ananas",
-    "tableSlug": "ananas",
-    "folderSlug": "mme-koko-marie-2",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "mangue-couple-emmanuel": {
-    "token": "mangue-couple-emmanuel",
-    "guestName": "Couple Emmanuel",
+  "mangue-couple-issola": {
+    "token": "mangue-couple-issola",
+    "guestName": "Couple ISSOLA",
     "tableName": "Mangue",
     "tableSlug": "mangue",
-    "folderSlug": "couple-emmanuel",
+    "folderSlug": "couple-issola",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
@@ -429,12 +395,12 @@ const invitations = {
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "mangue-aicha-nsonsa": {
-    "token": "mangue-aicha-nsonsa",
-    "guestName": "Aicha Nsonsa",
+  "mangue-mr-aicha-nsonsa": {
+    "token": "mangue-mr-aicha-nsonsa",
+    "guestName": "Mr.Aicha Nsonsa",
     "tableName": "Mangue",
     "tableSlug": "mangue",
-    "folderSlug": "aicha-nsonsa",
+    "folderSlug": "mr-aicha-nsonsa",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -446,17 +412,6 @@ const invitations = {
     "tableName": "Mangue",
     "tableSlug": "mangue",
     "folderSlug": "couple-sarah-ngokai",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "mangue-couple-sarah-ngokai-2": {
-    "token": "mangue-couple-sarah-ngokai-2",
-    "guestName": "Couple Sarah Ngokai",
-    "tableName": "Mangue",
-    "tableSlug": "mangue",
-    "folderSlug": "couple-sarah-ngokai-2",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
@@ -484,12 +439,12 @@ const invitations = {
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "piment-1-eliane": {
-    "token": "piment-1-eliane",
-    "guestName": "Eliane",
+  "piment-1-mme-eliane": {
+    "token": "piment-1-mme-eliane",
+    "guestName": "Mme Eliane",
     "tableName": "Piment 1",
     "tableSlug": "piment-1",
-    "folderSlug": "eliane",
+    "folderSlug": "mme-eliane",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -682,12 +637,12 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "mapendo-guylain-kuyalumukamiya": {
-    "token": "mapendo-guylain-kuyalumukamiya",
-    "guestName": "Guylain KUYALUMUKAmiya",
+  "mapendo-guylain-kuyalumuka-miya": {
+    "token": "mapendo-guylain-kuyalumuka-miya",
+    "guestName": "Guylain KUYALUMUKA miya",
     "tableName": "Mapendo",
     "tableSlug": "mapendo",
-    "folderSlug": "guylain-kuyalumukamiya",
+    "folderSlug": "guylain-kuyalumuka-miya",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -891,12 +846,12 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "goyave-yasmine-mbula": {
-    "token": "goyave-yasmine-mbula",
-    "guestName": "Yasmine Mbula",
+  "goyave-mme-prisca-lumanda": {
+    "token": "goyave-mme-prisca-lumanda",
+    "guestName": "Mme Prisca Lumanda",
     "tableName": "Goyave",
     "tableSlug": "goyave",
-    "folderSlug": "yasmine-mbula",
+    "folderSlug": "mme-prisca-lumanda",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -908,17 +863,6 @@ const invitations = {
     "tableName": "Goyave",
     "tableSlug": "goyave",
     "folderSlug": "thomas-salumu",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "goyave-elite-me-alpha": {
-    "token": "goyave-elite-me-alpha",
-    "guestName": "Elite (Me Alpha)",
-    "tableName": "Goyave",
-    "tableSlug": "goyave",
-    "folderSlug": "elite-me-alpha",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -979,33 +923,11 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "goyave-eli-dedel-lengbe": {
-    "token": "goyave-eli-dedel-lengbe",
-    "guestName": "Eli & Dedel Lengbe",
-    "tableName": "Goyave",
-    "tableSlug": "goyave",
-    "folderSlug": "eli-dedel-lengbe",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "goyave-samy-deborah-lengbe": {
-    "token": "goyave-samy-deborah-lengbe",
-    "guestName": "Samy & Deborah Lengbe",
-    "tableName": "Goyave",
-    "tableSlug": "goyave",
-    "folderSlug": "samy-deborah-lengbe",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
   "orange-couple-fabrice-kapinga": {
     "token": "orange-couple-fabrice-kapinga",
     "guestName": "Couple Fabrice Kapinga",
-    "tableName": "Orange",
-    "tableSlug": "orange",
+    "tableName": "Goyave",
+    "tableSlug": "goyave",
     "folderSlug": "couple-fabrice-kapinga",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
@@ -1015,12 +937,23 @@ const invitations = {
   "orange-couple-serge-kapinga": {
     "token": "orange-couple-serge-kapinga",
     "guestName": "Couple Serge kapinga",
-    "tableName": "Orange",
-    "tableSlug": "orange",
+    "tableName": "Goyave",
+    "tableSlug": "goyave",
     "folderSlug": "couple-serge-kapinga",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "orange-manace": {
+    "token": "orange-manace",
+    "guestName": "Manacé",
+    "tableName": "Goyave",
+    "tableSlug": "goyave",
+    "folderSlug": "manace",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
   "orange-couple-winner": {
@@ -1032,17 +965,6 @@ const invitations = {
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "orange-manace": {
-    "token": "orange-manace",
-    "guestName": "Manacé",
-    "tableName": "Orange",
-    "tableSlug": "orange",
-    "folderSlug": "manace",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
   "orange-yhan-et-liliane": {
@@ -1100,290 +1022,455 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "c-ur-de-b-uf-vanessa-et-aminata": {
-    "token": "c-ur-de-b-uf-vanessa-et-aminata",
-    "guestName": "Vanessa et Aminata",
-    "tableName": "Cœur de Bœuf",
-    "tableSlug": "c-ur-de-b-uf",
-    "folderSlug": "vanessa-et-aminata",
+  "goyave-elite-me-alpha": {
+    "token": "goyave-elite-me-alpha",
+    "guestName": "Elite (Me Alpha)",
+    "tableName": "Orange",
+    "tableSlug": "orange",
+    "folderSlug": "elite-me-alpha",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "c-ur-de-b-uf-cynthia-et-rebecca": {
-    "token": "c-ur-de-b-uf-cynthia-et-rebecca",
-    "guestName": "Cynthia et Rebecca",
-    "tableName": "Cœur de Bœuf",
-    "tableSlug": "c-ur-de-b-uf",
-    "folderSlug": "cynthia-et-rebecca",
+  "goyave-eli-dedel-lengbe": {
+    "token": "goyave-eli-dedel-lengbe",
+    "guestName": "Eli & Dedel Lengbe",
+    "tableName": "Orange",
+    "tableSlug": "orange",
+    "folderSlug": "eli-dedel-lengbe",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "c-ur-de-b-uf-josephine-et-anifa": {
-    "token": "c-ur-de-b-uf-josephine-et-anifa",
-    "guestName": "Joséphine et Anifa",
-    "tableName": "Cœur de Bœuf",
-    "tableSlug": "c-ur-de-b-uf",
-    "folderSlug": "josephine-et-anifa",
+  "goyave-samy-deborah-lengbe": {
+    "token": "goyave-samy-deborah-lengbe",
+    "guestName": "Samy & Deborah Lengbe",
+    "tableName": "Orange",
+    "tableSlug": "orange",
+    "folderSlug": "samy-deborah-lengbe",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "c-ur-de-b-uf-kim-s-et-welbeck": {
-    "token": "c-ur-de-b-uf-kim-s-et-welbeck",
-    "guestName": "Kim's et Welbeck",
-    "tableName": "Cœur de Bœuf",
-    "tableSlug": "c-ur-de-b-uf",
-    "folderSlug": "kim-s-et-welbeck",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "c-ur-de-b-uf-olivier-et-junior": {
-    "token": "c-ur-de-b-uf-olivier-et-junior",
-    "guestName": "Olivier et junior",
-    "tableName": "Cœur de Bœuf",
-    "tableSlug": "c-ur-de-b-uf",
-    "folderSlug": "olivier-et-junior",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pomme-rouge-ornella-et-parfaite": {
-    "token": "pomme-rouge-ornella-et-parfaite",
-    "guestName": "Ornella et Parfaite",
-    "tableName": "pomme Rouge",
-    "tableSlug": "pomme-rouge",
-    "folderSlug": "ornella-et-parfaite",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pomme-rouge-angosi-et-virginie": {
-    "token": "pomme-rouge-angosi-et-virginie",
-    "guestName": "Angosi et Virginie",
-    "tableName": "pomme Rouge",
-    "tableSlug": "pomme-rouge",
-    "folderSlug": "angosi-et-virginie",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pomme-rouge-simplice-et-boss": {
-    "token": "pomme-rouge-simplice-et-boss",
-    "guestName": "Simplice et Boss",
-    "tableName": "pomme Rouge",
-    "tableSlug": "pomme-rouge",
-    "folderSlug": "simplice-et-boss",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pomme-rouge-amisi-et-joel": {
-    "token": "pomme-rouge-amisi-et-joel",
-    "guestName": "Amisi et Joel",
-    "tableName": "pomme Rouge",
-    "tableSlug": "pomme-rouge",
-    "folderSlug": "amisi-et-joel",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pomme-rouge-patricia-et-naomie": {
-    "token": "pomme-rouge-patricia-et-naomie",
-    "guestName": "Patricia et Naomie",
-    "tableName": "pomme Rouge",
-    "tableSlug": "pomme-rouge",
-    "folderSlug": "patricia-et-naomie",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pamplemousse-couple-mbelenge": {
-    "token": "pamplemousse-couple-mbelenge",
-    "guestName": "Couple Mbelenge",
-    "tableName": "Pamplemousse",
-    "tableSlug": "pamplemousse",
-    "folderSlug": "couple-mbelenge",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pamplemousse-couple-mundele": {
-    "token": "pamplemousse-couple-mundele",
-    "guestName": "Couple Mundele",
-    "tableName": "Pamplemousse",
-    "tableSlug": "pamplemousse",
-    "folderSlug": "couple-mundele",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pamplemousse-couple-leleta": {
-    "token": "pamplemousse-couple-leleta",
-    "guestName": "Couple Leleta",
-    "tableName": "Pamplemousse",
-    "tableSlug": "pamplemousse",
-    "folderSlug": "couple-leleta",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pamplemousse-papa-aime": {
-    "token": "pamplemousse-papa-aime",
-    "guestName": "Papa Aimé",
-    "tableName": "Pamplemousse",
-    "tableSlug": "pamplemousse",
-    "folderSlug": "papa-aime",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "pamplemousse-couple-dianga": {
-    "token": "pamplemousse-couple-dianga",
-    "guestName": "Couple Dianga",
-    "tableName": "Pamplemousse",
-    "tableSlug": "pamplemousse",
-    "folderSlug": "couple-dianga",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-airways-et-chantal": {
-    "token": "moringa-airways-et-chantal",
-    "guestName": "Airways et Chantal",
+  "moringa-couple-honorable-ilunga": {
+    "token": "moringa-couple-honorable-ilunga",
+    "guestName": "Couple Honorable ILUNGA",
     "tableName": "Moringa",
     "tableSlug": "moringa",
-    "folderSlug": "airways-et-chantal",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-divine-et-shekina": {
-    "token": "moringa-divine-et-shekina",
-    "guestName": "Divine et Shekina",
-    "tableName": "Moringa",
-    "tableSlug": "moringa",
-    "folderSlug": "divine-et-shekina",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-sephora-et-nyclette": {
-    "token": "moringa-sephora-et-nyclette",
-    "guestName": "Sephora et Nyclette",
-    "tableName": "Moringa",
-    "tableSlug": "moringa",
-    "folderSlug": "sephora-et-nyclette",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-agnes-et-esther": {
-    "token": "moringa-agnes-et-esther",
-    "guestName": "Agnès et Esther",
-    "tableName": "Moringa",
-    "tableSlug": "moringa",
-    "folderSlug": "agnes-et-esther",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-claudia-et-clemence": {
-    "token": "moringa-claudia-et-clemence",
-    "guestName": "Claudia et Clémence",
-    "tableName": "Moringa",
-    "tableSlug": "moringa",
-    "folderSlug": "claudia-et-clemence",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "safou-couple-miya": {
-    "token": "safou-couple-miya",
-    "guestName": "Couple Miya",
-    "tableName": "Safou",
-    "tableSlug": "safou",
-    "folderSlug": "couple-miya",
+    "folderSlug": "couple-honorable-ilunga",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "safou-couple-kepandeko": {
-    "token": "safou-couple-kepandeko",
-    "guestName": "Couple Kepandeko",
-    "tableName": "Safou",
-    "tableSlug": "safou",
-    "folderSlug": "couple-kepandeko",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Cher invite",
-    "seats": 2,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "kasembele-chloe-et-gael": {
-    "token": "kasembele-chloe-et-gael",
-    "guestName": "Chloé et Gael",
-    "tableName": "Kasembele",
-    "tableSlug": "kasembele",
-    "folderSlug": "chloe-et-gael",
+  "table-a-attribuer-micheline-et-hortense": {
+    "token": "table-a-attribuer-micheline-et-hortense",
+    "guestName": "MICHELINE ET HORTENSE",
+    "tableName": "Moringa",
+    "tableSlug": "moringa",
+    "folderSlug": "micheline-et-hortense",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "kasembele-mme-yollande": {
-    "token": "kasembele-mme-yollande",
-    "guestName": "Mme Yollande",
-    "tableName": "Kasembele",
-    "tableSlug": "kasembele",
-    "folderSlug": "mme-yollande",
+  "moringa-couple-special-kolongele": {
+    "token": "moringa-couple-special-kolongele",
+    "guestName": "Couple SPECIAL KOLONGELE",
+    "tableName": "Moringa",
+    "tableSlug": "moringa",
+    "folderSlug": "couple-special-kolongele",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "moringa-couple-ipakala": {
+    "token": "moringa-couple-ipakala",
+    "guestName": "Couple IPAKALA",
+    "tableName": "Moringa",
+    "tableSlug": "moringa",
+    "folderSlug": "couple-ipakala",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "moringa-couple-ntambila": {
+    "token": "moringa-couple-ntambila",
+    "guestName": "Couple NTAMBILA",
+    "tableName": "Moringa",
+    "tableSlug": "moringa",
+    "folderSlug": "couple-ntambila",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "banane-couple-kura": {
+    "token": "banane-couple-kura",
+    "guestName": "Couple KURA",
+    "tableName": "Banane",
+    "tableSlug": "banane",
+    "folderSlug": "couple-kura",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "banane-couple-bitene-prince": {
+    "token": "banane-couple-bitene-prince",
+    "guestName": "COUPLE BITENE PRINCE",
+    "tableName": "Banane",
+    "tableSlug": "banane",
+    "folderSlug": "couple-bitene-prince",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "banane-couple-bitene-rodrigue": {
+    "token": "banane-couple-bitene-rodrigue",
+    "guestName": "Couple BITENE RODRIGUE",
+    "tableName": "Banane",
+    "tableSlug": "banane",
+    "folderSlug": "couple-bitene-rodrigue",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "banane-couple-bitene-patrick": {
+    "token": "banane-couple-bitene-patrick",
+    "guestName": "Couple BITENE PATRICK",
+    "tableName": "Banane",
+    "tableSlug": "banane",
+    "folderSlug": "couple-bitene-patrick",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "banane-couple-thierry-mbuluku": {
+    "token": "banane-couple-thierry-mbuluku",
+    "guestName": "Couple THIERRY MBULUKU",
+    "tableName": "Banane",
+    "tableSlug": "banane",
+    "folderSlug": "couple-thierry-mbuluku",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pomme-cythere-couplekolongele-lutu": {
+    "token": "pomme-cythere-couplekolongele-lutu",
+    "guestName": "CoupleKOLONGELE LUTU",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "couplekolongele-lutu",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pomme-cythere-couple-mobali": {
+    "token": "pomme-cythere-couple-mobali",
+    "guestName": "Couple MOBALI",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "couple-mobali",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pomme-cythere-couple-bitene-malachie": {
+    "token": "pomme-cythere-couple-bitene-malachie",
+    "guestName": "Couple BITENE MALACHIE",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "couple-bitene-malachie",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pomme-cythere-mr-gen-kasongo": {
+    "token": "pomme-cythere-mr-gen-kasongo",
+    "guestName": "Mr.GEN KASONGO",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "mr-gen-kasongo",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "kasembele-couple-heritier": {
-    "token": "kasembele-couple-heritier",
-    "guestName": "couple Héritier",
-    "tableName": "Kasembele",
-    "tableSlug": "kasembele",
-    "folderSlug": "couple-heritier",
+  "pomme-cythere-couple-guy-et-sylvie": {
+    "token": "pomme-cythere-couple-guy-et-sylvie",
+    "guestName": "Couple GUY ET SYLVIE",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "couple-guy-et-sylvie",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "kasembele-couple-georges": {
-    "token": "kasembele-couple-georges",
-    "guestName": "Couple Georges",
-    "tableName": "Kasembele",
-    "tableSlug": "kasembele",
-    "folderSlug": "couple-georges",
+  "pomme-cythere-mme-maryse": {
+    "token": "pomme-cythere-mme-maryse",
+    "guestName": "Mme Maryse",
+    "tableName": "Pomme Cythère",
+    "tableSlug": "pomme-cythere",
+    "folderSlug": "mme-maryse",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "mangousta-couple-mukuanga": {
+    "token": "mangousta-couple-mukuanga",
+    "guestName": "Couple MUKUANGA",
+    "tableName": "Mangousta",
+    "tableSlug": "mangousta",
+    "folderSlug": "couple-mukuanga",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "mangousta-couple-mukuanga-2": {
+    "token": "mangousta-couple-mukuanga-2",
+    "guestName": "Couple MUKUANGA",
+    "tableName": "Mangousta",
+    "tableSlug": "mangousta",
+    "folderSlug": "couple-mukuanga-2",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "mangousta-couple-mbuluku-miya": {
+    "token": "mangousta-couple-mbuluku-miya",
+    "guestName": "Couple MBULUKU MIYA",
+    "tableName": "Mangousta",
+    "tableSlug": "mangousta",
+    "folderSlug": "couple-mbuluku-miya",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "mangousta-couple-kapinga": {
+    "token": "mangousta-couple-kapinga",
+    "guestName": "Couple KAPINGA",
+    "tableName": "Mangousta",
+    "tableSlug": "mangousta",
+    "folderSlug": "couple-kapinga",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "manga-sende-aimee-et-sele": {
+    "token": "manga-sende-aimee-et-sele",
+    "guestName": "AIMEE ET SELE",
+    "tableName": "Mangousta",
+    "tableSlug": "mangousta",
+    "folderSlug": "aimee-et-sele",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "corossole-couple-luwakumu": {
+    "token": "corossole-couple-luwakumu",
+    "guestName": "Couple LUWAKUMU",
+    "tableName": "corossole",
+    "tableSlug": "corossole",
+    "folderSlug": "couple-luwakumu",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "feuille-de-loriet-paulette-ipakala": {
+    "token": "feuille-de-loriet-paulette-ipakala",
+    "guestName": "PAULETTE IPAKALA",
+    "tableName": "corossole",
+    "tableSlug": "corossole",
+    "folderSlug": "paulette-ipakala",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "feuille-de-loriet-billy-et-mamie": {
+    "token": "feuille-de-loriet-billy-et-mamie",
+    "guestName": "BILLY ET MAMIE",
+    "tableName": "corossole",
+    "tableSlug": "corossole",
+    "folderSlug": "billy-et-mamie",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "feuille-de-loriet-mimbo-jacques": {
+    "token": "feuille-de-loriet-mimbo-jacques",
+    "guestName": "MIMBO JACQUES",
+    "tableName": "corossole",
+    "tableSlug": "corossole",
+    "folderSlug": "mimbo-jacques",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "feuille-de-loriet-bavon-et-abraham": {
+    "token": "feuille-de-loriet-bavon-et-abraham",
+    "guestName": "BAVON ET ABRAHAM",
+    "tableName": "corossole",
+    "tableSlug": "corossole",
+    "folderSlug": "bavon-et-abraham",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "citron-couple-kalonzo": {
+    "token": "citron-couple-kalonzo",
+    "guestName": "Couple KALONZO",
+    "tableName": "Citron",
+    "tableSlug": "citron",
+    "folderSlug": "couple-kalonzo",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "citron-couple-khari": {
+    "token": "citron-couple-khari",
+    "guestName": "Couple KHARI",
+    "tableName": "Citron",
+    "tableSlug": "citron",
+    "folderSlug": "couple-khari",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "citron-couple-niembo": {
+    "token": "citron-couple-niembo",
+    "guestName": "Couple NIEMBO",
+    "tableName": "Citron",
+    "tableSlug": "citron",
+    "folderSlug": "couple-niembo",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "citron-couple-binda": {
+    "token": "citron-couple-binda",
+    "guestName": "Couple BINDA",
+    "tableName": "Citron",
+    "tableSlug": "citron",
+    "folderSlug": "couple-binda",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-a-attribuer-falonne-et-nonon": {
+    "token": "table-a-attribuer-falonne-et-nonon",
+    "guestName": "FALONNE ET NONON",
+    "tableName": "Citron",
+    "tableSlug": "citron",
+    "folderSlug": "falonne-et-nonon",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "raisn-couple-bubu": {
+    "token": "raisn-couple-bubu",
+    "guestName": "Couple BUBU",
+    "tableName": "Raisn",
+    "tableSlug": "raisn",
+    "folderSlug": "couple-bubu",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "raisn-couple-musumadi": {
+    "token": "raisn-couple-musumadi",
+    "guestName": "Couple MUSUMADI",
+    "tableName": "Raisn",
+    "tableSlug": "raisn",
+    "folderSlug": "couple-musumadi",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pasteque-couple-dr-laurent": {
+    "token": "pasteque-couple-dr-laurent",
+    "guestName": "Couple Dr LAURENT",
+    "tableName": "Pasteque",
+    "tableSlug": "pasteque",
+    "folderSlug": "couple-dr-laurent",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pasteque-couple-dr-mbendi": {
+    "token": "pasteque-couple-dr-mbendi",
+    "guestName": "Couple Dr MBENDI",
+    "tableName": "Pasteque",
+    "tableSlug": "pasteque",
+    "folderSlug": "couple-dr-mbendi",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "moringa-2-nadine-et-denise": {
+    "token": "moringa-2-nadine-et-denise",
+    "guestName": "NADINE ET DENISE",
+    "tableName": "Pasteque",
+    "tableSlug": "pasteque",
+    "folderSlug": "nadine-et-denise",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "pasteque-couple-muzungu": {
+    "token": "pasteque-couple-muzungu",
+    "guestName": "Couple MUZUNGU",
+    "tableName": "Pasteque",
+    "tableSlug": "pasteque",
+    "folderSlug": "couple-muzungu",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "moringa-2-ferdinand-et-esther": {
+    "token": "moringa-2-ferdinand-et-esther",
+    "guestName": "FERDINAND ET ESTHER",
+    "tableName": "Pasteque",
+    "tableSlug": "pasteque",
+    "folderSlug": "ferdinand-et-esther",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
   "acacia-kabongo-ntumba": {
@@ -1496,408 +1583,155 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "banane-couple-kura": {
-    "token": "banane-couple-kura",
-    "guestName": "Couple KURA",
-    "tableName": "Banane",
-    "tableSlug": "banane",
-    "folderSlug": "couple-kura",
+  "kasembele-chloe-et-gael": {
+    "token": "kasembele-chloe-et-gael",
+    "guestName": "Chloé et Gael",
+    "tableName": "Kasembele",
+    "tableSlug": "kasembele",
+    "folderSlug": "chloe-et-gael",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "kasembele-mme-yollande": {
+    "token": "kasembele-mme-yollande",
+    "guestName": "Mme Yollande",
+    "tableName": "Kasembele",
+    "tableSlug": "kasembele",
+    "folderSlug": "mme-yollande",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "kasembele-couple-heritier": {
+    "token": "kasembele-couple-heritier",
+    "guestName": "couple Héritier",
+    "tableName": "Kasembele",
+    "tableSlug": "kasembele",
+    "folderSlug": "couple-heritier",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "banane-couple-bitene-prince": {
-    "token": "banane-couple-bitene-prince",
-    "guestName": "COUPLE BITENE PRINCE",
-    "tableName": "Banane",
-    "tableSlug": "banane",
-    "folderSlug": "couple-bitene-prince",
+  "kasembele-couple-georges": {
+    "token": "kasembele-couple-georges",
+    "guestName": "Couple Georges",
+    "tableName": "Kasembele",
+    "tableSlug": "kasembele",
+    "folderSlug": "couple-georges",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "banane-cpl-bitene-rodrigue": {
-    "token": "banane-cpl-bitene-rodrigue",
-    "guestName": "CPL BITENE RODRIGUE",
-    "tableName": "Banane",
-    "tableSlug": "banane",
-    "folderSlug": "cpl-bitene-rodrigue",
+  "safou-couple-miya": {
+    "token": "safou-couple-miya",
+    "guestName": "Couple Miya",
+    "tableName": "Safou",
+    "tableSlug": "safou",
+    "folderSlug": "couple-miya",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "moringa-claudia-et-clemence": {
+    "token": "moringa-claudia-et-clemence",
+    "guestName": "Claudia et Clémence",
+    "tableName": "Safou",
+    "tableSlug": "safou",
+    "folderSlug": "claudia-et-clemence",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "banane-cplbitene-patrick": {
-    "token": "banane-cplbitene-patrick",
-    "guestName": "CPLBITENE PATRICK",
-    "tableName": "Banane",
-    "tableSlug": "banane",
-    "folderSlug": "cplbitene-patrick",
+  "safou-maria-et-natha": {
+    "token": "safou-maria-et-natha",
+    "guestName": "Maria et natha",
+    "tableName": "Safou",
+    "tableSlug": "safou",
+    "folderSlug": "maria-et-natha",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "banane-cpl-thierry-mbuluku": {
-    "token": "banane-cpl-thierry-mbuluku",
-    "guestName": "CPL THIERRY MBULUKU",
-    "tableName": "Banane",
-    "tableSlug": "banane",
-    "folderSlug": "cpl-thierry-mbuluku",
+  "pomme-rouge-patricia-et-naomie": {
+    "token": "pomme-rouge-patricia-et-naomie",
+    "guestName": "Patricia et naomie",
+    "tableName": "Safou",
+    "tableSlug": "safou",
+    "folderSlug": "patricia-et-naomie",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "mangousta-cpl-kolongele-lutu": {
-    "token": "mangousta-cpl-kolongele-lutu",
-    "guestName": "CPL KOLONGELE LUTU",
-    "tableName": "Mangousta",
-    "tableSlug": "mangousta",
-    "folderSlug": "cpl-kolongele-lutu",
+  "pamplemousse-couple-dianga": {
+    "token": "pamplemousse-couple-dianga",
+    "guestName": "Couple Dianga",
+    "tableName": "Safou",
+    "tableSlug": "safou",
+    "folderSlug": "couple-dianga",
     "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
+    "salutation": "Cher invite",
+    "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "mangousta-cpl-mobali": {
-    "token": "mangousta-cpl-mobali",
-    "guestName": "CPL MOBALI",
-    "tableName": "Mangousta",
-    "tableSlug": "mangousta",
-    "folderSlug": "cpl-mobali",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "mangousta-cpl-bitene-malachie": {
-    "token": "mangousta-cpl-bitene-malachie",
-    "guestName": "CPL BITENE MALACHIE",
-    "tableName": "Mangousta",
-    "tableSlug": "mangousta",
-    "folderSlug": "cpl-bitene-malachie",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "mangousta-cpl-gen-kasongo": {
-    "token": "mangousta-cpl-gen-kasongo",
-    "guestName": "CPL GEN KASONGO",
-    "tableName": "Mangousta",
-    "tableSlug": "mangousta",
-    "folderSlug": "cpl-gen-kasongo",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "mangousta-cpl-guy-et-sylvie": {
-    "token": "mangousta-cpl-guy-et-sylvie",
-    "guestName": "CPL GUY ET SYLVIE",
-    "tableName": "Mangousta",
-    "tableSlug": "mangousta",
-    "folderSlug": "cpl-guy-et-sylvie",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "manga-sende-cpl-mukuanga": {
-    "token": "manga-sende-cpl-mukuanga",
-    "guestName": "CPL MUKUANGA",
-    "tableName": "Manga Sende",
-    "tableSlug": "manga-sende",
-    "folderSlug": "cpl-mukuanga",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "manga-sende-cpl-mukuanga-2": {
-    "token": "manga-sende-cpl-mukuanga-2",
-    "guestName": "CPL MUKUANGA",
-    "tableName": "Manga Sende",
-    "tableSlug": "manga-sende",
-    "folderSlug": "cpl-mukuanga-2",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "manga-sende-cpl-mbuluku-miya": {
-    "token": "manga-sende-cpl-mbuluku-miya",
-    "guestName": "CPL MBULUKU MIYA",
-    "tableName": "Manga Sende",
-    "tableSlug": "manga-sende",
-    "folderSlug": "cpl-mbuluku-miya",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "manga-sende-cpl-kapinga": {
-    "token": "manga-sende-cpl-kapinga",
-    "guestName": "CPL KAPINGA",
-    "tableName": "Manga Sende",
-    "tableSlug": "manga-sende",
-    "folderSlug": "cpl-kapinga",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "manga-sende-aimee-et-sele": {
-    "token": "manga-sende-aimee-et-sele",
-    "guestName": "AIMEE ET SELE",
-    "tableName": "Manga Sende",
-    "tableSlug": "manga-sende",
-    "folderSlug": "aimee-et-sele",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "feuille-de-loriet-cpl-luwakumu": {
-    "token": "feuille-de-loriet-cpl-luwakumu",
-    "guestName": "CPL LUWAKUMU",
-    "tableName": "Feuille de Loriet",
-    "tableSlug": "feuille-de-loriet",
-    "folderSlug": "cpl-luwakumu",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "feuille-de-loriet-paulette-ipakala": {
-    "token": "feuille-de-loriet-paulette-ipakala",
-    "guestName": "PAULETTE IPAKALA",
-    "tableName": "Feuille de Loriet",
-    "tableSlug": "feuille-de-loriet",
-    "folderSlug": "paulette-ipakala",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "feuille-de-loriet-billy-et-mamie": {
-    "token": "feuille-de-loriet-billy-et-mamie",
-    "guestName": "BILLY ET MAMIE",
-    "tableName": "Feuille de Loriet",
-    "tableSlug": "feuille-de-loriet",
-    "folderSlug": "billy-et-mamie",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "feuille-de-loriet-mimbo-jacques": {
-    "token": "feuille-de-loriet-mimbo-jacques",
-    "guestName": "MIMBO JACQUES",
-    "tableName": "Feuille de Loriet",
-    "tableSlug": "feuille-de-loriet",
-    "folderSlug": "mimbo-jacques",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "feuille-de-loriet-bavon-et-abraham": {
-    "token": "feuille-de-loriet-bavon-et-abraham",
-    "guestName": "BAVON ET ABRAHAM",
-    "tableName": "Feuille de Loriet",
-    "tableSlug": "feuille-de-loriet",
-    "folderSlug": "bavon-et-abraham",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "moringa-2-dr-laurent": {
-    "token": "moringa-2-dr-laurent",
-    "guestName": "DR LAURENT",
+  "moringa-airways-et-chantal": {
+    "token": "moringa-airways-et-chantal",
+    "guestName": "Airways et Chantal",
     "tableName": "Moringa 2",
     "tableSlug": "moringa-2",
-    "folderSlug": "dr-laurent",
+    "folderSlug": "airways-et-chantal",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "moringa-2-dr-mbendi": {
-    "token": "moringa-2-dr-mbendi",
-    "guestName": "DR MBENDI",
+  "moringa-divine-et-shekina": {
+    "token": "moringa-divine-et-shekina",
+    "guestName": "Divine et Shekina",
     "tableName": "Moringa 2",
     "tableSlug": "moringa-2",
-    "folderSlug": "dr-mbendi",
+    "folderSlug": "divine-et-shekina",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "moringa-2-nadine-et-denise": {
-    "token": "moringa-2-nadine-et-denise",
-    "guestName": "NADINE ET DENISE",
+  "moringa-sephora-et-nyclette": {
+    "token": "moringa-sephora-et-nyclette",
+    "guestName": "Sephora et Nyclette",
     "tableName": "Moringa 2",
     "tableSlug": "moringa-2",
-    "folderSlug": "nadine-et-denise",
+    "folderSlug": "sephora-et-nyclette",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "moringa-2-muzungu": {
-    "token": "moringa-2-muzungu",
-    "guestName": "MUZUNGU",
+  "moringa-agnes-et-esther": {
+    "token": "moringa-agnes-et-esther",
+    "guestName": "Agnès et Esther",
     "tableName": "Moringa 2",
     "tableSlug": "moringa-2",
-    "folderSlug": "muzungu",
+    "folderSlug": "agnes-et-esther",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
-  "moringa-2-ferdinand-et-esther": {
-    "token": "moringa-2-ferdinand-et-esther",
-    "guestName": "FERDINAND ET ESTHER",
+  "moringa-2-claudia-et-clemence": {
+    "token": "moringa-2-claudia-et-clemence",
+    "guestName": "Claudia et Clémence",
     "tableName": "Moringa 2",
     "tableSlug": "moringa-2",
-    "folderSlug": "ferdinand-et-esther",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-kalonzo": {
-    "token": "table-a-attribuer-kalonzo",
-    "guestName": "KALONZO",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "kalonzo",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-khari": {
-    "token": "table-a-attribuer-khari",
-    "guestName": "KHARI",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "khari",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-niembo": {
-    "token": "table-a-attribuer-niembo",
-    "guestName": "NIEMBO",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "niembo",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-binda": {
-    "token": "table-a-attribuer-binda",
-    "guestName": "BINDA",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "binda",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-falonne-et-nonon": {
-    "token": "table-a-attribuer-falonne-et-nonon",
-    "guestName": "FALONNE ET NONON",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "falonne-et-nonon",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-bubu": {
-    "token": "table-a-attribuer-bubu",
-    "guestName": "BUBU",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "bubu",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-musumadi": {
-    "token": "table-a-attribuer-musumadi",
-    "guestName": "MUSUMADI",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "musumadi",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-honorable-ilunga": {
-    "token": "table-a-attribuer-honorable-ilunga",
-    "guestName": "HONORABLE ILUNGA",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "honorable-ilunga",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-micheline-et-hortense": {
-    "token": "table-a-attribuer-micheline-et-hortense",
-    "guestName": "MICHELINE ET HORTENSE",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "micheline-et-hortense",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-special-kolongele": {
-    "token": "table-a-attribuer-special-kolongele",
-    "guestName": "SPECIAL KOLONGELE",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "special-kolongele",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-ipakala": {
-    "token": "table-a-attribuer-ipakala",
-    "guestName": "IPAKALA",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "ipakala",
-    "eventId": "christian-sephora-palama-2026",
-    "salutation": "Chere invite",
-    "seats": 1,
-    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
-  },
-  "table-a-attribuer-ntambila": {
-    "token": "table-a-attribuer-ntambila",
-    "guestName": "NTAMBILA",
-    "tableName": "Table a attribuer",
-    "tableSlug": "table-a-attribuer",
-    "folderSlug": "ntambila",
+    "folderSlug": "claudia-et-clemence",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Chere invite",
     "seats": 1,
@@ -1941,12 +1775,6 @@ const routes = {
     "qrPagePath": "./Table Clou de girofle/mme-mete/qr-code-mme-mete.html",
     "publicQrPagePath": "/couple-christian-sephora/Table%20Clou%20de%20girofle/mme-mete/qr-code-mme-mete"
   },
-  "clou-de-girofle-mme-mete-2": {
-    "invitationPagePath": "./Table Clou de girofle/mme-mete-2/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20Clou%20de%20girofle/mme-mete-2/invitation",
-    "qrPagePath": "./Table Clou de girofle/mme-mete-2/qr-code-mme-mete-2.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20Clou%20de%20girofle/mme-mete-2/qr-code-mme-mete-2"
-  },
   "citronnelle-couple-roger-ndanu": {
     "invitationPagePath": "./Citronnelle/couple-roger-ndanu/invitation.html",
     "publicInvitationPath": "/couple-christian-sephora/Citronnelle/couple-roger-ndanu/invitation",
@@ -1982,12 +1810,6 @@ const routes = {
     "publicInvitationPath": "/couple-christian-sephora/Citronnelle/mme-costa/invitation",
     "qrPagePath": "./Citronnelle/mme-costa/qr-code-mme-costa.html",
     "publicQrPagePath": "/couple-christian-sephora/Citronnelle/mme-costa/qr-code-mme-costa"
-  },
-  "citronnelle-mme-costa-2": {
-    "invitationPagePath": "./Citronnelle/mme-costa-2/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Citronnelle/mme-costa-2/invitation",
-    "qrPagePath": "./Citronnelle/mme-costa-2/qr-code-mme-costa-2.html",
-    "publicQrPagePath": "/couple-christian-sephora/Citronnelle/mme-costa-2/qr-code-mme-costa-2"
   },
   "maracuja-couple-dala": {
     "invitationPagePath": "./Maracuja/couple-dala/invitation.html",
@@ -2049,11 +1871,11 @@ const routes = {
     "qrPagePath": "./Loprade/couple-futila/qr-code-couple-futila.html",
     "publicQrPagePath": "/couple-christian-sephora/Loprade/couple-futila/qr-code-couple-futila"
   },
-  "ananas-couple-nzangi": {
-    "invitationPagePath": "./Ananas/couple-nzangi/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Ananas/couple-nzangi/invitation",
-    "qrPagePath": "./Ananas/couple-nzangi/qr-code-couple-nzangi.html",
-    "publicQrPagePath": "/couple-christian-sephora/Ananas/couple-nzangi/qr-code-couple-nzangi"
+  "ananas-couple-onorable-nzangi": {
+    "invitationPagePath": "./Ananas/couple-onorable-nzangi/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Ananas/couple-onorable-nzangi/invitation",
+    "qrPagePath": "./Ananas/couple-onorable-nzangi/qr-code-couple-onorable-nzangi.html",
+    "publicQrPagePath": "/couple-christian-sephora/Ananas/couple-onorable-nzangi/qr-code-couple-onorable-nzangi"
   },
   "ananas-couple-londo": {
     "invitationPagePath": "./Ananas/couple-londo/invitation.html",
@@ -2085,17 +1907,11 @@ const routes = {
     "qrPagePath": "./Ananas/mme-koko-marie/qr-code-mme-koko-marie.html",
     "publicQrPagePath": "/couple-christian-sephora/Ananas/mme-koko-marie/qr-code-mme-koko-marie"
   },
-  "ananas-mme-koko-marie-2": {
-    "invitationPagePath": "./Ananas/mme-koko-marie-2/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Ananas/mme-koko-marie-2/invitation",
-    "qrPagePath": "./Ananas/mme-koko-marie-2/qr-code-mme-koko-marie-2.html",
-    "publicQrPagePath": "/couple-christian-sephora/Ananas/mme-koko-marie-2/qr-code-mme-koko-marie-2"
-  },
-  "mangue-couple-emmanuel": {
-    "invitationPagePath": "./Mangue/couple-emmanuel/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangue/couple-emmanuel/invitation",
-    "qrPagePath": "./Mangue/couple-emmanuel/qr-code-couple-emmanuel.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangue/couple-emmanuel/qr-code-couple-emmanuel"
+  "mangue-couple-issola": {
+    "invitationPagePath": "./Mangue/couple-issola/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangue/couple-issola/invitation",
+    "qrPagePath": "./Mangue/couple-issola/qr-code-couple-issola.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangue/couple-issola/qr-code-couple-issola"
   },
   "mangue-mr-chris-lukanu": {
     "invitationPagePath": "./Mangue/mr-chris-lukanu/invitation.html",
@@ -2115,23 +1931,17 @@ const routes = {
     "qrPagePath": "./Mangue/couple-ridi/qr-code-couple-ridi.html",
     "publicQrPagePath": "/couple-christian-sephora/Mangue/couple-ridi/qr-code-couple-ridi"
   },
-  "mangue-aicha-nsonsa": {
-    "invitationPagePath": "./Mangue/aicha-nsonsa/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangue/aicha-nsonsa/invitation",
-    "qrPagePath": "./Mangue/aicha-nsonsa/qr-code-aicha-nsonsa.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangue/aicha-nsonsa/qr-code-aicha-nsonsa"
+  "mangue-mr-aicha-nsonsa": {
+    "invitationPagePath": "./Mangue/mr-aicha-nsonsa/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangue/mr-aicha-nsonsa/invitation",
+    "qrPagePath": "./Mangue/mr-aicha-nsonsa/qr-code-mr-aicha-nsonsa.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangue/mr-aicha-nsonsa/qr-code-mr-aicha-nsonsa"
   },
   "mangue-couple-sarah-ngokai": {
     "invitationPagePath": "./Mangue/couple-sarah-ngokai/invitation.html",
     "publicInvitationPath": "/couple-christian-sephora/Mangue/couple-sarah-ngokai/invitation",
     "qrPagePath": "./Mangue/couple-sarah-ngokai/qr-code-couple-sarah-ngokai.html",
     "publicQrPagePath": "/couple-christian-sephora/Mangue/couple-sarah-ngokai/qr-code-couple-sarah-ngokai"
-  },
-  "mangue-couple-sarah-ngokai-2": {
-    "invitationPagePath": "./Mangue/couple-sarah-ngokai-2/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangue/couple-sarah-ngokai-2/invitation",
-    "qrPagePath": "./Mangue/couple-sarah-ngokai-2/qr-code-couple-sarah-ngokai-2.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangue/couple-sarah-ngokai-2/qr-code-couple-sarah-ngokai-2"
   },
   "piment-1-mme-deborah-ngbeau": {
     "invitationPagePath": "./Piment 1/mme-deborah-ngbeau/invitation.html",
@@ -2145,11 +1955,11 @@ const routes = {
     "qrPagePath": "./Piment 1/couple-keren/qr-code-couple-keren.html",
     "publicQrPagePath": "/couple-christian-sephora/Piment%201/couple-keren/qr-code-couple-keren"
   },
-  "piment-1-eliane": {
-    "invitationPagePath": "./Piment 1/eliane/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Piment%201/eliane/invitation",
-    "qrPagePath": "./Piment 1/eliane/qr-code-eliane.html",
-    "publicQrPagePath": "/couple-christian-sephora/Piment%201/eliane/qr-code-eliane"
+  "piment-1-mme-eliane": {
+    "invitationPagePath": "./Piment 1/mme-eliane/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Piment%201/mme-eliane/invitation",
+    "qrPagePath": "./Piment 1/mme-eliane/qr-code-mme-eliane.html",
+    "publicQrPagePath": "/couple-christian-sephora/Piment%201/mme-eliane/qr-code-mme-eliane"
   },
   "piment-1-mr-kevin": {
     "invitationPagePath": "./Piment 1/mr-kevin/invitation.html",
@@ -2253,11 +2063,11 @@ const routes = {
     "qrPagePath": "./Mapendo/tonton-blaise/qr-code-tonton-blaise.html",
     "publicQrPagePath": "/couple-christian-sephora/Mapendo/tonton-blaise/qr-code-tonton-blaise"
   },
-  "mapendo-guylain-kuyalumukamiya": {
-    "invitationPagePath": "./Mapendo/guylain-kuyalumukamiya/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mapendo/guylain-kuyalumukamiya/invitation",
-    "qrPagePath": "./Mapendo/guylain-kuyalumukamiya/qr-code-guylain-kuyalumukamiya.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mapendo/guylain-kuyalumukamiya/qr-code-guylain-kuyalumukamiya"
+  "mapendo-guylain-kuyalumuka-miya": {
+    "invitationPagePath": "./Mapendo/guylain-kuyalumuka-miya/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mapendo/guylain-kuyalumuka-miya/invitation",
+    "qrPagePath": "./Mapendo/guylain-kuyalumuka-miya/qr-code-guylain-kuyalumuka-miya.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mapendo/guylain-kuyalumuka-miya/qr-code-guylain-kuyalumuka-miya"
   },
   "mapendo-couple-cathy-cibambi": {
     "invitationPagePath": "./Mapendo/couple-cathy-cibambi/invitation.html",
@@ -2367,23 +2177,17 @@ const routes = {
     "qrPagePath": "./Urée/ricko-nziki/qr-code-ricko-nziki.html",
     "publicQrPagePath": "/couple-christian-sephora/Ur%C3%A9e/ricko-nziki/qr-code-ricko-nziki"
   },
-  "goyave-yasmine-mbula": {
-    "invitationPagePath": "./Goyave/yasmine-mbula/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Goyave/yasmine-mbula/invitation",
-    "qrPagePath": "./Goyave/yasmine-mbula/qr-code-yasmine-mbula.html",
-    "publicQrPagePath": "/couple-christian-sephora/Goyave/yasmine-mbula/qr-code-yasmine-mbula"
+  "goyave-mme-prisca-lumanda": {
+    "invitationPagePath": "./Goyave/mme-prisca-lumanda/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Goyave/mme-prisca-lumanda/invitation",
+    "qrPagePath": "./Goyave/mme-prisca-lumanda/qr-code-mme-prisca-lumanda.html",
+    "publicQrPagePath": "/couple-christian-sephora/Goyave/mme-prisca-lumanda/qr-code-mme-prisca-lumanda"
   },
   "goyave-thomas-salumu": {
     "invitationPagePath": "./Goyave/thomas-salumu/invitation.html",
     "publicInvitationPath": "/couple-christian-sephora/Goyave/thomas-salumu/invitation",
     "qrPagePath": "./Goyave/thomas-salumu/qr-code-thomas-salumu.html",
     "publicQrPagePath": "/couple-christian-sephora/Goyave/thomas-salumu/qr-code-thomas-salumu"
-  },
-  "goyave-elite-me-alpha": {
-    "invitationPagePath": "./Goyave/elite-me-alpha/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Goyave/elite-me-alpha/invitation",
-    "qrPagePath": "./Goyave/elite-me-alpha/qr-code-elite-me-alpha.html",
-    "publicQrPagePath": "/couple-christian-sephora/Goyave/elite-me-alpha/qr-code-elite-me-alpha"
   },
   "goyave-couple-junior-ntambwe": {
     "invitationPagePath": "./Goyave/couple-junior-ntambwe/invitation.html",
@@ -2415,41 +2219,29 @@ const routes = {
     "qrPagePath": "./Goyave/yves-lomboto-et-fabrice/qr-code-yves-lomboto-et-fabrice.html",
     "publicQrPagePath": "/couple-christian-sephora/Goyave/yves-lomboto-et-fabrice/qr-code-yves-lomboto-et-fabrice"
   },
-  "goyave-eli-dedel-lengbe": {
-    "invitationPagePath": "./Goyave/eli-dedel-lengbe/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Goyave/eli-dedel-lengbe/invitation",
-    "qrPagePath": "./Goyave/eli-dedel-lengbe/qr-code-eli-dedel-lengbe.html",
-    "publicQrPagePath": "/couple-christian-sephora/Goyave/eli-dedel-lengbe/qr-code-eli-dedel-lengbe"
-  },
-  "goyave-samy-deborah-lengbe": {
-    "invitationPagePath": "./Goyave/samy-deborah-lengbe/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Goyave/samy-deborah-lengbe/invitation",
-    "qrPagePath": "./Goyave/samy-deborah-lengbe/qr-code-samy-deborah-lengbe.html",
-    "publicQrPagePath": "/couple-christian-sephora/Goyave/samy-deborah-lengbe/qr-code-samy-deborah-lengbe"
-  },
   "orange-couple-fabrice-kapinga": {
-    "invitationPagePath": "./Orange/couple-fabrice-kapinga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Orange/couple-fabrice-kapinga/invitation",
-    "qrPagePath": "./Orange/couple-fabrice-kapinga/qr-code-couple-fabrice-kapinga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Orange/couple-fabrice-kapinga/qr-code-couple-fabrice-kapinga"
+    "invitationPagePath": "./Goyave/couple-fabrice-kapinga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Goyave/couple-fabrice-kapinga/invitation",
+    "qrPagePath": "./Goyave/couple-fabrice-kapinga/qr-code-couple-fabrice-kapinga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Goyave/couple-fabrice-kapinga/qr-code-couple-fabrice-kapinga"
   },
   "orange-couple-serge-kapinga": {
-    "invitationPagePath": "./Orange/couple-serge-kapinga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Orange/couple-serge-kapinga/invitation",
-    "qrPagePath": "./Orange/couple-serge-kapinga/qr-code-couple-serge-kapinga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Orange/couple-serge-kapinga/qr-code-couple-serge-kapinga"
+    "invitationPagePath": "./Goyave/couple-serge-kapinga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Goyave/couple-serge-kapinga/invitation",
+    "qrPagePath": "./Goyave/couple-serge-kapinga/qr-code-couple-serge-kapinga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Goyave/couple-serge-kapinga/qr-code-couple-serge-kapinga"
+  },
+  "orange-manace": {
+    "invitationPagePath": "./Goyave/manace/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Goyave/manace/invitation",
+    "qrPagePath": "./Goyave/manace/qr-code-manace.html",
+    "publicQrPagePath": "/couple-christian-sephora/Goyave/manace/qr-code-manace"
   },
   "orange-couple-winner": {
     "invitationPagePath": "./Orange/couple-winner/invitation.html",
     "publicInvitationPath": "/couple-christian-sephora/Orange/couple-winner/invitation",
     "qrPagePath": "./Orange/couple-winner/qr-code-couple-winner.html",
     "publicQrPagePath": "/couple-christian-sephora/Orange/couple-winner/qr-code-couple-winner"
-  },
-  "orange-manace": {
-    "invitationPagePath": "./Orange/manace/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Orange/manace/invitation",
-    "qrPagePath": "./Orange/manace/qr-code-manace.html",
-    "publicQrPagePath": "/couple-christian-sephora/Orange/manace/qr-code-manace"
   },
   "orange-yhan-et-liliane": {
     "invitationPagePath": "./Orange/yhan-et-liliane/invitation.html",
@@ -2481,161 +2273,251 @@ const routes = {
     "qrPagePath": "./Orange/richard-mbuyi/qr-code-richard-mbuyi.html",
     "publicQrPagePath": "/couple-christian-sephora/Orange/richard-mbuyi/qr-code-richard-mbuyi"
   },
-  "c-ur-de-b-uf-vanessa-et-aminata": {
-    "invitationPagePath": "./Cœur de Bœuf/vanessa-et-aminata/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/vanessa-et-aminata/invitation",
-    "qrPagePath": "./Cœur de Bœuf/vanessa-et-aminata/qr-code-vanessa-et-aminata.html",
-    "publicQrPagePath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/vanessa-et-aminata/qr-code-vanessa-et-aminata"
+  "goyave-elite-me-alpha": {
+    "invitationPagePath": "./Orange/elite-me-alpha/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Orange/elite-me-alpha/invitation",
+    "qrPagePath": "./Orange/elite-me-alpha/qr-code-elite-me-alpha.html",
+    "publicQrPagePath": "/couple-christian-sephora/Orange/elite-me-alpha/qr-code-elite-me-alpha"
   },
-  "c-ur-de-b-uf-cynthia-et-rebecca": {
-    "invitationPagePath": "./Cœur de Bœuf/cynthia-et-rebecca/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/cynthia-et-rebecca/invitation",
-    "qrPagePath": "./Cœur de Bœuf/cynthia-et-rebecca/qr-code-cynthia-et-rebecca.html",
-    "publicQrPagePath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/cynthia-et-rebecca/qr-code-cynthia-et-rebecca"
+  "goyave-eli-dedel-lengbe": {
+    "invitationPagePath": "./Orange/eli-dedel-lengbe/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Orange/eli-dedel-lengbe/invitation",
+    "qrPagePath": "./Orange/eli-dedel-lengbe/qr-code-eli-dedel-lengbe.html",
+    "publicQrPagePath": "/couple-christian-sephora/Orange/eli-dedel-lengbe/qr-code-eli-dedel-lengbe"
   },
-  "c-ur-de-b-uf-josephine-et-anifa": {
-    "invitationPagePath": "./Cœur de Bœuf/josephine-et-anifa/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/josephine-et-anifa/invitation",
-    "qrPagePath": "./Cœur de Bœuf/josephine-et-anifa/qr-code-josephine-et-anifa.html",
-    "publicQrPagePath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/josephine-et-anifa/qr-code-josephine-et-anifa"
+  "goyave-samy-deborah-lengbe": {
+    "invitationPagePath": "./Orange/samy-deborah-lengbe/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Orange/samy-deborah-lengbe/invitation",
+    "qrPagePath": "./Orange/samy-deborah-lengbe/qr-code-samy-deborah-lengbe.html",
+    "publicQrPagePath": "/couple-christian-sephora/Orange/samy-deborah-lengbe/qr-code-samy-deborah-lengbe"
   },
-  "c-ur-de-b-uf-kim-s-et-welbeck": {
-    "invitationPagePath": "./Cœur de Bœuf/kim-s-et-welbeck/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/kim-s-et-welbeck/invitation",
-    "qrPagePath": "./Cœur de Bœuf/kim-s-et-welbeck/qr-code-kim-s-et-welbeck.html",
-    "publicQrPagePath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/kim-s-et-welbeck/qr-code-kim-s-et-welbeck"
+  "moringa-couple-honorable-ilunga": {
+    "invitationPagePath": "./Moringa/couple-honorable-ilunga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa/couple-honorable-ilunga/invitation",
+    "qrPagePath": "./Moringa/couple-honorable-ilunga/qr-code-couple-honorable-ilunga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa/couple-honorable-ilunga/qr-code-couple-honorable-ilunga"
   },
-  "c-ur-de-b-uf-olivier-et-junior": {
-    "invitationPagePath": "./Cœur de Bœuf/olivier-et-junior/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/olivier-et-junior/invitation",
-    "qrPagePath": "./Cœur de Bœuf/olivier-et-junior/qr-code-olivier-et-junior.html",
-    "publicQrPagePath": "/couple-christian-sephora/C%C5%93ur%20de%20B%C5%93uf/olivier-et-junior/qr-code-olivier-et-junior"
+  "table-a-attribuer-micheline-et-hortense": {
+    "invitationPagePath": "./Moringa/micheline-et-hortense/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa/micheline-et-hortense/invitation",
+    "qrPagePath": "./Moringa/micheline-et-hortense/qr-code-micheline-et-hortense.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa/micheline-et-hortense/qr-code-micheline-et-hortense"
   },
-  "pomme-rouge-ornella-et-parfaite": {
-    "invitationPagePath": "./pomme Rouge/ornella-et-parfaite/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/ornella-et-parfaite/invitation",
-    "qrPagePath": "./pomme Rouge/ornella-et-parfaite/qr-code-ornella-et-parfaite.html",
-    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/ornella-et-parfaite/qr-code-ornella-et-parfaite"
+  "moringa-couple-special-kolongele": {
+    "invitationPagePath": "./Moringa/couple-special-kolongele/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa/couple-special-kolongele/invitation",
+    "qrPagePath": "./Moringa/couple-special-kolongele/qr-code-couple-special-kolongele.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa/couple-special-kolongele/qr-code-couple-special-kolongele"
   },
-  "pomme-rouge-angosi-et-virginie": {
-    "invitationPagePath": "./pomme Rouge/angosi-et-virginie/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/angosi-et-virginie/invitation",
-    "qrPagePath": "./pomme Rouge/angosi-et-virginie/qr-code-angosi-et-virginie.html",
-    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/angosi-et-virginie/qr-code-angosi-et-virginie"
+  "moringa-couple-ipakala": {
+    "invitationPagePath": "./Moringa/couple-ipakala/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa/couple-ipakala/invitation",
+    "qrPagePath": "./Moringa/couple-ipakala/qr-code-couple-ipakala.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa/couple-ipakala/qr-code-couple-ipakala"
   },
-  "pomme-rouge-simplice-et-boss": {
-    "invitationPagePath": "./pomme Rouge/simplice-et-boss/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/simplice-et-boss/invitation",
-    "qrPagePath": "./pomme Rouge/simplice-et-boss/qr-code-simplice-et-boss.html",
-    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/simplice-et-boss/qr-code-simplice-et-boss"
+  "moringa-couple-ntambila": {
+    "invitationPagePath": "./Moringa/couple-ntambila/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa/couple-ntambila/invitation",
+    "qrPagePath": "./Moringa/couple-ntambila/qr-code-couple-ntambila.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa/couple-ntambila/qr-code-couple-ntambila"
   },
-  "pomme-rouge-amisi-et-joel": {
-    "invitationPagePath": "./pomme Rouge/amisi-et-joel/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/amisi-et-joel/invitation",
-    "qrPagePath": "./pomme Rouge/amisi-et-joel/qr-code-amisi-et-joel.html",
-    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/amisi-et-joel/qr-code-amisi-et-joel"
+  "banane-couple-kura": {
+    "invitationPagePath": "./Banane/couple-kura/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-kura/invitation",
+    "qrPagePath": "./Banane/couple-kura/qr-code-couple-kura.html",
+    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-kura/qr-code-couple-kura"
   },
-  "pomme-rouge-patricia-et-naomie": {
-    "invitationPagePath": "./pomme Rouge/patricia-et-naomie/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/patricia-et-naomie/invitation",
-    "qrPagePath": "./pomme Rouge/patricia-et-naomie/qr-code-patricia-et-naomie.html",
-    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/patricia-et-naomie/qr-code-patricia-et-naomie"
+  "banane-couple-bitene-prince": {
+    "invitationPagePath": "./Banane/couple-bitene-prince/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-bitene-prince/invitation",
+    "qrPagePath": "./Banane/couple-bitene-prince/qr-code-couple-bitene-prince.html",
+    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-bitene-prince/qr-code-couple-bitene-prince"
   },
-  "pamplemousse-couple-mbelenge": {
-    "invitationPagePath": "./Pamplemousse/couple-mbelenge/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pamplemousse/couple-mbelenge/invitation",
-    "qrPagePath": "./Pamplemousse/couple-mbelenge/qr-code-couple-mbelenge.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pamplemousse/couple-mbelenge/qr-code-couple-mbelenge"
+  "banane-couple-bitene-rodrigue": {
+    "invitationPagePath": "./Banane/couple-bitene-rodrigue/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-bitene-rodrigue/invitation",
+    "qrPagePath": "./Banane/couple-bitene-rodrigue/qr-code-couple-bitene-rodrigue.html",
+    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-bitene-rodrigue/qr-code-couple-bitene-rodrigue"
   },
-  "pamplemousse-couple-mundele": {
-    "invitationPagePath": "./Pamplemousse/couple-mundele/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pamplemousse/couple-mundele/invitation",
-    "qrPagePath": "./Pamplemousse/couple-mundele/qr-code-couple-mundele.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pamplemousse/couple-mundele/qr-code-couple-mundele"
+  "banane-couple-bitene-patrick": {
+    "invitationPagePath": "./Banane/couple-bitene-patrick/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-bitene-patrick/invitation",
+    "qrPagePath": "./Banane/couple-bitene-patrick/qr-code-couple-bitene-patrick.html",
+    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-bitene-patrick/qr-code-couple-bitene-patrick"
   },
-  "pamplemousse-couple-leleta": {
-    "invitationPagePath": "./Pamplemousse/couple-leleta/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pamplemousse/couple-leleta/invitation",
-    "qrPagePath": "./Pamplemousse/couple-leleta/qr-code-couple-leleta.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pamplemousse/couple-leleta/qr-code-couple-leleta"
+  "banane-couple-thierry-mbuluku": {
+    "invitationPagePath": "./Banane/couple-thierry-mbuluku/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-thierry-mbuluku/invitation",
+    "qrPagePath": "./Banane/couple-thierry-mbuluku/qr-code-couple-thierry-mbuluku.html",
+    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-thierry-mbuluku/qr-code-couple-thierry-mbuluku"
   },
-  "pamplemousse-papa-aime": {
-    "invitationPagePath": "./Pamplemousse/papa-aime/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pamplemousse/papa-aime/invitation",
-    "qrPagePath": "./Pamplemousse/papa-aime/qr-code-papa-aime.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pamplemousse/papa-aime/qr-code-papa-aime"
+  "pomme-cythere-couplekolongele-lutu": {
+    "invitationPagePath": "./Pomme Cythère/couplekolongele-lutu/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couplekolongele-lutu/invitation",
+    "qrPagePath": "./Pomme Cythère/couplekolongele-lutu/qr-code-couplekolongele-lutu.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couplekolongele-lutu/qr-code-couplekolongele-lutu"
   },
-  "pamplemousse-couple-dianga": {
-    "invitationPagePath": "./Pamplemousse/couple-dianga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pamplemousse/couple-dianga/invitation",
-    "qrPagePath": "./Pamplemousse/couple-dianga/qr-code-couple-dianga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pamplemousse/couple-dianga/qr-code-couple-dianga"
+  "pomme-cythere-couple-mobali": {
+    "invitationPagePath": "./Pomme Cythère/couple-mobali/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-mobali/invitation",
+    "qrPagePath": "./Pomme Cythère/couple-mobali/qr-code-couple-mobali.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-mobali/qr-code-couple-mobali"
   },
-  "moringa-airways-et-chantal": {
-    "invitationPagePath": "./Moringa/airways-et-chantal/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa/airways-et-chantal/invitation",
-    "qrPagePath": "./Moringa/airways-et-chantal/qr-code-airways-et-chantal.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa/airways-et-chantal/qr-code-airways-et-chantal"
+  "pomme-cythere-couple-bitene-malachie": {
+    "invitationPagePath": "./Pomme Cythère/couple-bitene-malachie/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-bitene-malachie/invitation",
+    "qrPagePath": "./Pomme Cythère/couple-bitene-malachie/qr-code-couple-bitene-malachie.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-bitene-malachie/qr-code-couple-bitene-malachie"
   },
-  "moringa-divine-et-shekina": {
-    "invitationPagePath": "./Moringa/divine-et-shekina/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa/divine-et-shekina/invitation",
-    "qrPagePath": "./Moringa/divine-et-shekina/qr-code-divine-et-shekina.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa/divine-et-shekina/qr-code-divine-et-shekina"
+  "pomme-cythere-mr-gen-kasongo": {
+    "invitationPagePath": "./Pomme Cythère/mr-gen-kasongo/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/mr-gen-kasongo/invitation",
+    "qrPagePath": "./Pomme Cythère/mr-gen-kasongo/qr-code-mr-gen-kasongo.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/mr-gen-kasongo/qr-code-mr-gen-kasongo"
   },
-  "moringa-sephora-et-nyclette": {
-    "invitationPagePath": "./Moringa/sephora-et-nyclette/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa/sephora-et-nyclette/invitation",
-    "qrPagePath": "./Moringa/sephora-et-nyclette/qr-code-sephora-et-nyclette.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa/sephora-et-nyclette/qr-code-sephora-et-nyclette"
+  "pomme-cythere-couple-guy-et-sylvie": {
+    "invitationPagePath": "./Pomme Cythère/couple-guy-et-sylvie/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-guy-et-sylvie/invitation",
+    "qrPagePath": "./Pomme Cythère/couple-guy-et-sylvie/qr-code-couple-guy-et-sylvie.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/couple-guy-et-sylvie/qr-code-couple-guy-et-sylvie"
   },
-  "moringa-agnes-et-esther": {
-    "invitationPagePath": "./Moringa/agnes-et-esther/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa/agnes-et-esther/invitation",
-    "qrPagePath": "./Moringa/agnes-et-esther/qr-code-agnes-et-esther.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa/agnes-et-esther/qr-code-agnes-et-esther"
+  "pomme-cythere-mme-maryse": {
+    "invitationPagePath": "./Pomme Cythère/mme-maryse/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/mme-maryse/invitation",
+    "qrPagePath": "./Pomme Cythère/mme-maryse/qr-code-mme-maryse.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Cyth%C3%A8re/mme-maryse/qr-code-mme-maryse"
   },
-  "moringa-claudia-et-clemence": {
-    "invitationPagePath": "./Moringa/claudia-et-clemence/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa/claudia-et-clemence/invitation",
-    "qrPagePath": "./Moringa/claudia-et-clemence/qr-code-claudia-et-clemence.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa/claudia-et-clemence/qr-code-claudia-et-clemence"
+  "mangousta-couple-mukuanga": {
+    "invitationPagePath": "./Mangousta/couple-mukuanga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangousta/couple-mukuanga/invitation",
+    "qrPagePath": "./Mangousta/couple-mukuanga/qr-code-couple-mukuanga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangousta/couple-mukuanga/qr-code-couple-mukuanga"
   },
-  "safou-couple-miya": {
-    "invitationPagePath": "./Safou/couple-miya/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Safou/couple-miya/invitation",
-    "qrPagePath": "./Safou/couple-miya/qr-code-couple-miya.html",
-    "publicQrPagePath": "/couple-christian-sephora/Safou/couple-miya/qr-code-couple-miya"
+  "mangousta-couple-mukuanga-2": {
+    "invitationPagePath": "./Mangousta/couple-mukuanga-2/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangousta/couple-mukuanga-2/invitation",
+    "qrPagePath": "./Mangousta/couple-mukuanga-2/qr-code-couple-mukuanga-2.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangousta/couple-mukuanga-2/qr-code-couple-mukuanga-2"
   },
-  "safou-couple-kepandeko": {
-    "invitationPagePath": "./Safou/couple-kepandeko/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Safou/couple-kepandeko/invitation",
-    "qrPagePath": "./Safou/couple-kepandeko/qr-code-couple-kepandeko.html",
-    "publicQrPagePath": "/couple-christian-sephora/Safou/couple-kepandeko/qr-code-couple-kepandeko"
+  "mangousta-couple-mbuluku-miya": {
+    "invitationPagePath": "./Mangousta/couple-mbuluku-miya/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangousta/couple-mbuluku-miya/invitation",
+    "qrPagePath": "./Mangousta/couple-mbuluku-miya/qr-code-couple-mbuluku-miya.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangousta/couple-mbuluku-miya/qr-code-couple-mbuluku-miya"
   },
-  "kasembele-chloe-et-gael": {
-    "invitationPagePath": "./Kasembele/chloe-et-gael/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Kasembele/chloe-et-gael/invitation",
-    "qrPagePath": "./Kasembele/chloe-et-gael/qr-code-chloe-et-gael.html",
-    "publicQrPagePath": "/couple-christian-sephora/Kasembele/chloe-et-gael/qr-code-chloe-et-gael"
+  "mangousta-couple-kapinga": {
+    "invitationPagePath": "./Mangousta/couple-kapinga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangousta/couple-kapinga/invitation",
+    "qrPagePath": "./Mangousta/couple-kapinga/qr-code-couple-kapinga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangousta/couple-kapinga/qr-code-couple-kapinga"
   },
-  "kasembele-mme-yollande": {
-    "invitationPagePath": "./Kasembele/mme-yollande/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Kasembele/mme-yollande/invitation",
-    "qrPagePath": "./Kasembele/mme-yollande/qr-code-mme-yollande.html",
-    "publicQrPagePath": "/couple-christian-sephora/Kasembele/mme-yollande/qr-code-mme-yollande"
+  "manga-sende-aimee-et-sele": {
+    "invitationPagePath": "./Mangousta/aimee-et-sele/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mangousta/aimee-et-sele/invitation",
+    "qrPagePath": "./Mangousta/aimee-et-sele/qr-code-aimee-et-sele.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mangousta/aimee-et-sele/qr-code-aimee-et-sele"
   },
-  "kasembele-couple-heritier": {
-    "invitationPagePath": "./Kasembele/couple-heritier/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Kasembele/couple-heritier/invitation",
-    "qrPagePath": "./Kasembele/couple-heritier/qr-code-couple-heritier.html",
-    "publicQrPagePath": "/couple-christian-sephora/Kasembele/couple-heritier/qr-code-couple-heritier"
+  "corossole-couple-luwakumu": {
+    "invitationPagePath": "./corossole/couple-luwakumu/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/corossole/couple-luwakumu/invitation",
+    "qrPagePath": "./corossole/couple-luwakumu/qr-code-couple-luwakumu.html",
+    "publicQrPagePath": "/couple-christian-sephora/corossole/couple-luwakumu/qr-code-couple-luwakumu"
   },
-  "kasembele-couple-georges": {
-    "invitationPagePath": "./Kasembele/couple-georges/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Kasembele/couple-georges/invitation",
-    "qrPagePath": "./Kasembele/couple-georges/qr-code-couple-georges.html",
-    "publicQrPagePath": "/couple-christian-sephora/Kasembele/couple-georges/qr-code-couple-georges"
+  "feuille-de-loriet-paulette-ipakala": {
+    "invitationPagePath": "./corossole/paulette-ipakala/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/corossole/paulette-ipakala/invitation",
+    "qrPagePath": "./corossole/paulette-ipakala/qr-code-paulette-ipakala.html",
+    "publicQrPagePath": "/couple-christian-sephora/corossole/paulette-ipakala/qr-code-paulette-ipakala"
+  },
+  "feuille-de-loriet-billy-et-mamie": {
+    "invitationPagePath": "./corossole/billy-et-mamie/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/corossole/billy-et-mamie/invitation",
+    "qrPagePath": "./corossole/billy-et-mamie/qr-code-billy-et-mamie.html",
+    "publicQrPagePath": "/couple-christian-sephora/corossole/billy-et-mamie/qr-code-billy-et-mamie"
+  },
+  "feuille-de-loriet-mimbo-jacques": {
+    "invitationPagePath": "./corossole/mimbo-jacques/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/corossole/mimbo-jacques/invitation",
+    "qrPagePath": "./corossole/mimbo-jacques/qr-code-mimbo-jacques.html",
+    "publicQrPagePath": "/couple-christian-sephora/corossole/mimbo-jacques/qr-code-mimbo-jacques"
+  },
+  "feuille-de-loriet-bavon-et-abraham": {
+    "invitationPagePath": "./corossole/bavon-et-abraham/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/corossole/bavon-et-abraham/invitation",
+    "qrPagePath": "./corossole/bavon-et-abraham/qr-code-bavon-et-abraham.html",
+    "publicQrPagePath": "/couple-christian-sephora/corossole/bavon-et-abraham/qr-code-bavon-et-abraham"
+  },
+  "citron-couple-kalonzo": {
+    "invitationPagePath": "./Citron/couple-kalonzo/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Citron/couple-kalonzo/invitation",
+    "qrPagePath": "./Citron/couple-kalonzo/qr-code-couple-kalonzo.html",
+    "publicQrPagePath": "/couple-christian-sephora/Citron/couple-kalonzo/qr-code-couple-kalonzo"
+  },
+  "citron-couple-khari": {
+    "invitationPagePath": "./Citron/couple-khari/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Citron/couple-khari/invitation",
+    "qrPagePath": "./Citron/couple-khari/qr-code-couple-khari.html",
+    "publicQrPagePath": "/couple-christian-sephora/Citron/couple-khari/qr-code-couple-khari"
+  },
+  "citron-couple-niembo": {
+    "invitationPagePath": "./Citron/couple-niembo/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Citron/couple-niembo/invitation",
+    "qrPagePath": "./Citron/couple-niembo/qr-code-couple-niembo.html",
+    "publicQrPagePath": "/couple-christian-sephora/Citron/couple-niembo/qr-code-couple-niembo"
+  },
+  "citron-couple-binda": {
+    "invitationPagePath": "./Citron/couple-binda/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Citron/couple-binda/invitation",
+    "qrPagePath": "./Citron/couple-binda/qr-code-couple-binda.html",
+    "publicQrPagePath": "/couple-christian-sephora/Citron/couple-binda/qr-code-couple-binda"
+  },
+  "table-a-attribuer-falonne-et-nonon": {
+    "invitationPagePath": "./Citron/falonne-et-nonon/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Citron/falonne-et-nonon/invitation",
+    "qrPagePath": "./Citron/falonne-et-nonon/qr-code-falonne-et-nonon.html",
+    "publicQrPagePath": "/couple-christian-sephora/Citron/falonne-et-nonon/qr-code-falonne-et-nonon"
+  },
+  "raisn-couple-bubu": {
+    "invitationPagePath": "./Raisn/couple-bubu/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Raisn/couple-bubu/invitation",
+    "qrPagePath": "./Raisn/couple-bubu/qr-code-couple-bubu.html",
+    "publicQrPagePath": "/couple-christian-sephora/Raisn/couple-bubu/qr-code-couple-bubu"
+  },
+  "raisn-couple-musumadi": {
+    "invitationPagePath": "./Raisn/couple-musumadi/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Raisn/couple-musumadi/invitation",
+    "qrPagePath": "./Raisn/couple-musumadi/qr-code-couple-musumadi.html",
+    "publicQrPagePath": "/couple-christian-sephora/Raisn/couple-musumadi/qr-code-couple-musumadi"
+  },
+  "pasteque-couple-dr-laurent": {
+    "invitationPagePath": "./Pasteque/couple-dr-laurent/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pasteque/couple-dr-laurent/invitation",
+    "qrPagePath": "./Pasteque/couple-dr-laurent/qr-code-couple-dr-laurent.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pasteque/couple-dr-laurent/qr-code-couple-dr-laurent"
+  },
+  "pasteque-couple-dr-mbendi": {
+    "invitationPagePath": "./Pasteque/couple-dr-mbendi/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pasteque/couple-dr-mbendi/invitation",
+    "qrPagePath": "./Pasteque/couple-dr-mbendi/qr-code-couple-dr-mbendi.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pasteque/couple-dr-mbendi/qr-code-couple-dr-mbendi"
+  },
+  "moringa-2-nadine-et-denise": {
+    "invitationPagePath": "./Pasteque/nadine-et-denise/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pasteque/nadine-et-denise/invitation",
+    "qrPagePath": "./Pasteque/nadine-et-denise/qr-code-nadine-et-denise.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pasteque/nadine-et-denise/qr-code-nadine-et-denise"
+  },
+  "pasteque-couple-muzungu": {
+    "invitationPagePath": "./Pasteque/couple-muzungu/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pasteque/couple-muzungu/invitation",
+    "qrPagePath": "./Pasteque/couple-muzungu/qr-code-couple-muzungu.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pasteque/couple-muzungu/qr-code-couple-muzungu"
+  },
+  "moringa-2-ferdinand-et-esther": {
+    "invitationPagePath": "./Pasteque/ferdinand-et-esther/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Pasteque/ferdinand-et-esther/invitation",
+    "qrPagePath": "./Pasteque/ferdinand-et-esther/qr-code-ferdinand-et-esther.html",
+    "publicQrPagePath": "/couple-christian-sephora/Pasteque/ferdinand-et-esther/qr-code-ferdinand-et-esther"
   },
   "acacia-kabongo-ntumba": {
     "invitationPagePath": "./Acacia/kabongo-ntumba/invitation.html",
@@ -2697,227 +2579,89 @@ const routes = {
     "qrPagePath": "./Acacia/mbalanga-l-homme/qr-code-mbalanga-l-homme.html",
     "publicQrPagePath": "/couple-christian-sephora/Acacia/mbalanga-l-homme/qr-code-mbalanga-l-homme"
   },
-  "banane-couple-kura": {
-    "invitationPagePath": "./Banane/couple-kura/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-kura/invitation",
-    "qrPagePath": "./Banane/couple-kura/qr-code-couple-kura.html",
-    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-kura/qr-code-couple-kura"
+  "kasembele-chloe-et-gael": {
+    "invitationPagePath": "./Kasembele/chloe-et-gael/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Kasembele/chloe-et-gael/invitation",
+    "qrPagePath": "./Kasembele/chloe-et-gael/qr-code-chloe-et-gael.html",
+    "publicQrPagePath": "/couple-christian-sephora/Kasembele/chloe-et-gael/qr-code-chloe-et-gael"
   },
-  "banane-couple-bitene-prince": {
-    "invitationPagePath": "./Banane/couple-bitene-prince/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Banane/couple-bitene-prince/invitation",
-    "qrPagePath": "./Banane/couple-bitene-prince/qr-code-couple-bitene-prince.html",
-    "publicQrPagePath": "/couple-christian-sephora/Banane/couple-bitene-prince/qr-code-couple-bitene-prince"
+  "kasembele-mme-yollande": {
+    "invitationPagePath": "./Kasembele/mme-yollande/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Kasembele/mme-yollande/invitation",
+    "qrPagePath": "./Kasembele/mme-yollande/qr-code-mme-yollande.html",
+    "publicQrPagePath": "/couple-christian-sephora/Kasembele/mme-yollande/qr-code-mme-yollande"
   },
-  "banane-cpl-bitene-rodrigue": {
-    "invitationPagePath": "./Banane/cpl-bitene-rodrigue/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Banane/cpl-bitene-rodrigue/invitation",
-    "qrPagePath": "./Banane/cpl-bitene-rodrigue/qr-code-cpl-bitene-rodrigue.html",
-    "publicQrPagePath": "/couple-christian-sephora/Banane/cpl-bitene-rodrigue/qr-code-cpl-bitene-rodrigue"
+  "kasembele-couple-heritier": {
+    "invitationPagePath": "./Kasembele/couple-heritier/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Kasembele/couple-heritier/invitation",
+    "qrPagePath": "./Kasembele/couple-heritier/qr-code-couple-heritier.html",
+    "publicQrPagePath": "/couple-christian-sephora/Kasembele/couple-heritier/qr-code-couple-heritier"
   },
-  "banane-cplbitene-patrick": {
-    "invitationPagePath": "./Banane/cplbitene-patrick/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Banane/cplbitene-patrick/invitation",
-    "qrPagePath": "./Banane/cplbitene-patrick/qr-code-cplbitene-patrick.html",
-    "publicQrPagePath": "/couple-christian-sephora/Banane/cplbitene-patrick/qr-code-cplbitene-patrick"
+  "kasembele-couple-georges": {
+    "invitationPagePath": "./Kasembele/couple-georges/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Kasembele/couple-georges/invitation",
+    "qrPagePath": "./Kasembele/couple-georges/qr-code-couple-georges.html",
+    "publicQrPagePath": "/couple-christian-sephora/Kasembele/couple-georges/qr-code-couple-georges"
   },
-  "banane-cpl-thierry-mbuluku": {
-    "invitationPagePath": "./Banane/cpl-thierry-mbuluku/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Banane/cpl-thierry-mbuluku/invitation",
-    "qrPagePath": "./Banane/cpl-thierry-mbuluku/qr-code-cpl-thierry-mbuluku.html",
-    "publicQrPagePath": "/couple-christian-sephora/Banane/cpl-thierry-mbuluku/qr-code-cpl-thierry-mbuluku"
+  "safou-couple-miya": {
+    "invitationPagePath": "./Safou/couple-miya/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Safou/couple-miya/invitation",
+    "qrPagePath": "./Safou/couple-miya/qr-code-couple-miya.html",
+    "publicQrPagePath": "/couple-christian-sephora/Safou/couple-miya/qr-code-couple-miya"
   },
-  "mangousta-cpl-kolongele-lutu": {
-    "invitationPagePath": "./Mangousta/cpl-kolongele-lutu/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangousta/cpl-kolongele-lutu/invitation",
-    "qrPagePath": "./Mangousta/cpl-kolongele-lutu/qr-code-cpl-kolongele-lutu.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangousta/cpl-kolongele-lutu/qr-code-cpl-kolongele-lutu"
+  "moringa-claudia-et-clemence": {
+    "invitationPagePath": "./Safou/claudia-et-clemence/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Safou/claudia-et-clemence/invitation",
+    "qrPagePath": "./Safou/claudia-et-clemence/qr-code-claudia-et-clemence.html",
+    "publicQrPagePath": "/couple-christian-sephora/Safou/claudia-et-clemence/qr-code-claudia-et-clemence"
   },
-  "mangousta-cpl-mobali": {
-    "invitationPagePath": "./Mangousta/cpl-mobali/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangousta/cpl-mobali/invitation",
-    "qrPagePath": "./Mangousta/cpl-mobali/qr-code-cpl-mobali.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangousta/cpl-mobali/qr-code-cpl-mobali"
+  "safou-maria-et-natha": {
+    "invitationPagePath": "./Safou/maria-et-natha/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Safou/maria-et-natha/invitation",
+    "qrPagePath": "./Safou/maria-et-natha/qr-code-maria-et-natha.html",
+    "publicQrPagePath": "/couple-christian-sephora/Safou/maria-et-natha/qr-code-maria-et-natha"
   },
-  "mangousta-cpl-bitene-malachie": {
-    "invitationPagePath": "./Mangousta/cpl-bitene-malachie/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangousta/cpl-bitene-malachie/invitation",
-    "qrPagePath": "./Mangousta/cpl-bitene-malachie/qr-code-cpl-bitene-malachie.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangousta/cpl-bitene-malachie/qr-code-cpl-bitene-malachie"
+  "pomme-rouge-patricia-et-naomie": {
+    "invitationPagePath": "./Safou/patricia-et-naomie/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Safou/patricia-et-naomie/invitation",
+    "qrPagePath": "./Safou/patricia-et-naomie/qr-code-patricia-et-naomie.html",
+    "publicQrPagePath": "/couple-christian-sephora/Safou/patricia-et-naomie/qr-code-patricia-et-naomie"
   },
-  "mangousta-cpl-gen-kasongo": {
-    "invitationPagePath": "./Mangousta/cpl-gen-kasongo/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangousta/cpl-gen-kasongo/invitation",
-    "qrPagePath": "./Mangousta/cpl-gen-kasongo/qr-code-cpl-gen-kasongo.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangousta/cpl-gen-kasongo/qr-code-cpl-gen-kasongo"
+  "pamplemousse-couple-dianga": {
+    "invitationPagePath": "./Safou/couple-dianga/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Safou/couple-dianga/invitation",
+    "qrPagePath": "./Safou/couple-dianga/qr-code-couple-dianga.html",
+    "publicQrPagePath": "/couple-christian-sephora/Safou/couple-dianga/qr-code-couple-dianga"
   },
-  "mangousta-cpl-guy-et-sylvie": {
-    "invitationPagePath": "./Mangousta/cpl-guy-et-sylvie/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mangousta/cpl-guy-et-sylvie/invitation",
-    "qrPagePath": "./Mangousta/cpl-guy-et-sylvie/qr-code-cpl-guy-et-sylvie.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mangousta/cpl-guy-et-sylvie/qr-code-cpl-guy-et-sylvie"
+  "moringa-airways-et-chantal": {
+    "invitationPagePath": "./Moringa 2/airways-et-chantal/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/airways-et-chantal/invitation",
+    "qrPagePath": "./Moringa 2/airways-et-chantal/qr-code-airways-et-chantal.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/airways-et-chantal/qr-code-airways-et-chantal"
   },
-  "manga-sende-cpl-mukuanga": {
-    "invitationPagePath": "./Manga Sende/cpl-mukuanga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Manga%20Sende/cpl-mukuanga/invitation",
-    "qrPagePath": "./Manga Sende/cpl-mukuanga/qr-code-cpl-mukuanga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Manga%20Sende/cpl-mukuanga/qr-code-cpl-mukuanga"
+  "moringa-divine-et-shekina": {
+    "invitationPagePath": "./Moringa 2/divine-et-shekina/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/divine-et-shekina/invitation",
+    "qrPagePath": "./Moringa 2/divine-et-shekina/qr-code-divine-et-shekina.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/divine-et-shekina/qr-code-divine-et-shekina"
   },
-  "manga-sende-cpl-mukuanga-2": {
-    "invitationPagePath": "./Manga Sende/cpl-mukuanga-2/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Manga%20Sende/cpl-mukuanga-2/invitation",
-    "qrPagePath": "./Manga Sende/cpl-mukuanga-2/qr-code-cpl-mukuanga-2.html",
-    "publicQrPagePath": "/couple-christian-sephora/Manga%20Sende/cpl-mukuanga-2/qr-code-cpl-mukuanga-2"
+  "moringa-sephora-et-nyclette": {
+    "invitationPagePath": "./Moringa 2/sephora-et-nyclette/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/sephora-et-nyclette/invitation",
+    "qrPagePath": "./Moringa 2/sephora-et-nyclette/qr-code-sephora-et-nyclette.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/sephora-et-nyclette/qr-code-sephora-et-nyclette"
   },
-  "manga-sende-cpl-mbuluku-miya": {
-    "invitationPagePath": "./Manga Sende/cpl-mbuluku-miya/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Manga%20Sende/cpl-mbuluku-miya/invitation",
-    "qrPagePath": "./Manga Sende/cpl-mbuluku-miya/qr-code-cpl-mbuluku-miya.html",
-    "publicQrPagePath": "/couple-christian-sephora/Manga%20Sende/cpl-mbuluku-miya/qr-code-cpl-mbuluku-miya"
+  "moringa-agnes-et-esther": {
+    "invitationPagePath": "./Moringa 2/agnes-et-esther/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/agnes-et-esther/invitation",
+    "qrPagePath": "./Moringa 2/agnes-et-esther/qr-code-agnes-et-esther.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/agnes-et-esther/qr-code-agnes-et-esther"
   },
-  "manga-sende-cpl-kapinga": {
-    "invitationPagePath": "./Manga Sende/cpl-kapinga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Manga%20Sende/cpl-kapinga/invitation",
-    "qrPagePath": "./Manga Sende/cpl-kapinga/qr-code-cpl-kapinga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Manga%20Sende/cpl-kapinga/qr-code-cpl-kapinga"
-  },
-  "manga-sende-aimee-et-sele": {
-    "invitationPagePath": "./Manga Sende/aimee-et-sele/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Manga%20Sende/aimee-et-sele/invitation",
-    "qrPagePath": "./Manga Sende/aimee-et-sele/qr-code-aimee-et-sele.html",
-    "publicQrPagePath": "/couple-christian-sephora/Manga%20Sende/aimee-et-sele/qr-code-aimee-et-sele"
-  },
-  "feuille-de-loriet-cpl-luwakumu": {
-    "invitationPagePath": "./Feuille de Loriet/cpl-luwakumu/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Feuille%20de%20Loriet/cpl-luwakumu/invitation",
-    "qrPagePath": "./Feuille de Loriet/cpl-luwakumu/qr-code-cpl-luwakumu.html",
-    "publicQrPagePath": "/couple-christian-sephora/Feuille%20de%20Loriet/cpl-luwakumu/qr-code-cpl-luwakumu"
-  },
-  "feuille-de-loriet-paulette-ipakala": {
-    "invitationPagePath": "./Feuille de Loriet/paulette-ipakala/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Feuille%20de%20Loriet/paulette-ipakala/invitation",
-    "qrPagePath": "./Feuille de Loriet/paulette-ipakala/qr-code-paulette-ipakala.html",
-    "publicQrPagePath": "/couple-christian-sephora/Feuille%20de%20Loriet/paulette-ipakala/qr-code-paulette-ipakala"
-  },
-  "feuille-de-loriet-billy-et-mamie": {
-    "invitationPagePath": "./Feuille de Loriet/billy-et-mamie/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Feuille%20de%20Loriet/billy-et-mamie/invitation",
-    "qrPagePath": "./Feuille de Loriet/billy-et-mamie/qr-code-billy-et-mamie.html",
-    "publicQrPagePath": "/couple-christian-sephora/Feuille%20de%20Loriet/billy-et-mamie/qr-code-billy-et-mamie"
-  },
-  "feuille-de-loriet-mimbo-jacques": {
-    "invitationPagePath": "./Feuille de Loriet/mimbo-jacques/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Feuille%20de%20Loriet/mimbo-jacques/invitation",
-    "qrPagePath": "./Feuille de Loriet/mimbo-jacques/qr-code-mimbo-jacques.html",
-    "publicQrPagePath": "/couple-christian-sephora/Feuille%20de%20Loriet/mimbo-jacques/qr-code-mimbo-jacques"
-  },
-  "feuille-de-loriet-bavon-et-abraham": {
-    "invitationPagePath": "./Feuille de Loriet/bavon-et-abraham/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Feuille%20de%20Loriet/bavon-et-abraham/invitation",
-    "qrPagePath": "./Feuille de Loriet/bavon-et-abraham/qr-code-bavon-et-abraham.html",
-    "publicQrPagePath": "/couple-christian-sephora/Feuille%20de%20Loriet/bavon-et-abraham/qr-code-bavon-et-abraham"
-  },
-  "moringa-2-dr-laurent": {
-    "invitationPagePath": "./Moringa 2/dr-laurent/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/dr-laurent/invitation",
-    "qrPagePath": "./Moringa 2/dr-laurent/qr-code-dr-laurent.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/dr-laurent/qr-code-dr-laurent"
-  },
-  "moringa-2-dr-mbendi": {
-    "invitationPagePath": "./Moringa 2/dr-mbendi/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/dr-mbendi/invitation",
-    "qrPagePath": "./Moringa 2/dr-mbendi/qr-code-dr-mbendi.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/dr-mbendi/qr-code-dr-mbendi"
-  },
-  "moringa-2-nadine-et-denise": {
-    "invitationPagePath": "./Moringa 2/nadine-et-denise/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/nadine-et-denise/invitation",
-    "qrPagePath": "./Moringa 2/nadine-et-denise/qr-code-nadine-et-denise.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/nadine-et-denise/qr-code-nadine-et-denise"
-  },
-  "moringa-2-muzungu": {
-    "invitationPagePath": "./Moringa 2/muzungu/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/muzungu/invitation",
-    "qrPagePath": "./Moringa 2/muzungu/qr-code-muzungu.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/muzungu/qr-code-muzungu"
-  },
-  "moringa-2-ferdinand-et-esther": {
-    "invitationPagePath": "./Moringa 2/ferdinand-et-esther/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/ferdinand-et-esther/invitation",
-    "qrPagePath": "./Moringa 2/ferdinand-et-esther/qr-code-ferdinand-et-esther.html",
-    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/ferdinand-et-esther/qr-code-ferdinand-et-esther"
-  },
-  "table-a-attribuer-kalonzo": {
-    "invitationPagePath": "./Table a attribuer/kalonzo/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/kalonzo/invitation",
-    "qrPagePath": "./Table a attribuer/kalonzo/qr-code-kalonzo.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/kalonzo/qr-code-kalonzo"
-  },
-  "table-a-attribuer-khari": {
-    "invitationPagePath": "./Table a attribuer/khari/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/khari/invitation",
-    "qrPagePath": "./Table a attribuer/khari/qr-code-khari.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/khari/qr-code-khari"
-  },
-  "table-a-attribuer-niembo": {
-    "invitationPagePath": "./Table a attribuer/niembo/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/niembo/invitation",
-    "qrPagePath": "./Table a attribuer/niembo/qr-code-niembo.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/niembo/qr-code-niembo"
-  },
-  "table-a-attribuer-binda": {
-    "invitationPagePath": "./Table a attribuer/binda/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/binda/invitation",
-    "qrPagePath": "./Table a attribuer/binda/qr-code-binda.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/binda/qr-code-binda"
-  },
-  "table-a-attribuer-falonne-et-nonon": {
-    "invitationPagePath": "./Table a attribuer/falonne-et-nonon/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/falonne-et-nonon/invitation",
-    "qrPagePath": "./Table a attribuer/falonne-et-nonon/qr-code-falonne-et-nonon.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/falonne-et-nonon/qr-code-falonne-et-nonon"
-  },
-  "table-a-attribuer-bubu": {
-    "invitationPagePath": "./Table a attribuer/bubu/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/bubu/invitation",
-    "qrPagePath": "./Table a attribuer/bubu/qr-code-bubu.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/bubu/qr-code-bubu"
-  },
-  "table-a-attribuer-musumadi": {
-    "invitationPagePath": "./Table a attribuer/musumadi/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/musumadi/invitation",
-    "qrPagePath": "./Table a attribuer/musumadi/qr-code-musumadi.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/musumadi/qr-code-musumadi"
-  },
-  "table-a-attribuer-honorable-ilunga": {
-    "invitationPagePath": "./Table a attribuer/honorable-ilunga/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/honorable-ilunga/invitation",
-    "qrPagePath": "./Table a attribuer/honorable-ilunga/qr-code-honorable-ilunga.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/honorable-ilunga/qr-code-honorable-ilunga"
-  },
-  "table-a-attribuer-micheline-et-hortense": {
-    "invitationPagePath": "./Table a attribuer/micheline-et-hortense/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/micheline-et-hortense/invitation",
-    "qrPagePath": "./Table a attribuer/micheline-et-hortense/qr-code-micheline-et-hortense.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/micheline-et-hortense/qr-code-micheline-et-hortense"
-  },
-  "table-a-attribuer-special-kolongele": {
-    "invitationPagePath": "./Table a attribuer/special-kolongele/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/special-kolongele/invitation",
-    "qrPagePath": "./Table a attribuer/special-kolongele/qr-code-special-kolongele.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/special-kolongele/qr-code-special-kolongele"
-  },
-  "table-a-attribuer-ipakala": {
-    "invitationPagePath": "./Table a attribuer/ipakala/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/ipakala/invitation",
-    "qrPagePath": "./Table a attribuer/ipakala/qr-code-ipakala.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/ipakala/qr-code-ipakala"
-  },
-  "table-a-attribuer-ntambila": {
-    "invitationPagePath": "./Table a attribuer/ntambila/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Table%20a%20attribuer/ntambila/invitation",
-    "qrPagePath": "./Table a attribuer/ntambila/qr-code-ntambila.html",
-    "publicQrPagePath": "/couple-christian-sephora/Table%20a%20attribuer/ntambila/qr-code-ntambila"
+  "moringa-2-claudia-et-clemence": {
+    "invitationPagePath": "./Moringa 2/claudia-et-clemence/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Moringa%202/claudia-et-clemence/invitation",
+    "qrPagePath": "./Moringa 2/claudia-et-clemence/qr-code-claudia-et-clemence.html",
+    "publicQrPagePath": "/couple-christian-sephora/Moringa%202/claudia-et-clemence/qr-code-claudia-et-clemence"
   }
 };
 

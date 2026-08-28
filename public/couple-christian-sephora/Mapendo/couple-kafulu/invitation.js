@@ -40,7 +40,7 @@
     const preferences = pageConfig.drinkPreferences || invitation.preferences || {};
     const categories = [
       { label: "Bières & alcoolisées", items: preferences.beers || preferences.alcoholic || [] },
-      { label: "Vins & champagne", items: preferences.wine || [] },
+      { label: "Vins & spiritueux", items: preferences.wine || [] },
       { label: "Sans alcool", items: preferences.soft || [] }
     ].filter(function (category) { return category.items.length; });
     container.innerHTML = categories.map(function (category) {
@@ -140,3 +140,4 @@
     }
   }).catch(function () { feedback("rsvpFeedback", "Invitation indisponible pour le moment.", true); });
 })();
+
