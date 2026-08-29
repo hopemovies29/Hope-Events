@@ -1671,6 +1671,83 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
+  "table-docg-directeur-pay-pay": {
+    "token": "table-docg-directeur-pay-pay",
+    "guestName": "Directeur Pay Pay",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "directeur-pay-pay",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-madame-eunice": {
+    "token": "table-docg-madame-eunice",
+    "guestName": "Madame Eunice",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "madame-eunice",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-madame-maguy": {
+    "token": "table-docg-madame-maguy",
+    "guestName": "Madame Maguy",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "madame-maguy",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-madame-sarah": {
+    "token": "table-docg-madame-sarah",
+    "guestName": "Madame Sarah",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "madame-sarah",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-monsieur-junior": {
+    "token": "table-docg-monsieur-junior",
+    "guestName": "Monsieur Junior",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "monsieur-junior",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-monsieur-stive": {
+    "token": "table-docg-monsieur-stive",
+    "guestName": "Monsieur Stive",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "monsieur-stive",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-docg-monsieur-claude": {
+    "token": "table-docg-monsieur-claude",
+    "guestName": "Monsieur Claude",
+    "tableName": "Table DOCG",
+    "tableSlug": "table-docg",
+    "folderSlug": "monsieur-claude",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Chere invite",
+    "seats": 1,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
   "clou-de-girofle-mme-mete-2": {
     "token": "clou-de-girofle-mme-mete-2",
     "guestName": "Mme METE",
@@ -2791,6 +2868,48 @@ const routes = {
     "publicInvitationPath": "/couple-christian-sephora/Moringa%202/agnes-et-esther/invitation",
     "qrPagePath": "./Moringa 2/agnes-et-esther/qr-code-agnes-et-esther.html",
     "publicQrPagePath": "/couple-christian-sephora/Moringa%202/agnes-et-esther/qr-code-agnes-et-esther"
+  },
+  "table-docg-directeur-pay-pay": {
+    "invitationPagePath": "./Table DOCG/directeur-pay-pay/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/directeur-pay-pay/invitation",
+    "qrPagePath": "./Table DOCG/directeur-pay-pay/qr-code-directeur-pay-pay.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/directeur-pay-pay/qr-code-directeur-pay-pay"
+  },
+  "table-docg-madame-eunice": {
+    "invitationPagePath": "./Table DOCG/madame-eunice/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/madame-eunice/invitation",
+    "qrPagePath": "./Table DOCG/madame-eunice/qr-code-madame-eunice.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/madame-eunice/qr-code-madame-eunice"
+  },
+  "table-docg-madame-maguy": {
+    "invitationPagePath": "./Table DOCG/madame-maguy/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/madame-maguy/invitation",
+    "qrPagePath": "./Table DOCG/madame-maguy/qr-code-madame-maguy.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/madame-maguy/qr-code-madame-maguy"
+  },
+  "table-docg-madame-sarah": {
+    "invitationPagePath": "./Table DOCG/madame-sarah/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/madame-sarah/invitation",
+    "qrPagePath": "./Table DOCG/madame-sarah/qr-code-madame-sarah.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/madame-sarah/qr-code-madame-sarah"
+  },
+  "table-docg-monsieur-junior": {
+    "invitationPagePath": "./Table DOCG/monsieur-junior/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/monsieur-junior/invitation",
+    "qrPagePath": "./Table DOCG/monsieur-junior/qr-code-monsieur-junior.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/monsieur-junior/qr-code-monsieur-junior"
+  },
+  "table-docg-monsieur-stive": {
+    "invitationPagePath": "./Table DOCG/monsieur-stive/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/monsieur-stive/invitation",
+    "qrPagePath": "./Table DOCG/monsieur-stive/qr-code-monsieur-stive.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/monsieur-stive/qr-code-monsieur-stive"
+  },
+  "table-docg-monsieur-claude": {
+    "invitationPagePath": "./Table DOCG/monsieur-claude/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/monsieur-claude/invitation",
+    "qrPagePath": "./Table DOCG/monsieur-claude/qr-code-monsieur-claude.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/monsieur-claude/qr-code-monsieur-claude"
   },
   "clou-de-girofle-mme-mete-2": {
     "invitationPagePath": "./Table Clou de girofle/mme-mete-2/invitation.html",

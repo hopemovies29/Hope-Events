@@ -38,6 +38,17 @@ EVENT = {
         "soft": ["Coca-Cola", "Fanta", "Sprite", "Vital'O", "Maltina", "Énergie Malt", "XXL", "Top", "Eau"],
     },
 }
+MANUAL_TABLES = {
+    "Table DOCG": [
+        "Directeur Pay Pay",
+        "Madame Eunice",
+        "Madame Maguy",
+        "Madame Sarah",
+        "Monsieur Junior",
+        "Monsieur Stive",
+        "Monsieur Claude",
+    ]
+}
 
 
 def text(value: object) -> str:
@@ -247,6 +258,28 @@ def extract_guests(
     return records
 
 
+def manual_guest_records() -> list[dict[str, str | int]]:
+    """Add tables provided after the workbook was issued without changing existing guests."""
+    records = []
+    for table_name, guest_names in MANUAL_TABLES.items():
+        table_slug = table_token_slug(table_name)
+        used_slugs: defaultdict[str, int] = defaultdict(int)
+        for guest_name in guest_names:
+            base_slug = f"{table_slug}-{slug(guest_name)}"
+            used_slugs[base_slug] += 1
+            suffix = "" if used_slugs[base_slug] == 1 else f"-{used_slugs[base_slug]}"
+            records.append(
+                {
+                    "token": f"{base_slug}{suffix}",
+                    "guestName": guest_name,
+                    "tableName": table_name,
+                    "tableSlug": table_slug,
+                    "folderSlug": f"{slug(guest_name)}{suffix}",
+                }
+            )
+    return records
+
+
 def merge_legacy_guests(
     guests: list[dict[str, str | int]], previous: dict[str, dict]
 ) -> list[dict[str, str | int]]:
@@ -394,6 +427,7 @@ def main() -> None:
             for guest in guests
             if str(guest["token"]) in previous["invitations"]
         ]
+    guests.extend(manual_guest_records())
     unique_guests = {}
     for guest in guests:
         unique_guests.setdefault(str(guest["token"]), guest)

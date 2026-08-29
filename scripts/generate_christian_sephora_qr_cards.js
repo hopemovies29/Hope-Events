@@ -4,6 +4,9 @@ const QRCode = require("qrcode");
 const sharp = require("sharp");
 
 const root = path.resolve(__dirname, "..", "public", "couple-christian-sephora");
+const cardDirectory = process.env.QR_CARD_DIRECTORY
+  ? path.resolve(process.env.QR_CARD_DIRECTORY)
+  : root;
 const template = path.join(root, "assets", "carte-qr-christian-sephora.jpg");
 const publicBaseUrl = "https://hope-events.vercel.app";
 
@@ -39,7 +42,7 @@ async function createCard(pagePath) {
 }
 
 async function main() {
-  const pages = findQrPages(root);
+  const pages = findQrPages(cardDirectory);
   for (const pagePath of pages) await createCard(pagePath);
   console.log(`Generated ${pages.length} personalized QR cards.`);
 }
