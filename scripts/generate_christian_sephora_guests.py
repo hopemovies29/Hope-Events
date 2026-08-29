@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import unicodedata
 from difflib import SequenceMatcher
 from collections import defaultdict
@@ -280,6 +281,26 @@ def public_paths(table_name: str, guest_slug: str) -> tuple[str, str]:
     return invitation, qr
 
 
+def copy_existing_guest_card(token: str, destination_folder: Path) -> None:
+    """Carry a guest's existing personalized QR card into a renamed table folder."""
+    destination = destination_folder / "carte-qr.webp"
+    if destination.exists():
+        return
+
+    token_marker = f'defaultToken: "{token}"'
+    for qr_page in EVENT_ROOT.rglob("qr-code-*.html"):
+        if qr_page.parent == destination_folder:
+            continue
+
+        source_card = qr_page.parent / "carte-qr.webp"
+        if not source_card.exists():
+            continue
+
+        if token_marker in qr_page.read_text(encoding="utf-8"):
+            shutil.copy2(source_card, destination)
+            return
+
+
 def write_guest_pages(guest: dict[str, str | int]) -> dict[str, str]:
     table_name = str(guest["tableName"])
     guest_name = str(guest["guestName"])
@@ -308,6 +329,7 @@ def write_guest_pages(guest: dict[str, str | int]) -> dict[str, str]:
         ("Couple Palama", guest_name),
         ("Table Clou de girofle", table_name),
         ("couple-palama", guest_slug),
+        ("Carte-QR-Couple-Palama.webp", f"Carte-QR-{guest_slug}.webp"),
     ]
 
     for filename in ("invitation.html", "invitation.js", "style.css", "qr-code-couple-palama.html"):
@@ -324,6 +346,8 @@ def write_guest_pages(guest: dict[str, str | int]) -> dict[str, str]:
             poster_path,
         )
         destination.write_text(content, encoding="utf-8")
+
+    copy_existing_guest_card(token, folder)
 
     return {
         "invitationPagePath": f"./{table_name}/{guest_slug}/invitation.html",
