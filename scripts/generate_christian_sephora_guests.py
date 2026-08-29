@@ -49,6 +49,12 @@ MANUAL_TABLES = {
         "Monsieur Claude",
     ]
 }
+GUEST_NAME_REPLACEMENTS = {
+    ("Mapendo", "couple-bailleur"): "Couple Dr Aimé Mangbele",
+}
+GUEST_TOKEN_OVERRIDES = {
+    ("Mapendo", "Couple Dr Aimé Mangbele"): "mapendo-couple-bailleur",
+}
 
 
 def text(value: object) -> str:
@@ -229,18 +235,23 @@ def extract_guests(
 
         for column, table_name in columns.items():
             for row in range(first_guest_row, sheet.max_row + 1):
-                guest_name = text(sheet.cell(row, column).value)
-                if not usable_guest(guest_name):
+                source_guest_name = text(sheet.cell(row, column).value)
+                if not usable_guest(source_guest_name):
                     continue
+                guest_name = GUEST_NAME_REPLACEMENTS.get(
+                    (table_name, slug(source_guest_name)), source_guest_name
+                )
                 base_slug = f"{table_token_slug(table_name)}-{slug(guest_name)}"
                 used_slugs[base_slug] += 1
                 suffix = "" if used_slugs[base_slug] == 1 else f"-{used_slugs[base_slug]}"
-                token = find_previous_token(
-                    guest_name,
-                    previous_invitations,
-                    previous_tokens,
-                    used_previous_tokens,
-                )
+                token = GUEST_TOKEN_OVERRIDES.get((table_name, guest_name), "")
+                if not token:
+                    token = find_previous_token(
+                        guest_name,
+                        previous_invitations,
+                        previous_tokens,
+                        used_previous_tokens,
+                    )
                 if token:
                     used_previous_tokens.add(token)
                 else:

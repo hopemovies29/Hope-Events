@@ -606,10 +606,10 @@ const invitations = {
   },
   "mapendo-couple-bailleur": {
     "token": "mapendo-couple-bailleur",
-    "guestName": "Couple Bailleur",
+    "guestName": "Couple Dr Aimé Mangbele",
     "tableName": "Mapendo",
     "tableSlug": "mapendo",
-    "folderSlug": "couple-bailleur",
+    "folderSlug": "couple-dr-aime-mangbele",
     "eventId": "christian-sephora-palama-2026",
     "salutation": "Cher invite",
     "seats": 2,
@@ -2288,10 +2288,10 @@ const routes = {
     "publicQrPagePath": "/couple-christian-sephora/Mapendo/mapendo/qr-code-mapendo"
   },
   "mapendo-couple-bailleur": {
-    "invitationPagePath": "./Mapendo/couple-bailleur/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Mapendo/couple-bailleur/invitation",
-    "qrPagePath": "./Mapendo/couple-bailleur/qr-code-couple-bailleur.html",
-    "publicQrPagePath": "/couple-christian-sephora/Mapendo/couple-bailleur/qr-code-couple-bailleur"
+    "invitationPagePath": "./Mapendo/couple-dr-aime-mangbele/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Mapendo/couple-dr-aime-mangbele/invitation",
+    "qrPagePath": "./Mapendo/couple-dr-aime-mangbele/qr-code-couple-dr-aime-mangbele.html",
+    "publicQrPagePath": "/couple-christian-sephora/Mapendo/couple-dr-aime-mangbele/qr-code-couple-dr-aime-mangbele"
   },
   "mapendo-tonton-blaise": {
     "invitationPagePath": "./Mapendo/tonton-blaise/invitation.html",
