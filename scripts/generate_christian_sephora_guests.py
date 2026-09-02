@@ -53,6 +53,7 @@ MANUAL_TABLES = {
         "Couple Ngoyi (Pius et Edith)",
         "Couple Mpanzu (Fiston et Lydia)",
         "Couple Itende (Erneste et Tina)",
+        "Couple Mukonkole (Olivier et Cécile)",
     ],
 }
 GUEST_NAME_REPLACEMENTS = {

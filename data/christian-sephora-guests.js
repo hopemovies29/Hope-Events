@@ -1792,6 +1792,17 @@ const invitations = {
     "seats": 2,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
+  "table-k-couple-mukonkole-olivier-et-cecile": {
+    "token": "table-k-couple-mukonkole-olivier-et-cecile",
+    "guestName": "Couple Mukonkole (Olivier et Cécile)",
+    "tableName": "Table K",
+    "tableSlug": "table-k",
+    "folderSlug": "couple-mukonkole-olivier-et-cecile",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
   "clou-de-girofle-mme-mete-2": {
     "token": "clou-de-girofle-mme-mete-2",
     "guestName": "Mme METE",
@@ -2978,6 +2989,12 @@ const routes = {
     "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-itende-erneste-et-tina/invitation",
     "qrPagePath": "./Table K/couple-itende-erneste-et-tina/qr-code-couple-itende-erneste-et-tina.html",
     "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-itende-erneste-et-tina/qr-code-couple-itende-erneste-et-tina"
+  },
+  "table-k-couple-mukonkole-olivier-et-cecile": {
+    "invitationPagePath": "./Table K/couple-mukonkole-olivier-et-cecile/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-mukonkole-olivier-et-cecile/invitation",
+    "qrPagePath": "./Table K/couple-mukonkole-olivier-et-cecile/qr-code-couple-mukonkole-olivier-et-cecile.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-mukonkole-olivier-et-cecile/qr-code-couple-mukonkole-olivier-et-cecile"
   },
   "clou-de-girofle-mme-mete-2": {
     "invitationPagePath": "./Table Clou de girofle/mme-mete-2/invitation.html",
