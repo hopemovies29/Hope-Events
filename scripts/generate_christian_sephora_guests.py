@@ -47,7 +47,13 @@ MANUAL_TABLES = {
         "Monsieur Junior",
         "Monsieur Stive",
         "Monsieur Claude",
-    ]
+    ],
+    "Table K": [
+        "Couple Katubadi (Célestin et Elvire)",
+        "Couple Ngoyi (Pius et Edith)",
+        "Couple Mpanzu (Fiston et Lydia)",
+        "Couple Itende (Erneste et Tina)",
+    ],
 }
 GUEST_NAME_REPLACEMENTS = {
     ("Mapendo", "couple-bailleur"): "Couple Dr Aimé Mangbele",

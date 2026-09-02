@@ -1748,6 +1748,50 @@ const invitations = {
     "seats": 1,
     "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
   },
+  "table-k-couple-katubadi-celestin-et-elvire": {
+    "token": "table-k-couple-katubadi-celestin-et-elvire",
+    "guestName": "Couple Katubadi (Célestin et Elvire)",
+    "tableName": "Table K",
+    "tableSlug": "table-k",
+    "folderSlug": "couple-katubadi-celestin-et-elvire",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-k-couple-ngoyi-pius-et-edith": {
+    "token": "table-k-couple-ngoyi-pius-et-edith",
+    "guestName": "Couple Ngoyi (Pius et Edith)",
+    "tableName": "Table K",
+    "tableSlug": "table-k",
+    "folderSlug": "couple-ngoyi-pius-et-edith",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-k-couple-mpanzu-fiston-et-lydia": {
+    "token": "table-k-couple-mpanzu-fiston-et-lydia",
+    "guestName": "Couple Mpanzu (Fiston et Lydia)",
+    "tableName": "Table K",
+    "tableSlug": "table-k",
+    "folderSlug": "couple-mpanzu-fiston-et-lydia",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
+  "table-k-couple-itende-erneste-et-tina": {
+    "token": "table-k-couple-itende-erneste-et-tina",
+    "guestName": "Couple Itende (Erneste et Tina)",
+    "tableName": "Table K",
+    "tableSlug": "table-k",
+    "folderSlug": "couple-itende-erneste-et-tina",
+    "eventId": "christian-sephora-palama-2026",
+    "salutation": "Cher invite",
+    "seats": 2,
+    "personalMessage": "Christian et Sephora seront heureux de partager cette journee de benediction et de joie avec vous."
+  },
   "clou-de-girofle-mme-mete-2": {
     "token": "clou-de-girofle-mme-mete-2",
     "guestName": "Mme METE",
@@ -2910,6 +2954,30 @@ const routes = {
     "publicInvitationPath": "/couple-christian-sephora/Table%20DOCG/monsieur-claude/invitation",
     "qrPagePath": "./Table DOCG/monsieur-claude/qr-code-monsieur-claude.html",
     "publicQrPagePath": "/couple-christian-sephora/Table%20DOCG/monsieur-claude/qr-code-monsieur-claude"
+  },
+  "table-k-couple-katubadi-celestin-et-elvire": {
+    "invitationPagePath": "./Table K/couple-katubadi-celestin-et-elvire/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-katubadi-celestin-et-elvire/invitation",
+    "qrPagePath": "./Table K/couple-katubadi-celestin-et-elvire/qr-code-couple-katubadi-celestin-et-elvire.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-katubadi-celestin-et-elvire/qr-code-couple-katubadi-celestin-et-elvire"
+  },
+  "table-k-couple-ngoyi-pius-et-edith": {
+    "invitationPagePath": "./Table K/couple-ngoyi-pius-et-edith/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-ngoyi-pius-et-edith/invitation",
+    "qrPagePath": "./Table K/couple-ngoyi-pius-et-edith/qr-code-couple-ngoyi-pius-et-edith.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-ngoyi-pius-et-edith/qr-code-couple-ngoyi-pius-et-edith"
+  },
+  "table-k-couple-mpanzu-fiston-et-lydia": {
+    "invitationPagePath": "./Table K/couple-mpanzu-fiston-et-lydia/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-mpanzu-fiston-et-lydia/invitation",
+    "qrPagePath": "./Table K/couple-mpanzu-fiston-et-lydia/qr-code-couple-mpanzu-fiston-et-lydia.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-mpanzu-fiston-et-lydia/qr-code-couple-mpanzu-fiston-et-lydia"
+  },
+  "table-k-couple-itende-erneste-et-tina": {
+    "invitationPagePath": "./Table K/couple-itende-erneste-et-tina/invitation.html",
+    "publicInvitationPath": "/couple-christian-sephora/Table%20K/couple-itende-erneste-et-tina/invitation",
+    "qrPagePath": "./Table K/couple-itende-erneste-et-tina/qr-code-couple-itende-erneste-et-tina.html",
+    "publicQrPagePath": "/couple-christian-sephora/Table%20K/couple-itende-erneste-et-tina/qr-code-couple-itende-erneste-et-tina"
   },
   "clou-de-girofle-mme-mete-2": {
     "invitationPagePath": "./Table Clou de girofle/mme-mete-2/invitation.html",
