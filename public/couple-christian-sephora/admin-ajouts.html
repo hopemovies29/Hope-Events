@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajout d'invitations | Christian et Sephora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./client.css" />
+    <link rel="stylesheet" href="./admin-ajouts.css" />
+  </head>
+  <body class="home-page">
+    <div class="backdrop-noise" aria-hidden="true"></div>
+    <main class="section client-space-page">
+      <section class="client-space-hero"><p class="eyebrow">Administration privée</p><h1>Ajouter une invitation.</h1><p class="hero-text">Entrez seulement le nom du couple et sa table. Le lien, la carte QR et l'invitation au même modèle seront créés automatiquement.</p></section>
+      <section class="admin-panel" id="adminPanel">
+        <form id="invitationForm" class="admin-form">
+          <label for="guestName">Nom du couple ou invité</label><input id="guestName" name="guestName" required maxlength="120" placeholder="Ex. Couple Mukonkole (Olivier et Cécile)" />
+          <label for="tableName">Table</label><input id="tableName" name="tableName" list="knownTables" required maxlength="80" placeholder="Ex. Table K" /><datalist id="knownTables"></datalist>
+          <button class="button button-primary" type="submit">Créer l'invitation QR</button>
+          <p id="adminFeedback" class="admin-feedback" aria-live="polite"></p>
+        </form>
+        <section class="admin-result is-hidden" id="adminResult"><p class="eyebrow">Invitation créée</p><h2 id="resultGuest">-</h2><p id="resultTable">-</p><div class="admin-actions"><a id="resultQr" class="button button-primary" target="_blank" rel="noopener">Ouvrir la carte QR</a><a id="resultInvitation" class="button button-secondary" target="_blank" rel="noopener">Ouvrir l'invitation</a><button id="copyShareLink" class="button button-secondary" type="button">Copier le lien à envoyer</button></div></section>
+      </section>
+    </main>
+    <script src="./admin-ajouts.js"></script>
+  </body>
+</html>
