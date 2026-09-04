@@ -9,5 +9,13 @@
 .admin-result h2 { margin: .2rem 0; color: #f8f0e4; font-family: "Cormorant Garamond", serif; font-size: 2rem; }
 .admin-result p { color: #dac9b6; }
 .admin-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1rem; }
+.admin-created-list { margin-top: 1.5rem; }
+.admin-created-list h2 { color: #f8f0e4; font-family: "Cormorant Garamond", serif; font-size: 2rem; margin: .2rem 0 1rem; }
+.admin-created-row { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 1rem; margin-top: .65rem; border: 1px solid rgba(216, 173, 85, .25); border-radius: 14px; background: rgba(17, 12, 9, .72); }
+.admin-created-row strong, .admin-created-row span { display: block; color: #f8f0e4; }
+.admin-created-row span { color: #dac9b6; font-size: .9rem; margin-top: .2rem; }
+.admin-row-actions { display: flex; gap: .55rem; flex-wrap: wrap; }
+.admin-row-actions button { padding: .55rem .8rem; border: 1px solid rgba(216, 173, 85, .5); border-radius: 9px; background: transparent; color: #f8f0e4; font: inherit; cursor: pointer; }
+.admin-row-actions .delete { border-color: rgba(227, 124, 124, .6); color: #f1a5a5; }
 .is-hidden { display: none; }
-@media (max-width: 560px) { .admin-actions .button { width: 100%; justify-content: center; } }
+@media (max-width: 560px) { .admin-actions .button, .admin-created-row { width: 100%; justify-content: center; } .admin-created-row { box-sizing: border-box; align-items: flex-start; flex-direction: column; } }

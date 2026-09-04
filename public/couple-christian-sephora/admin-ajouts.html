@@ -18,10 +18,12 @@
         <form id="invitationForm" class="admin-form">
           <label for="guestName">Nom du couple ou invité</label><input id="guestName" name="guestName" required maxlength="120" placeholder="Ex. Couple Mukonkole (Olivier et Cécile)" />
           <label for="tableName">Table</label><input id="tableName" name="tableName" list="knownTables" required maxlength="80" placeholder="Ex. Table K" /><datalist id="knownTables"></datalist>
-          <button class="button button-primary" type="submit">Créer l'invitation QR</button>
+          <button class="button button-primary" id="submitInvitation" type="submit">Créer l'invitation QR</button>
+          <button class="button button-secondary is-hidden" id="cancelEdit" type="button">Annuler la modification</button>
           <p id="adminFeedback" class="admin-feedback" aria-live="polite"></p>
         </form>
         <section class="admin-result is-hidden" id="adminResult"><p class="eyebrow">Invitation créée</p><h2 id="resultGuest">-</h2><p id="resultTable">-</p><div class="admin-actions"><a id="resultQr" class="button button-primary" target="_blank" rel="noopener">Ouvrir la carte QR</a><a id="resultInvitation" class="button button-secondary" target="_blank" rel="noopener">Ouvrir l'invitation</a><button id="copyShareLink" class="button button-secondary" type="button">Copier le lien à envoyer</button></div></section>
+        <section class="admin-created-list" id="adminCreatedList"><p class="eyebrow">Ajouts de l'admin</p><h2>Modifier ou supprimer un ajout.</h2><div id="adminCreatedRows"></div></section>
       </section>
     </main>
     <script src="./admin-ajouts.js"></script>
