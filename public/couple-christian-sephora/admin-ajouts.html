@@ -13,11 +13,11 @@
   <body class="home-page">
     <div class="backdrop-noise" aria-hidden="true"></div>
     <main class="section client-space-page">
-      <section class="client-space-hero"><p class="eyebrow">Administration privée</p><h1>Ajouter une invitation.</h1><p class="hero-text">Entrez seulement le nom du couple et sa table. Le lien, la carte QR et l'invitation au même modèle seront créés automatiquement.</p></section>
+      <section class="client-space-hero"><p class="eyebrow">Administration privée</p><h1>Ajouter et gérer les invitations.</h1><p class="hero-text">Choisissez une table existante ou écrivez une nouvelle table, puis entrez le nom du couple. Le lien, la carte QR et l'invitation au même modèle seront créés automatiquement.</p></section>
       <section class="admin-panel" id="adminPanel">
         <form id="invitationForm" class="admin-form">
           <label for="guestName">Nom du couple ou invité</label><input id="guestName" name="guestName" required maxlength="120" placeholder="Ex. Couple Mukonkole (Olivier et Cécile)" />
-          <label for="tableName">Table</label><input id="tableName" name="tableName" list="knownTables" required maxlength="80" placeholder="Ex. Table K" /><datalist id="knownTables"></datalist>
+          <label for="tableName">Table</label><input id="tableName" name="tableName" list="knownTables" required maxlength="80" placeholder="Ex. Table K" /><p class="admin-field-helper">Vous pouvez sélectionner une table existante ou saisir le nom d'une nouvelle table.</p><datalist id="knownTables"></datalist>
           <button class="button button-primary" id="submitInvitation" type="submit">Créer l'invitation QR</button>
           <button class="button button-secondary is-hidden" id="cancelEdit" type="button">Annuler la modification</button>
           <p id="adminFeedback" class="admin-feedback" aria-live="polite"></p>

@@ -1,6 +1,7 @@
 .admin-panel { max-width: 780px; margin: 1.5rem auto 0; padding: 1.25rem; border: 1px solid rgba(216, 173, 85, .4); border-radius: 24px; background: rgba(28, 16, 10, .86); }
 .admin-form { display: grid; gap: .7rem; }
 .admin-form label { color: #dac9b6; font-weight: 700; }
+.admin-field-helper { margin: -.35rem 0 0; color: rgba(218, 201, 182, .76); font-size: .86rem; line-height: 1.45; }
 .admin-form input { width: 100%; box-sizing: border-box; padding: .9rem 1rem; border: 1px solid rgba(216, 173, 85, .4); border-radius: 12px; background: #110c09; color: #f8f0e4; font: inherit; }
 .admin-form .button { justify-content: center; margin-top: .6rem; }
 .admin-feedback { min-height: 1.4rem; color: #d8ad55; margin: .3rem 0 0; }

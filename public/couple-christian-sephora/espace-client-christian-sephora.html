@@ -86,6 +86,17 @@
             <p class="eyebrow">Tables et invites</p>
             <h2>Invitations pretes a etre partagees.</h2>
           </div>
+          <div class="invitation-toolbar" aria-label="Rechercher et sélectionner des invitations">
+            <input id="guest-search" type="search" placeholder="Rechercher un invité ou un couple" autocomplete="off" />
+            <select id="table-filter"><option value="">Toutes les tables</option></select>
+            <label class="select-visible"><input id="select-visible" type="checkbox" /> Sélectionner les résultats</label>
+            <div class="bulk-actions">
+              <span id="selected-count">0 sélection</span>
+              <button id="bulk-copy-messages" class="guest-link" type="button" disabled>Copier les messages</button>
+              <button id="bulk-whatsapp" class="guest-link guest-link-whatsapp" type="button" disabled>Préparer WhatsApp</button>
+            </div>
+          </div>
+          <p class="bulk-helper" id="bulk-helper" aria-live="polite">Sélectionnez des invités pour préparer leurs messages WhatsApp.</p>
           <div class="tables-grid" id="tables-grid"></div>
         </section>
 
@@ -112,5 +123,6 @@
     <script src="./config.js"></script>
     <script src="../assets/js/api.js"></script>
     <script src="./espace-client.js"></script>
+    <script src="./admin-entry.js"></script>
   </body>
 </html>

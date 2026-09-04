@@ -16,8 +16,17 @@
   const messagesReport = document.getElementById("messages-report");
   const reportsStatus = document.getElementById("reports-status");
   const reportsRefresh = document.getElementById("reports-refresh");
+  const guestSearch = document.getElementById("guest-search");
+  const tableFilter = document.getElementById("table-filter");
+  const selectVisible = document.getElementById("select-visible");
+  const selectedCount = document.getElementById("selected-count");
+  const bulkCopyMessages = document.getElementById("bulk-copy-messages");
+  const bulkWhatsapp = document.getElementById("bulk-whatsapp");
+  const bulkHelper = document.getElementById("bulk-helper");
   const revealNodes = document.querySelectorAll("[data-reveal]");
   const sectionAnchors = document.querySelectorAll('a[href^="#"]');
+  let currentInvitations = [];
+  const selectedTokens = new Set();
 
   function isFileMode() {
     return window.location.protocol === "file:";
@@ -59,6 +68,10 @@
   }
 
   function buildWhatsAppShareUrl(invitation, publicLink) {
+    return `https://wa.me/?text=${encodeURIComponent(buildWhatsAppMessage(invitation, publicLink))}`;
+  }
+
+  function buildWhatsAppMessage(invitation, publicLink) {
     const guestName = String(invitation.guestName || "cher invite").trim();
     const message = [
       "Mariage : Christian & Sephora",
@@ -72,7 +85,7 @@
       publicLink
     ].join("\n");
 
-    return `https://wa.me/?text=${encodeURIComponent(message)}`;
+    return message;
   }
 
   function buildInvitationUrl(invitation) {
@@ -195,12 +208,34 @@
     }, {});
   }
 
+  function getFilteredInvitations(invitations) {
+    const search = String(guestSearch && guestSearch.value || "").trim().toLocaleLowerCase("fr");
+    const table = String(tableFilter && tableFilter.value || "");
+    return invitations.filter(function (invitation) {
+      const matchesSearch = !search || `${invitation.guestName} ${invitation.tableName}`.toLocaleLowerCase("fr").includes(search);
+      return matchesSearch && (!table || invitation.tableName === table);
+    });
+  }
+
+  function renderBulkState(visibleInvitations) {
+    const count = selectedTokens.size;
+    if (selectedCount) selectedCount.textContent = `${count} sélection${count > 1 ? "s" : ""}`;
+    if (bulkCopyMessages) bulkCopyMessages.disabled = count === 0;
+    if (bulkWhatsapp) bulkWhatsapp.disabled = count === 0;
+    if (selectVisible) {
+      const visibleTokens = visibleInvitations.map(function (item) { return item.token; });
+      selectVisible.checked = visibleTokens.length > 0 && visibleTokens.every(function (token) { return selectedTokens.has(token); });
+      selectVisible.indeterminate = !selectVisible.checked && visibleTokens.some(function (token) { return selectedTokens.has(token); });
+    }
+  }
+
   function renderTables(invitations) {
     if (!tablesGrid) {
       return;
     }
 
-    const groups = groupByTable(invitations);
+    const filteredInvitations = getFilteredInvitations(invitations);
+    const groups = groupByTable(filteredInvitations);
     const entries = Object.keys(groups).sort(function (a, b) {
       return a.localeCompare(b, "fr", { sensitivity: "base" });
     });
@@ -220,10 +255,11 @@
             return `
               <li class="guest-row guest-row-rich">
                 <div class="guest-info">
-                  <strong>${invitation.guestName}</strong>
+                  <strong>${escapeHtml(invitation.guestName)}</strong>
                   <span>${invitation.seats} place${invitation.seats > 1 ? "s" : ""}</span>
                 </div>
                 <div class="guest-actions">
+                  <label class="guest-select"><input type="checkbox" data-select-token="${escapeHtml(invitation.token)}" ${selectedTokens.has(invitation.token) ? "checked" : ""} /> Sélectionner</label>
                   <a class="guest-link" href="${invitationUrl}">Invitation</a>
                   <a class="guest-link guest-link-alt" href="${qrCardUrl}">Page QR</a>
                   <a class="guest-link guest-link-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
@@ -251,6 +287,67 @@
         `;
       })
       .join("");
+
+    if (!tablesGrid.innerHTML) {
+      tablesGrid.innerHTML = '<p class="client-space-helper">Aucune invitation ne correspond à cette recherche.</p>';
+    }
+    renderBulkState(filteredInvitations);
+  }
+
+  function syncTableFilter(invitations) {
+    if (!tableFilter) return;
+    const selected = tableFilter.value;
+    const tables = Array.from(new Set(invitations.map(function (item) { return item.tableName; }))).sort(function (a, b) {
+      return a.localeCompare(b, "fr", { sensitivity: "base" });
+    });
+    tableFilter.innerHTML = '<option value="">Toutes les tables</option>' + tables.map(function (table) {
+      return `<option value="${escapeHtml(table)}">${escapeHtml(table)}</option>`;
+    }).join("");
+    tableFilter.value = tables.includes(selected) ? selected : "";
+  }
+
+  function getSelectedInvitations() {
+    return currentInvitations.filter(function (invitation) { return selectedTokens.has(invitation.token); });
+  }
+
+  function initInvitationTools() {
+    [guestSearch, tableFilter].filter(Boolean).forEach(function (control) {
+      control.addEventListener("input", function () { renderTables(currentInvitations); });
+      control.addEventListener("change", function () { renderTables(currentInvitations); });
+    });
+
+    if (selectVisible) {
+      selectVisible.addEventListener("change", function () {
+        getFilteredInvitations(currentInvitations).forEach(function (invitation) {
+          if (selectVisible.checked) selectedTokens.add(invitation.token);
+          else selectedTokens.delete(invitation.token);
+        });
+        renderTables(currentInvitations);
+      });
+    }
+
+    if (bulkCopyMessages) {
+      bulkCopyMessages.addEventListener("click", async function () {
+        const messages = getSelectedInvitations().map(function (invitation) {
+          return buildWhatsAppMessage(invitation, buildPublicInvitationUrl(invitation.token));
+        }).join("\n\n--------------------\n\n");
+        try {
+          await navigator.clipboard.writeText(messages);
+          if (bulkHelper) bulkHelper.textContent = `${getSelectedInvitations().length} message(s) copié(s). Collez-en un dans WhatsApp pour chaque invité.`;
+        } catch (error) {
+          window.prompt("Copiez les messages préparés :", messages);
+        }
+      });
+    }
+
+    if (bulkWhatsapp) {
+      bulkWhatsapp.addEventListener("click", function () {
+        const invitations = getSelectedInvitations();
+        if (!invitations.length) return;
+        window.open(buildWhatsAppShareUrl(invitations[0], buildPublicInvitationUrl(invitations[0].token)), "_blank", "noopener");
+        if (bulkHelper) bulkHelper.textContent = `Premier message ouvert dans WhatsApp. ${invitations.length - 1} autre(s) message(s) restent prêts à copier.`;
+      });
+    }
   }
 
   function initCopyButtons() {
@@ -259,6 +356,13 @@
     }
 
     tablesGrid.addEventListener("click", async function (event) {
+      const checkbox = event.target.closest("[data-select-token]");
+      if (checkbox) {
+        if (checkbox.checked) selectedTokens.add(checkbox.getAttribute("data-select-token"));
+        else selectedTokens.delete(checkbox.getAttribute("data-select-token"));
+        renderBulkState(getFilteredInvitations(currentInvitations));
+        return;
+      }
       const trigger = event.target.closest("[data-copy-link]");
 
       if (!trigger) {
@@ -387,13 +491,13 @@
       }
     } catch (error) {
       if (rsvpReport) {
-        rsvpReport.innerHTML = emptyReport("Le suivi sera disponible des que Firebase aura recu les premieres reponses.");
+        rsvpReport.innerHTML = emptyReport("Le suivi sera disponible des que Firebase aura reçu les premieres reponses.");
       }
       if (preferencesReport) {
         preferencesReport.innerHTML = emptyReport("Les choix de boissons apparaitront ici.");
       }
       if (messagesReport) {
-        messagesReport.innerHTML = emptyReport("Les messages des invites apparaitront ici.");
+        messagesReport.innerHTML = emptyReport("Les messages des invités apparaitront ici.");
       }
       if (reportsStatus) {
         reportsStatus.textContent = "Impossible d'actualiser le suivi pour le moment.";
@@ -431,7 +535,12 @@
       summaryCount.textContent = String((space.invitations || []).length);
     }
 
-    renderTables(space.invitations || []);
+    currentInvitations = space.invitations || [];
+    Array.from(selectedTokens).forEach(function (token) {
+      if (!currentInvitations.some(function (invitation) { return invitation.token === token; })) selectedTokens.delete(token);
+    });
+    syncTableFilter(currentInvitations);
+    renderTables(currentInvitations);
     setHidden(loadingState, true);
     setHidden(errorState, true);
     setHidden(contentState, false);
@@ -447,6 +556,7 @@
     initReveal();
     initSectionAnchors();
     initCopyButtons();
+    initInvitationTools();
 
     const key = resolveKey();
 
