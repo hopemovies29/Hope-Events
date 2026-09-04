@@ -11,7 +11,7 @@
   document.getElementById("openInvitationButton").href = invitationUrl;
   document.getElementById("confirmPresenceButton").href = `${invitationUrl}#rsvpOptions`;
   document.getElementById("downloadCardButton").href = imageUrl;
-  document.getElementById("downloadCardButton").download = "Carte-QR-Christian-Sephora.svg";
+  document.getElementById("downloadCardButton").download = "Carte-QR-Christian-Sephora.webp";
 
   window.HopeEventsApi.getInvitation(token).then(function (response) {
     const invitation = response.data;
