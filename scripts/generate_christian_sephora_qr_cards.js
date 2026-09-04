@@ -7,6 +7,9 @@ const root = path.resolve(__dirname, "..", "public", "couple-christian-sephora")
 const cardDirectory = process.env.QR_CARD_DIRECTORY
   ? path.resolve(process.env.QR_CARD_DIRECTORY)
   : root;
+const tokenManifest = process.env.QR_CARD_TOKENS_FILE
+  ? new Set(JSON.parse(fs.readFileSync(path.resolve(process.env.QR_CARD_TOKENS_FILE), "utf8")))
+  : null;
 const template = path.join(root, "assets", "carte-qr-christian-sephora.jpg");
 const publicBaseUrl = "https://hope-events.vercel.app";
 
@@ -42,7 +45,11 @@ async function createCard(pagePath) {
 }
 
 async function main() {
-  const pages = findQrPages(cardDirectory);
+  const pages = findQrPages(cardDirectory).filter((pagePath) => {
+    if (!tokenManifest) return true;
+    const source = fs.readFileSync(pagePath, "utf8");
+    return tokenManifest.has(capture(source, /defaultToken:\s*"([^"]+)"/, "guest token"));
+  });
   for (const pagePath of pages) await createCard(pagePath);
   console.log(`Generated ${pages.length} personalized QR cards.`);
 }

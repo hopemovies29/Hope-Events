@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte QR | Mme Patricia | Christian et Sephora</title>
+    <meta name="description" content="Carte QR personnelle du Mme Patricia." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/jpeg" href="../../../assets/img/logo.jpg" />
+    <link rel="stylesheet" href="../../guest-qr-page.css" />
+  </head>
+  <body class="guest-qr-page">
+    <main class="guest-qr-shell">
+      <p class="qr-kicker">Carte privée · Hope Events</p>
+      <section class="guest-qr-card">
+        <img id="posterViewer" src="./carte-qr.webp" alt="Carte QR du Mme Patricia" />
+      </section>
+      <p class="qr-helper">Scannez le QR de votre carte ou utilisez une action ci-dessous.</p>
+      <div class="guest-qr-actions">
+        <a id="openInvitationButton" class="guest-action is-primary" href="./invitation.html?token=safou-mme-patricia"><span>Accéder à l'invitation</span></a>
+        <button id="confirmPresenceButton" class="guest-action" type="button"><span>Confirmer ma présence</span></button>
+        <a id="downloadCardButton" class="guest-action" href="./carte-qr.webp" download="Carte-QR-mme-patricia.webp"><span>Télécharger la carte</span></a>
+        <button id="shareQrPageButton" class="guest-action" type="button"><span>Partager</span></button>
+      </div>
+      <p class="guest-qr-feedback" id="guestQrFeedback" aria-live="polite"></p>
+    </main>
+    <script>
+      window.HopeEventsGuestQrPageConfig = {
+        defaultToken: "safou-mme-patricia",
+        guestName: "Mme Patricia",
+        tableName: "Safou",
+        coupleNames: "Christian et Sephora",
+        posterPath: "./carte-qr.webp",
+        posterDownloadPath: "./carte-qr.webp",
+        invitationPagePath: "./invitation.html",
+        publicInvitationPath: "/couple-christian-sephora/Safou/mme-patricia/invitation",
+        publicPagePath: "/couple-christian-sephora/Safou/mme-patricia/qr-code-mme-patricia"
+      };
+    </script>
+    <script src="../../config.js"></script><script src="../../../assets/js/api.js"></script><script src="../../guest-qr-page.js"></script>
+  </body>
+</html>
