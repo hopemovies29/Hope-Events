@@ -35,8 +35,10 @@ module.exports = async function handler(req, res) {
       color: { dark: "#120d0a", light: "#fffdf8" }
     });
     const qrGraphic = qrSvg
-      .replace(/^<svg[^>]*>/, '<g transform="translate(290 520) scale(.72)">')
-      .replace(/<\/svg>\s*$/, "</g>");
+      // Keep the QR viewport intact. Replacing it with a group loses the
+      // original viewBox scale and renders only a tiny fragment of the code.
+      .replace(/^<svg/, '<svg x="290" y="520"')
+      .replace(/<\/svg>\s*$/, "</svg>");
 
     const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
