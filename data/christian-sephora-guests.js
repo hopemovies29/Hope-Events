@@ -3758,81 +3758,81 @@ const routes = {
   },
   "pomme-rouge-joelle": {
     "invitationPagePath": "./Pomme Rouge/joelle/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/joelle/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/joelle/invitation",
     "qrPagePath": "./Pomme Rouge/joelle/qr-code-joelle.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/joelle/qr-code-joelle"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/joelle/qr-code-joelle"
   },
   "pomme-rouge-simplice": {
     "invitationPagePath": "./Pomme Rouge/simplice/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/simplice/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/simplice/invitation",
     "qrPagePath": "./Pomme Rouge/simplice/qr-code-simplice.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/simplice/qr-code-simplice"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/simplice/qr-code-simplice"
   },
   "pomme-rouge-chantal": {
     "invitationPagePath": "./Pomme Rouge/chantal/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/chantal/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/chantal/invitation",
     "qrPagePath": "./Pomme Rouge/chantal/qr-code-chantal.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/chantal/qr-code-chantal"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/chantal/qr-code-chantal"
   },
   "pomme-rouge-esther": {
     "invitationPagePath": "./Pomme Rouge/esther/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/esther/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/esther/invitation",
     "qrPagePath": "./Pomme Rouge/esther/qr-code-esther.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/esther/qr-code-esther"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/esther/qr-code-esther"
   },
   "pomme-rouge-shekinah": {
     "invitationPagePath": "./Pomme Rouge/shekinah/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/shekinah/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/shekinah/invitation",
     "qrPagePath": "./Pomme Rouge/shekinah/qr-code-shekinah.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/shekinah/qr-code-shekinah"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/shekinah/qr-code-shekinah"
   },
   "pomme-rouge-sephora": {
     "invitationPagePath": "./Pomme Rouge/sephora/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/sephora/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/sephora/invitation",
     "qrPagePath": "./Pomme Rouge/sephora/qr-code-sephora.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/sephora/qr-code-sephora"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/sephora/qr-code-sephora"
   },
   "pomme-rouge-nyclette": {
     "invitationPagePath": "./Pomme Rouge/nyclette/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/nyclette/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/nyclette/invitation",
     "qrPagePath": "./Pomme Rouge/nyclette/qr-code-nyclette.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/nyclette/qr-code-nyclette"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/nyclette/qr-code-nyclette"
   },
   "pomme-rouge-couple-mbelenge": {
     "invitationPagePath": "./Pomme Rouge/couple-mbelenge/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/couple-mbelenge/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/couple-mbelenge/invitation",
     "qrPagePath": "./Pomme Rouge/couple-mbelenge/qr-code-couple-mbelenge.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/couple-mbelenge/qr-code-couple-mbelenge"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/couple-mbelenge/qr-code-couple-mbelenge"
   },
   "pomme-rouge-couple-mundele": {
     "invitationPagePath": "./Pomme Rouge/couple-mundele/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/couple-mundele/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/couple-mundele/invitation",
     "qrPagePath": "./Pomme Rouge/couple-mundele/qr-code-couple-mundele.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/couple-mundele/qr-code-couple-mundele"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/couple-mundele/qr-code-couple-mundele"
   },
   "pomme-rouge-denise": {
     "invitationPagePath": "./Pomme Rouge/denise/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/denise/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/denise/invitation",
     "qrPagePath": "./Pomme Rouge/denise/qr-code-denise.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/denise/qr-code-denise"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/denise/qr-code-denise"
   },
   "pomme-rouge-robelline": {
     "invitationPagePath": "./Pomme Rouge/robelline/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/robelline/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/robelline/invitation",
     "qrPagePath": "./Pomme Rouge/robelline/qr-code-robelline.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/robelline/qr-code-robelline"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/robelline/qr-code-robelline"
   },
   "pomme-rouge-grace": {
     "invitationPagePath": "./Pomme Rouge/grace/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/grace/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/grace/invitation",
     "qrPagePath": "./Pomme Rouge/grace/qr-code-grace.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/grace/qr-code-grace"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/grace/qr-code-grace"
   },
   "pomme-rouge-mila": {
     "invitationPagePath": "./Pomme Rouge/mila/invitation.html",
-    "publicInvitationPath": "/couple-christian-sephora/Pomme%20Rouge/mila/invitation",
+    "publicInvitationPath": "/couple-christian-sephora/pomme%20Rouge/mila/invitation",
     "qrPagePath": "./Pomme Rouge/mila/qr-code-mila.html",
-    "publicQrPagePath": "/couple-christian-sephora/Pomme%20Rouge/mila/qr-code-mila"
+    "publicQrPagePath": "/couple-christian-sephora/pomme%20Rouge/mila/qr-code-mila"
   },
   "table-1-couple-honorable-ilunga": {
     "invitationPagePath": "./Table 1/couple-honorable-ilunga/invitation.html",
