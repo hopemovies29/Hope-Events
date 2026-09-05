@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/couple-christian-sephora/Pomme%20Rouge/:path*",
+      "destination": "/couple-christian-sephora/pomme%20Rouge/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/invitation/:token",
