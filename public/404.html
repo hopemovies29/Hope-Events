@@ -7,6 +7,20 @@
     <script>
       document.write('<base href="' + (window.location.protocol === "file:" ? "./" : "/") + '">');
     </script>
+    <script>
+      (function () {
+        var legacyPrefix = "/couple-christian-sephora/pomme rouge";
+        var decodedPath = decodeURIComponent(window.location.pathname);
+
+        if (decodedPath.toLowerCase().indexOf(legacyPrefix) !== 0) {
+          return;
+        }
+
+        var suffix = decodedPath.slice(legacyPrefix.length);
+        var canonicalPath = "/couple-christian-sephora/pomme%20Rouge" + suffix;
+        window.location.replace(canonicalPath + window.location.search + window.location.hash);
+      })();
+    </script>
     <link rel="icon" type="image/jpeg" href="assets/img/logo.jpg" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
