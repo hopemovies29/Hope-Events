@@ -2455,7 +2455,7 @@ const invitations = {
   "table-1-couple-honorable-ilunga": {
     "token": "table-1-couple-honorable-ilunga",
     "guestName": "Couple Honorable Ilunga",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "couple-honorable-ilunga",
     "eventId": "christian-sephora-palama-2026",
@@ -2466,7 +2466,7 @@ const invitations = {
   "table-1-couple-special": {
     "token": "table-1-couple-special",
     "guestName": "Couple Spécial",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "couple-special",
     "eventId": "christian-sephora-palama-2026",
@@ -2477,7 +2477,7 @@ const invitations = {
   "table-1-mme-micheline": {
     "token": "table-1-mme-micheline",
     "guestName": "Mme Micheline",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "mme-micheline",
     "eventId": "christian-sephora-palama-2026",
@@ -2488,7 +2488,7 @@ const invitations = {
   "table-1-mme-hortence": {
     "token": "table-1-mme-hortence",
     "guestName": "Mme Hortence",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "mme-hortence",
     "eventId": "christian-sephora-palama-2026",
@@ -2499,7 +2499,7 @@ const invitations = {
   "table-1-ntambila": {
     "token": "table-1-ntambila",
     "guestName": "Ntambila",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "ntambila",
     "eventId": "christian-sephora-palama-2026",
@@ -2510,7 +2510,7 @@ const invitations = {
   "table-1-ipakala-paulin": {
     "token": "table-1-ipakala-paulin",
     "guestName": "Ipakala Paulin",
-    "tableName": "Table 1",
+    "tableName": "Moringa",
     "tableSlug": "table-1",
     "folderSlug": "ipakala-paulin",
     "eventId": "christian-sephora-palama-2026",

@@ -38,6 +38,12 @@ CORRECTED_TABLES = {
         "Couple Mbuluku Miya",
         "Couple Luwakumu 1",
         "Couple Luwakumu 2",
+        "Couple Honorable Ilunga",
+        "Couple Spécial",
+        "Mme Micheline",
+        "Mme Hortence",
+        "Ntambila",
+        "Ipakala Paulin",
     ],
     "Raisin": [
         "Couple Butey",
@@ -132,14 +138,6 @@ CORRECTED_TABLES = {
         "Grâce",
         "Mila",
     ],
-    "Table 1": [
-        "Couple Honorable Ilunga",
-        "Couple Spécial",
-        "Mme Micheline",
-        "Mme Hortence",
-        "Ntambila",
-        "Ipakala Paulin",
-    ],
 }
 
 # Two legacy display names contain typos/case differences but represent the
@@ -147,6 +145,7 @@ CORRECTED_TABLES = {
 REPLACED_TABLE_NAMES = {
     "raisin": {"raisin", "raisn"},
     "pomme rouge": {"pomme rouge"},
+    "moringa": {"moringa", "table 1"},
 }
 
 
